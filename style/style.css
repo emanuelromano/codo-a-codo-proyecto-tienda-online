@@ -1,0 +1,384 @@
+/* ----------------------------------------------------------------------------- */
+/* Fuentes --------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+@font-face {
+    font-family: mooli;
+    src: url(/fonts/Mooli-Regular.ttf)
+}
+
+@font-face {
+    font-family: robotoslab;
+    src: url(/fonts/RobotoSlab-VariableFont_wght.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: mooli;
+    background-color: #ffdba4;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Cabecera -------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+.cabecera {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    z-index: 99998;
+    box-sizing: content-box;
+}
+
+.cabecera iframe {
+    overflow: hidden;
+    height: 100px;
+}
+
+.caja {
+    height: 100px;
+    width: auto;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Barra de navegación --------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+nav {
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    text-align: center;
+    margin: 0px 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav ul li {
+    color: #fa6400;
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+}
+
+nav ul li a {
+    color: #fa6400;
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: white;
+    background-color: #fa9600;
+    border-radius: 5px;
+    /* transform: scale(1.1); */
+    /* Puede ser scaleX para solo agrandar hacia arriba */
+}
+
+.selecc {
+    color: #9e4b07;
+    font-weight: bold;
+    background-color: #ffc163;
+    border-radius: 5px;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Aside ----------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+.aside {
+    background-color: #fff0da;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    border-radius: 5px;
+    margin: 10px 10px 10px 0px;
+}
+
+.aside-in {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagen-oferta {
+    width: 150px;
+    height: auto;
+    padding: 15px;
+    filter: invert(0.50) sepia(100%);
+    animation: rotation 30s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+.titulo-oferta {
+    color: #9e4b07;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 10px;
+}
+
+.texto-oferta {
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Contenido de la página ------------------------------------------------------ */
+/* ----------------------------------------------------------------------------- */
+
+.contenido {
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.contenido-in {
+    padding: 20px;
+}
+
+h2 {
+    color: #fa9600;
+    font-family: robotoslab;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: underline;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Footer ---------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+.foot {
+    font-family: mooli;
+    text-align: center;
+    padding: 0px 0px 10px 0px;
+}
+
+.foot hr {
+    padding: 0px 10px;
+    margin: 5px 10px;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Artículos en el Inicio ------------------------------------------------------ */
+/* ----------------------------------------------------------------------------- */
+
+.tarjetas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0px;
+}
+
+.tarjeta1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.tarjeta1:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+}
+
+.tarjeta2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.tarjeta2:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+}
+
+.imagentarjeta {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #fa9600;
+    border-radius: 8px;
+}
+
+.titulotarjeta {
+    color: #fa9600;
+}
+
+.preciotarjeta {
+    margin: 0px;
+}
+
+.ver-mas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.boton-ver-mas {
+    font-size: 20px;
+    padding: 10px;
+    font-family: mooli;
+    font-weight: bold;
+    color: #9e4b07;
+    background-color: #ffb23f;
+    border: 1px solid #fa9600;
+    border-radius: 5px;
+}
+
+.boton-ver-mas:hover {
+    color: white;
+    background-color: #fa9600;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+}
+
+/* ----------------------------------------------------------------------------- */
+/* CSS Responsivo -------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+/* .espacio {
+    display: block;
+    height: auto;
+    width: 200px;
+} */
+
+.contenedor {
+    padding: 0px 100px;
+    display: grid;
+    grid-template: auto auto auto auto auto / 20% auto 20%;
+    grid-template-areas:
+        "cabecera cabecera cabecera"
+        "menu1 menu1 menu1"
+        "centro centro aside1"
+        "centro centro aside1"
+        "footer footer footer";
+}
+
+.cabecera {
+    grid-area: cabecera;
+}
+
+.menu {
+    grid-area: menu1;
+}
+
+.aside {
+    grid-area: aside1;
+}
+
+.contenido {
+    grid-area: centro;
+}
+
+.foot {
+    grid-area: footer;
+}
+
+@media (max-width: 1500px) {
+    .contenedor {
+        padding: 0px 0px;
+        display: grid;
+        grid-template: auto auto auto auto auto / 20% auto 20%;
+        grid-template-areas:
+            "cabecera cabecera cabecera"
+            "menu1 menu1 menu1"
+            "centro centro aside1"
+            "centro centro aside1"
+            "footer footer footer";
+    }
+
+    .aside {
+        margin: 10px 10px 10px 0px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .contenedor {
+        display: grid;
+        grid-template: auto auto auto auto auto / 20% auto;
+        grid-template-areas: "header header"
+            "menu1 menu1"
+            "centro centro"
+            "aside1 aside1"
+            "footer footer";
+    }
+
+    .aside {
+        margin: 0px 10px 10px 10px;
+    }
+
+    .imagen-oferta {
+        width: 90px;
+        height: auto;
+        padding: 5px;
+        filter: invert(0.50) sepia(100%);
+        animation: rotation 30s infinite linear;
+    }
+}
+
+@media (max-width: 800px) {
+    .contenedor {
+        display: grid;
+        grid-template: auto auto auto auto auto / auto;
+        grid-template-areas: "header"
+            "menu1"
+            "centro"
+            "aside1"
+            "footer";
+    }
+
+    nav ul li {
+        color: #fa6400;
+        display: flex;
+        width: 100%;
+    }
+
+    nav ul li a {
+        color: #fa6400;
+        display: flex;
+        text-decoration: none;
+        padding: 10px;
+        width: 100%;
+    }
+
+    nav ul li a:hover {
+        color: white;
+        background-color: #fa9600;
+        border-radius: 5px;
+        /* Puede ser scaleX para solo agrandar hacia arriba */
+    }
+
+    .aside {
+        margin: 0px 10px 10px 10px;
+    }
+
+    .tarjetas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px 0px;
+    }
+}

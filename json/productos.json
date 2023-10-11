@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "nombre": "Selva Negra",
+        "imagen": "https://i.ibb.co/VMnQNkL/1.png",
+        "descripcion": "Bizcochuelo de chocolate empapado en kirsch e intercaladas con nata y cerezas.",
+        "porciones": "8",
+        "precio": "5500"
+    },
+    {
+        "id": 2,
+        "nombre": "Lemon Pie",
+        "imagen": "https://i.ibb.co/7zw8Rgy/2.jpg",
+        "descripcion": "Tarta formada por una base de masa quebrada u hojaldre rellena con crema de limón.",
+        "porciones": "8",
+        "precio": "2600"
+    },
+    {
+        "id": 3,
+        "nombre": "Torta Rogel",
+        "imagen": "https://i.ibb.co/p3XbHk6/3.jpg",
+        "descripcion": "Capas de discos de masa Rogel crocante, relleno de dulce de leche con chips de chocolate y terminado con merengue italiano.",
+        "porciones": "8",
+        "precio": "3500"
+    },
+    {
+        "id": 4,
+        "nombre": "Red Velvet",
+        "imagen": "https://i.ibb.co/F6nMM5N/4.jpg",
+        "descripcion": "Bizcocho de color rojo en capas, relleno con crema y con un glaseado de crema de queso.",
+        "porciones": "8",
+        "precio": "6000"
+    },
+    {
+        "id": 5,
+        "nombre": "Carrot Cake",
+        "imagen": "https://i.ibb.co/6my4Ddt/5.jpg",
+        "descripcion": "Budín de zanahoria, con una pizca de canela, cubierto con un frosting de queso crema dulce y topping de almendras tostadas.",
+        "porciones": "8",
+        "precio": "4800"
+    },
+    {
+        "id": 6,
+        "nombre": "Cheese Cake",
+        "imagen": "https://i.ibb.co/R4gHY8f/6.jpg",
+        "descripcion": "Base crocante de galletas y manteca, crema de queso y limón combinada con una perfecta confitura casera de frambuesa.",
+        "porciones": "8",
+        "precio": "5000"
+    },
+    {
+        "id": 7,
+        "nombre": "Chocotorta",
+        "imagen": "https://i.ibb.co/sWCgC6s/7.jpg",
+        "descripcion": "Siete capas de Chocolinas intercaladas con crema de dulce de leche repostero.",
+        "porciones": "8",
+        "precio": "4700"
+    },
+    {
+        "id": 8,
+        "nombre": "Torta Matcha",
+        "imagen": "https://i.ibb.co/Sxsyqbf/8.jpg",
+        "descripcion": "Una suave y delicada torta de té verde (matcha) y un mousse de chocolate blanco.",
+        "porciones": "8",
+        "precio": "6600"
+    }
+]
