@@ -6,8 +6,6 @@
 //         .then((data) => console.log(data));
 // }
 
-// traerJson()
-
 function cargarItemsInicio() {
     fetch("../json/productos.json")
         .then((res) => {
@@ -42,3 +40,26 @@ function cargarItemsInicio() {
 }
 
 cargarItemsInicio()
+
+function traerJson() {
+    fetch("../json/productos.json")
+        .then((res) => {
+            return res.json();
+        })
+        .then((data) => {
+            let longitud = data.length
+
+            let tarjetas = document.getElementsByClassName("tarjetas-productos")
+
+            for (let i = 0; i < longitud; i++) {
+                tarjetas[0].innerHTML +=
+                    `<div class="tarjeta-producto" key="${data[i].id}">
+                        <img class="imagentarjeta" src=${data[i].imagen}>
+                        <h3 class="titulotarjeta">· ${data[i].nombre} ·</h3>
+                        <h4 class="preciotarjeta">$${data[i].precio},00</h4>
+                    </div>`
+            }
+        });
+}
+
+traerJson()

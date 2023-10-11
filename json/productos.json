@@ -62,5 +62,13 @@
         "descripcion": "Una suave y delicada torta de té verde (matcha) y un mousse de chocolate blanco.",
         "porciones": "8",
         "precio": "6600"
+    },
+    {
+        "id": 9,
+        "nombre": "Torta de Chocolate y Licor",
+        "imagen": "https://i.ibb.co/BsVkMyy/paso-a-paso-para-realizar-pastel-de-chocolate-y-licor-de-crema-de-whisky-resultado-final-17cc6c91-12.jpg",
+        "descripcion": "Tres capas de bizcocho de chocolate unidas por de un delicioso merengue de licor de whisky.",
+        "porciones": "8",
+        "precio": "7000"
     }
 ]
