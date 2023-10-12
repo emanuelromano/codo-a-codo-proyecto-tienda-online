@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pastelería</title>
     <link rel="stylesheet" href="./style/style.css">
+    <!-- Scripts y JSON -->
+    <script src="./javascript/index.js"></script>
+    <script src="./json/productos.json"></script>
 </head>
 
 <body>
     <div class="contenedor">
-        <!-- Scripts y JSON -->
-        <script src="./javascript/index.js"></script>
-        <script src="./json/productos.json"></script>
 
         <!-- <div class="espacio"></div> -->
 
@@ -26,7 +26,7 @@
                 <li><a href="./productos.html">Productos</a></li>
                 <li><a href="./nosotros.html">Sobre Nosotros</a></li>
                 <li><a href="./contacto.html">Contacto</a></li>
-                <li><a href="./carro.html">Carro (0)</a></li>
+                <li><a class="boton-carrito-contador" href="./carro.html">Carro (0)</a></li>
             </ul>
         </nav>
 
@@ -54,6 +54,7 @@
                 </div>
 
                 <div class="ver-mas">
+                    <button onclick="resetCarrito()">RESET CARRO</button>
                     <button class="boton-ver-mas" onclick="location.href=`./productos.html`">Ver más
                         productos...</button>
                 </div>

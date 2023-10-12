@@ -234,7 +234,7 @@ h2 {
 
     border-radius: 10px;
     padding: 20px;
-    margin: 10px 20px;
+    margin: 10px 10px;
 }
 
 .tarjeta-producto:hover {
@@ -297,7 +297,7 @@ h2 {
 .producto {
     display: flex;
     flex-direction: row;
-    align-items:start ;
+    align-items: start;
     justify-content: space-around;
 }
 
@@ -341,10 +341,11 @@ h2 {
 
 .atencion-producto {
     font-size: 20px;
-    margin: 0px 0px 20px 0px;
+    margin: 20px 0px 0px 0px;
     background-color: #ffc0c0;
     border-radius: 10px;
     padding: 20px;
+    max-width: 350px;
 }
 
 .popup-add-carro {
@@ -354,6 +355,47 @@ h2 {
     border-radius: 10px;
     padding: 20px;
     margin: 20px 0px 0px 0px;
+    max-width: 350px;
+}
+
+.boton-ver-carro {
+    font-size: 20px;
+    margin: 15px 10px 0px 0px;
+    color: white;
+    background-color: #069e57;
+    border: 1px solid #069e57;
+    border-radius: 5px;
+    padding: 5px 8px;
+}
+
+.boton-ver-carro:hover {
+    color: white;
+    background-color: #02693e;
+    border: 1px solid #549e5a;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+}
+
+.boton-seguir-comprando {
+    font-size: 20px;
+    margin-top: 15px;
+    background-color: #affcb5;
+    border: 1px solid #5ba862;
+    border-radius: 5px;
+    padding: 5px 8px;
+}
+
+.boton-seguir-comprando:hover {
+    color: white;
+    background-color: rgb(99, 179, 105);
+    border: 1px solid #5ba862;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+}
+
+.boton-carrito-contador-selecc {
+    color: #9e4b07;
+    font-weight: bold;
+    background-color: #ffc163;
+    border-radius: 5px;
 }
 
 /* ----------------------------------------------------------------------------- */
@@ -542,5 +584,24 @@ h2 {
         align-items: start;
         justify-content: space-around;
         padding: 20px;
+    }
+
+    .atencion-producto {
+        font-size: 20px;
+        margin: 20px 0px 0px 0px;
+        background-color: #ffc0c0;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 500px;
+    }
+
+    .popup-add-carro {
+        font-size: 20px;
+        margin: 0px 0px 20px 0px;
+        background-color: #affcb5;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0px 0px 0px;
+        max-width: 500px;
     }
 }
