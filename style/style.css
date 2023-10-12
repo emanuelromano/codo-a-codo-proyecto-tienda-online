@@ -347,6 +347,15 @@ h2 {
     padding: 20px;
 }
 
+.popup-add-carro {
+    font-size: 20px;
+    margin: 0px 0px 20px 0px;
+    background-color: #affcb5;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0px 0px 0px;
+}
+
 /* ----------------------------------------------------------------------------- */
 /* CSS Responsivo -------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------- */
@@ -429,6 +438,15 @@ h2 {
 
     .aside {
         margin: 0px 10px 10px 10px;
+    }
+
+    .mostrar-producto {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px 20px 0px 20px;
     }
 
     .imagen-oferta {

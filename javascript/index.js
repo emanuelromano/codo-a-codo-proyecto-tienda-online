@@ -29,6 +29,9 @@ function cargarItemsInicio() {
                 `<img class="imagen-tarjeta" src=${data[num2].imagen}>
                 <h3 class="titulo-tarjeta">· ${data[num2].nombre} ·</h3>
                 <h4 class="precio-tarjeta">$${data[num2].precio},00</h4>`
+
+            // Contador de carrito inicial en 0
+            localStorage.setItem("contadorCarrito", 0)
         });
 }
 
