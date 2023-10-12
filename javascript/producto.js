@@ -5,7 +5,7 @@ function mostrarProducto() {
             return res.json();
         })
         .then((data) => {
-            let id = 4
+            let id = localStorage.getItem("productoSeleccionado")
 
             let producto = document.getElementsByClassName("mostrar-producto")
 

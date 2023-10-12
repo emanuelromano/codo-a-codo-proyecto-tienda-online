@@ -22,7 +22,9 @@ function traerJson() {
 
 traerJson()
 
-// Abre la vista de un producto en particular
+// Abre la vista de un producto seleccionado
 function abrirProducto(id) {
-    console.log(id)
+    localStorage.setItem("productoSeleccionado", id-1)
+
+    window.open('producto.html', '_self')
 }
