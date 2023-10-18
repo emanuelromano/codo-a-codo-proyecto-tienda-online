@@ -31,10 +31,10 @@ function cargarItemsCarro() {
                 </td>
 
                 <td class="cantidad-mas-menos-item">
-                    <div class="cantidad-item" id="item${itemsCarro[i].id}">Cantidad: ${itemsCarro[i].cantidadCompra}</div>
-                    <button onclick="sumarItem(${i}, ${itemsCarro[i].id}, ${itemsCarro[i].precio})">+</button>
-                    <button onclick="restarItem(${i}, ${itemsCarro[i].id}, ${itemsCarro[i].precio})">-</button>
-                    <button onclick="eliminarItem(${i}, ${itemsCarro[i].precio})">Eliminar</button>
+                    <div class="cantidad-item" id="item${itemsCarro[i].id}"><b>Cantidad: ${itemsCarro[i].cantidadCompra}</b></div>
+                    <button class="sumar-item" onclick="sumarItem(${i}, ${itemsCarro[i].id}, ${itemsCarro[i].precio})">+</button>
+                    <button class="restar-item" onclick="restarItem(${i}, ${itemsCarro[i].id}, ${itemsCarro[i].precio})">-</button>
+                    <button class="eliminar-item" onclick="eliminarItem(${i}, ${itemsCarro[i].precio})">Eliminar</button>
                 </td>
             </tr>`
     }
@@ -61,7 +61,7 @@ function sumarItem(i, id, precio) {
     localStorage.setItem("carroDeCompras", JSON.stringify(itemsCarro))
 
     let cant = document.getElementById(`item${id}`)
-    cant.innerText = `Cantidad: ${sum}`
+    cant.innerHTML = `<b>Cantidad: ${sum}</b>`
 
     let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
     let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
@@ -83,7 +83,7 @@ function restarItem(i, id, precio) {
         localStorage.setItem("carroDeCompras", JSON.stringify(itemsCarro))
 
         let cant = document.getElementById(`item${id}`)
-        cant.innerText = `Cantidad: ${sum}`
+        cant.innerHTML = `<b>Cantidad: ${sum}</b>`
 
         let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
         let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
