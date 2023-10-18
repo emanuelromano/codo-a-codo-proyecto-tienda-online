@@ -1,4 +1,6 @@
 // Muestra los detalles del producto seleccionado
+let arrayProducto = []
+
 function mostrarProducto() {
     fetch("../json/productos.json")
         .then((res) => {
@@ -8,6 +10,8 @@ function mostrarProducto() {
             let id = localStorage.getItem("productoSeleccionado")
 
             let producto = document.getElementsByClassName("mostrar-producto")
+            arrayProducto = data[id]
+            console.log(arrayProducto)
 
             producto[0].innerHTML =
                 `<div class="producto">
@@ -23,19 +27,36 @@ function mostrarProducto() {
                         <p class="atencion-producto"><b>Importante:</b> Una vez efectuado el pedido, el mismo estará disponible a partir de los próximos <b>cuatro días hábiles</b>.</p>
                     </div>
                 </div>`
-
-            let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
-            let botonCarrito = document.getElementsByClassName("boton-carrito-contador")
-            botonCarrito[0].innerText = `Carro (${contadorCarrito})`
         });
+}
+
+// Inicializar contador de carro de compras o recuperar número de productos en el carro
+let carroDeCompras = []
+
+function cargarCarro() {
+    if (localStorage.getItem("contadorCarrito") === null) {
+        localStorage.setItem("contadorCarrito", 0)
+    } else {
+        let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
+        let botonCarrito = document.getElementsByClassName("boton-carrito-contador")
+        botonCarrito[0].innerText = `Carro (${contadorCarrito})`
+    }
+
+    if (localStorage.getItem("carroDeCompras") === null) {
+        localStorage.setItem("carroDeCompras", JSON.stringify(carroDeCompras))
+        console.log(carroDeCompras)
+    } else {
+        carroDeCompras = JSON.parse(localStorage.getItem("carroDeCompras"))
+        console.log(carroDeCompras)
+    }
 }
 
 // Añade el producto al carro
 let contador = 0
+let bandera = false
 
 function addCarro() {
-    // localStorage.setItem("contadorProducto", contador)
-    // let cont = parseInt(localStorage.getItem("contadorProducto"))
+    // Incrementar contador en página de producto y carro de compras
     contador = contador + 1
     localStorage.setItem("contadorProducto", contador)
 
@@ -52,6 +73,34 @@ function addCarro() {
             <button class="boton-ver-carro" onclick="verCarro()"><b>Ver carro</b></button>
             <button class="boton-seguir-comprando" onclick="seguirComprando()"><b>Seguir comprando</b></button>
         </p>`
+
+    // Añadir producto a carro de compras en un arreglo
+    let long = carroDeCompras.length
+
+    // Bandera para verificar si existe el producto seleccionado en el carro
+    for (var i = 0; i < long; i++) {
+        if (carroDeCompras[i].id === arrayProducto.id) {
+            bandera = true
+        }
+    }
+
+    // Si no existe aún, lo agrega
+    if (bandera === false) {
+        arrayProducto.cantidadCompra = contador
+        carroDeCompras[long++] = arrayProducto
+        console.log(carroDeCompras)
+        localStorage.setItem("carroDeCompras", JSON.stringify(carroDeCompras))
+    } else if (bandera === true) {
+        for (var i = 0; i < long; i++) {
+            // Si ya existe un item con la ID de este producto, se actualiza la cantidad en el carro
+            if (carroDeCompras[i].id === arrayProducto.id) {
+                carroDeCompras[i].cantidadCompra = carroDeCompras[i].cantidadCompra + 1
+                console.log(carroDeCompras)
+                localStorage.setItem("carroDeCompras", JSON.stringify(carroDeCompras))
+                break;
+            }
+        }
+    }
 }
 
 function verCarro() {
@@ -62,6 +111,8 @@ function seguirComprando() {
     window.open('productos.html', '_self')
 }
 
+// Funciones a ejecutarse al cargar completamente la página
 window.addEventListener('load', function () {
     mostrarProducto()
+    cargarCarro()
 })

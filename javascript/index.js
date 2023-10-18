@@ -1,10 +1,15 @@
 // Carga dos productos aleatorios en la página de inicio
+let carroDeCompras = []
+
 function cargarItemsInicio() {
     fetch("../json/productos.json")
         .then((res) => {
             return res.json();
         })
         .then((data) => {
+            // Inicializar arreglo de carro de compras
+            // carroDeCompras = data
+            // localStorage.setItem("carroDeCompras", JSON.stringify(carroDeCompras))
 
             function obtenerAleatorio(max) {
                 return Math.floor(Math.random() * max);
@@ -36,7 +41,7 @@ function cargarItemsInicio() {
         });
 }
 
-// Inicializar carro de compras o recuperar número de productos en el carro
+// Inicializar contador de carro de compras o recuperar número de productos en el carro
 function cargarContadorCarrito() {
     if (localStorage.getItem("contadorCarrito") === null) {
         localStorage.setItem("contadorCarrito", 0)
@@ -45,22 +50,28 @@ function cargarContadorCarrito() {
         let botonCarrito = document.getElementsByClassName("boton-carrito-contador")
         botonCarrito[0].innerText = `Carro (${contadorCarrito})`
     }
+
+    if (localStorage.getItem("carroDeCompras") === null) {
+        localStorage.setItem("carroDeCompras", JSON.stringify(carroDeCompras))
+    }
 }
 
 // Abre la vista de un producto seleccionado
 function abrirProducto(id) {
     localStorage.setItem("productoSeleccionado", id - 1)
-
     window.open('producto.html', '_self')
 }
 
-function resetCarrito() {
-    localStorage.setItem("contadorCarrito", 0)
-    let botonCarrito = document.getElementsByClassName("boton-carrito-contador")
-    botonCarrito[0].innerText = `Carro (0)`
-}
-
+// Funciones a ejecutarse al cargar completamente la página
 window.addEventListener('load', function () {
     cargarItemsInicio()
     cargarContadorCarrito()
 })
+
+// DEBUG - Reinicia contador de carro
+function resetCarrito() {
+    localStorage.setItem("contadorCarrito", 0)
+    localStorage.setItem("carroDeCompras", JSON.stringify([]))
+    let botonCarrito = document.getElementsByClassName("boton-carrito-contador")
+    botonCarrito[0].innerText = `Carro (0)`
+}

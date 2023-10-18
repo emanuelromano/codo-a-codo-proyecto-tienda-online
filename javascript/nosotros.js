@@ -1,4 +1,4 @@
-// Inicializar carro de compras o recuperar número de productos en el carro
+// Inicializar contador de carro de compras o recuperar número de productos en el carro
 function cargarContadorCarrito() {
     if (localStorage.getItem("contadorCarrito") === null) {
         localStorage.setItem("contadorCarrito", 0)
@@ -9,6 +9,7 @@ function cargarContadorCarrito() {
     }
 }
 
+// Funciones a ejecutarse al cargar completamente la página
 window.addEventListener('load', function () {
     cargarContadorCarrito()
 })
