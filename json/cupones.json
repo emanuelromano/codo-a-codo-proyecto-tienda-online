@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "cupon": "PRIMAVERA",
+        "descuento": 0.20,
+        "texto": "¡Se aplicó un 20% de descuento a tu compra!"
+    },
+    {
+        "id": 2,
+        "cupon": "GRATIS",
+        "descuento": 1.00,
+        "texto": "Tuki. ¡Se aplicó un 100% de descuento a tu compra!"
+    }
+]

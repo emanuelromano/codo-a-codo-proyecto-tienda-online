@@ -40,7 +40,7 @@ function cargarItemsCarro() {
             </tr>`
 
         let subtotal = document.getElementById(`sub${itemsCarro[i].id}`)
-        subtotal.innerText = `Subtotal: ${resultado}`
+        subtotal.innerText = `Subtotal: $${resultado}`
     }
 }
 
@@ -129,6 +129,81 @@ function eliminarItem(id, precio) {
 
     botonCarrito[0].innerText = `Carro (${contadorCarrito - cant})`
     localStorage.setItem("contadorCarrito", contadorCarrito - cant)
+}
+
+// Verificar validez de cupón
+let banderaCupon = false
+
+function verificarCupon() {
+    if (banderaCupon === false) {
+        let cupon = document.getElementsByClassName("input-cupon")
+        let cuponMod = cupon[0].value.trim()
+        cupon[0].value = cuponMod
+
+        fetch("../json/cupones.json")
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => {
+                for (i = 0; i < data.length; i++) {
+                    if (data[i].cupon === cuponMod) {
+
+                        let descuento = totalPrecio * data[i].descuento
+                        let totalDescuento = Math.round(((totalPrecio - descuento) + Number.EPSILON) * 100) / 100  // Redondea los decimales
+
+                        console.log(totalPrecio)
+                        console.log(data[i].descuento)
+                        console.log(totalDescuento)
+
+                        let totalNum = document.getElementsByClassName("total-num")
+                        totalNum[0].innerText = `$${totalDescuento},00`
+
+                        let descuentoDiv = document.getElementsByClassName("descuento-div")
+                        descuentoDiv[0].innerHTML =
+                            `<div class="descuento-resta">
+                            <b>Antes: </br>
+                            <div style="color: red; text-decoration: line-through;">$${totalPrecio},00</div></b>
+                        </div>`
+
+                        totalPrecio = totalDescuento
+                        console.log(totalPrecio)
+
+                        let infoCupon = document.getElementsByClassName("info-cupon-div")
+                        infoCupon[0].innerHTML =
+                            `<div class="info-cupon" style="color: green; font-weight: bold">
+                            ${data[i].texto}
+                        </div>`
+
+                        banderaCupon = true
+                        break;
+                    } else if (cuponMod === "") {
+                        let infoCupon = document.getElementsByClassName("info-cupon-div")
+                        infoCupon[0].innerHTML =
+                            `<div class="info-cupon" style="color: #8b580a; font-weight: bold">
+                            Ingrese un cupón.
+                        </div>`
+                    } else {
+                        let infoCupon = document.getElementsByClassName("info-cupon-div")
+                        infoCupon[0].innerHTML =
+                            `<div class="info-cupon" style="color: red; font-weight: bold">
+                            Cupón no válido.
+                        </div>`
+                    }
+                }
+            });
+    } else {
+        let infoCupon = document.getElementsByClassName("info-cupon-aplicado-div")
+        infoCupon[0].innerHTML =
+        `<div class="info-cupon-aplicado" style="color: red; font-weight: bold">
+            Ya se aplicó un cupón de descuento.
+        </div>`
+    }
+}
+
+function efectuarCompra() {
+    itemsCarro = JSON.parse(localStorage.getItem("carroDeCompras"))
+
+    window.open('compra.html', '_self')
 }
 
 // Funciones a ejecutarse al cargar completamente la página

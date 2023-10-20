@@ -7,7 +7,7 @@
     <title>Pastelería</title>
     <link rel="stylesheet" href="./style/style.css">
     <!-- Scripts y JSON -->
-    <script src="./javascript/carro.js"></script>
+    <script src="./javascript/compra.js"></script>
     <script src="./json/productos.json"></script>
 </head>
 
@@ -44,26 +44,6 @@
                 <br>
                 <!-- Aquí va el contenido -->
 
-                <div class="items-contenedor">
-                    <table class="items-carro"></table>
-
-                    <div class="total-compra">
-                        <div class="total">Total:</div>
-                        <div class="descuento-div"></div>
-                        <div class="total-num">$0,00</div>
-
-                        <div class="cuadro-cupon">
-                            <div class="texto-cupon">Ingresar cupón de descuento:</div>
-                            <div class="cupon-in">
-                                <input class="input-cupon" type="text" style="text-transform:uppercase" oninput="this.value = this.value.toUpperCase()"> <button class="boton-cupon" onclick="verificarCupon()">✓</button>
-                            </div>
-                            <div class="info-cupon-div"></div>
-                            <div class="info-cupon-aplicado-div"></div>
-                        </div>
-
-                        <button class="comprar" onclick="efectuarCompra()">Comprar</button>
-                    </div>
-                </div>
             </div>
         </div>
 

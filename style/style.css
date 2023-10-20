@@ -22,7 +22,7 @@ body {
 * {
     box-sizing: border-box;
     transition: 0.2s;
-} 
+}
 
 /* ----------------------------------------------------------------------------- */
 /* Cabecera -------------------------------------------------------------------- */
@@ -422,16 +422,15 @@ h2 {
     display: flex;
     flex-direction: row;
     align-items: initial;
-    /* height: 90%; */
+    /* justify-content: space-between; */
 }
 
 .items-carro {
-    /* margin-top: 20px; */
-    table-layout:fixed;
-    width:100%;
-    display: flex;
+    table-layout: fixed;
+    width: 100%;
+    /* display: flex;
     flex-direction: column;
-    align-items: initial;
+    align-items: initial; */
 }
 
 .item-carro {
@@ -444,6 +443,10 @@ h2 {
     border-radius: 10px;
 }
 
+.item-carro:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+}
+
 .imagen-item {
     max-width: 80px;
     max-height: 80px;
@@ -453,7 +456,7 @@ h2 {
 
 .titulo-precio-item {
     margin-left: 15px;
-    width: 150px;;
+    width: 150px;
 }
 
 .titulo-item {
@@ -469,8 +472,10 @@ h2 {
 }
 
 .cantidad-mas-menos-item {
-    margin-left: 15px;
-    width: 200px;
+    width: 150px;
+
+    margin-left: auto;
+    margin-right: 0;
 }
 
 .cantidad-item {
@@ -480,7 +485,7 @@ h2 {
 
 .total-compra {
     /* display: block; */
-    /* width: 100%; */
+    width: 320px;
     /* height: auto; */
     padding: 10px;
     /* margin-top: 20px; */
@@ -611,6 +616,19 @@ h2 {
     color: white;
     background-color: #fa9600;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+}
+
+.info-cupon {
+    padding: 0px 10px 10px 10px;
+    display: block;
+}
+
+.descuento-resta {
+    margin: 0px 10px;
+}
+
+.info-cupon-aplicado {
+    margin: 0px 10px 10px 10px;
 }
 
 /* ----------------------------------------------------------------------------- */
@@ -840,7 +858,16 @@ h2 {
     .items-contenedor {
         display: flex;
         flex-direction: column;
-        align-items:initial ;
+        align-items: initial;
+    }
+
+    .items-carro {
+        /* margin-top: 20px; */
+        table-layout: fixed;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: initial;
     }
 
     .total-compra {
