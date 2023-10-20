@@ -422,7 +422,7 @@ h2 {
     display: flex;
     flex-direction: row;
     align-items: initial;
-    height: 90%;
+    /* height: 90%; */
 }
 
 .items-carro {
@@ -470,18 +470,18 @@ h2 {
 
 .cantidad-mas-menos-item {
     margin-left: 15px;
-    width: 120px;
+    width: 200px;
 }
 
 .cantidad-item {
-    margin-top: 7px;
-    margin-bottom: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 .total-compra {
-    display: block;
-    width: 100%;
-    height: auto;
+    /* display: block; */
+    /* width: 100%; */
+    /* height: auto; */
     padding: 10px;
     /* margin-top: 20px; */
     margin-left: 20px;

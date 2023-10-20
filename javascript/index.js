@@ -7,10 +7,6 @@ function cargarItemsInicio() {
             return res.json();
         })
         .then((data) => {
-            // Inicializar arreglo de carro de compras
-            // carroDeCompras = data
-            // localStorage.setItem("carroDeCompras", JSON.stringify(carroDeCompras))
-
             function obtenerAleatorio(max) {
                 return Math.floor(Math.random() * max);
             }
