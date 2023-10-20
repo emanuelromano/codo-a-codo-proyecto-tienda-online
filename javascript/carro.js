@@ -161,8 +161,10 @@ function verificarCupon() {
                         let descuentoDiv = document.getElementsByClassName("descuento-div")
                         descuentoDiv[0].innerHTML =
                             `<div class="descuento-resta">
-                            <b>Antes: </br>
-                            <div style="color: red; text-decoration: line-through;">$${totalPrecio},00</div></b>
+                            <b>Antes:
+                            <div style="color: red; text-decoration: line-through;">$${totalPrecio},00</div>
+                            </br>
+                            Ahora:</b>
                         </div>`
 
                         totalPrecio = totalDescuento

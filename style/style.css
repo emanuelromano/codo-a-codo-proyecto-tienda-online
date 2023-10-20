@@ -503,7 +503,7 @@ h2 {
 
 .total-num {
     font-size: 35px;
-    margin: 10px;
+    margin: 0px 10px 10px 10px;
 }
 
 .comprar {
@@ -642,6 +642,13 @@ h2 {
     border-radius: 10px;
 }
 
+.datos-envio-tarj {
+    margin-top: 10px;
+    border: 1px solid #00000021;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .datos-envio-checkbox-div {
     display: flex;
     flex-direction: row;
@@ -726,6 +733,33 @@ h2 {
     justify-content: left;
     padding: 10px;
     width: 150px;
+}
+
+.boton-pagar-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.boton-pagar {
+    font-size: 30px;
+    font-family: mooli;
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+    background-color: #affcb5;
+    border: 1px solid green;
+    width: 50%;
+}
+
+.boton-pagar:hover {
+    color: white;
+    background-color: #089c39;
+    border: 1px solid green;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
 }
 
 /* ----------------------------------------------------------------------------- */
@@ -1020,6 +1054,17 @@ h2 {
         flex-direction: column;
         justify-content: left;
         padding: 10px;
+        width: 100%;
+    }
+
+    .boton-pagar {
+        font-size: 30px;
+        font-family: mooli;
+        padding: 20px;
+        border-radius: 10px;
+        color: black;
+        background-color: #affcb5;
+        border: 1px solid green;
         width: 100%;
     }
 }
