@@ -194,14 +194,22 @@ function verificarCupon() {
     } else {
         let infoCupon = document.getElementsByClassName("info-cupon-aplicado-div")
         infoCupon[0].innerHTML =
-        `<div class="info-cupon-aplicado" style="color: red; font-weight: bold">
+            `<div class="info-cupon-aplicado" style="color: red; font-weight: bold">
             Ya se aplicó un cupón de descuento.
         </div>`
     }
 }
 
+// Guarda la cantidad de items a comprar y el precio total a pagar
 function efectuarCompra() {
-    itemsCarro = JSON.parse(localStorage.getItem("carroDeCompras"))
+    let cantidad = parseInt(localStorage.getItem("contadorCarrito"))
+
+    let compra = [{
+        "cantidad": cantidad,
+        "total": totalPrecio
+    }]
+
+    localStorage.setItem("compra", JSON.stringify(compra))
 
     window.open('compra.html', '_self')
 }

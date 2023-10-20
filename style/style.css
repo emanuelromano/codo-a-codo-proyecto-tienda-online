@@ -632,6 +632,103 @@ h2 {
 }
 
 /* ----------------------------------------------------------------------------- */
+/* Compra ---------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+.datos-envio {
+    margin-top: 10px;
+    border: 1px solid #00000021;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.datos-envio-checkbox-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.datos-texto-div {
+    margin: 10px 10px;
+    font-size: 20px;
+    color: #fa9600;
+    font-weight: bold;
+}
+
+.retirar-div {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    background-color: #ffdaa1;
+    border-radius: 8px;
+
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.checkbox {
+    width: 20px;
+}
+
+.texto-retirar {
+    padding: 5px;
+
+}
+
+.info-compra {
+    font-size: 20px;
+    border: 1px solid #00000021;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.input-compra-out {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.input-compra-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 10px;
+    width: 100%;
+}
+
+.input-compra-vacio {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 10px;
+    width: 100%;
+}
+
+.texto-in {
+    margin-bottom: 5px;
+}
+
+.input-in {
+    font-size: 18px;
+    padding: 5px;
+    border: 1px solid #fa9600;
+    border-radius: 8px;
+}
+
+.valido-hasta-tarj {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.valido-hasta-tarj-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 10px;
+    width: 150px;
+}
+
+/* ----------------------------------------------------------------------------- */
 /* CSS Responsivo -------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------- */
 
@@ -879,5 +976,50 @@ h2 {
         margin-left: 0px;
         border: 1px solid #00000021;
         border-radius: 10px;
+    }
+
+    .input-compra-out {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-compra-vacio {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .datos-envio-checkbox-div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .retirar-div {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        background-color: #ffdaa1;
+        border-radius: 8px;
+
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .valido-hasta-tarj {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        width: 100%;
+    }
+
+    .valido-hasta-tarj-in {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        padding: 10px;
+        width: 100%;
     }
 }
