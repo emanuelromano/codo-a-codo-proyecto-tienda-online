@@ -721,6 +721,19 @@ h2 {
     border-radius: 8px;
 }
 
+.input-in-num {
+    font-size: 18px;
+    padding: 5px;
+    border: 1px solid #fa9600;
+    border-radius: 8px;
+}
+
+.input-in-num::-webkit-outer-spin-button,
+.input-in-num::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .valido-hasta-tarj {
     display: flex;
     flex-direction: row;
@@ -747,6 +760,7 @@ h2 {
 .boton-pagar {
     font-size: 30px;
     font-family: mooli;
+    font-weight: bold;
     padding: 20px;
     border-radius: 10px;
     color: black;
@@ -760,6 +774,38 @@ h2 {
     background-color: #089c39;
     border: 1px solid green;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+}
+
+.datos-retiro-in {
+    border: 1px solid #00000021;
+    margin: 10px 0px 0px 0px;
+    border-radius: 10px;
+    background-color: #ffeed4;
+}
+
+.retiro-titulo {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 10px 0px 10px;
+}
+
+.retiro-horarios-mapa {
+    display: flex;
+    flex-direction: row;
+}
+
+.retiro-horarios {
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.retiro-mapa {
+    margin: 10px 20px 20px 20px;
+
+    margin-left: auto;
+    margin-right: 20px;
 }
 
 /* ----------------------------------------------------------------------------- */
