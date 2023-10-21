@@ -48,10 +48,13 @@ function cargarItemsCarro() {
 function cargarContadorCarro() {
     if (localStorage.getItem("contadorCarrito") === null) {
         localStorage.setItem("contadorCarrito", 0)
+        let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
+
         let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
         botonCarrito[0].innerText = `Carro (${contadorCarrito})`
     } else {
         let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
+
         let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
         botonCarrito[0].innerText = `Carro (${contadorCarrito})`
     }
@@ -204,24 +207,28 @@ function verificarCupon() {
 
 // Guarda la cantidad de items a comprar y el precio total a pagar
 function efectuarCompra() {
-    let cantidad = parseInt(localStorage.getItem("contadorCarrito"))
-    let envio
-
-    if (totalPrecio > 15000) {
-        envio = 0
+    if (parseInt(localStorage.getItem("contadorCarrito")) != 0) {
+        let cantidad = parseInt(localStorage.getItem("contadorCarrito"))
+        let envio
+    
+        if (totalPrecio > 15000) {
+            envio = 0
+        } else {
+            envio = 2500
+        }
+    
+        let compra = [{
+            "cantidad": cantidad,
+            "total": totalPrecio,
+            "envio": envio
+        }]
+    
+        localStorage.setItem("compra", JSON.stringify(compra))
+    
+        window.open('compra.html', '_self')
     } else {
-        envio = 2500
+
     }
-
-    let compra = [{
-        "cantidad": cantidad,
-        "total": totalPrecio,
-        "envio": envio
-    }]
-
-    localStorage.setItem("compra", JSON.stringify(compra))
-
-    window.open('compra.html', '_self')
 }
 
 // Funciones a ejecutarse al cargar completamente la página
