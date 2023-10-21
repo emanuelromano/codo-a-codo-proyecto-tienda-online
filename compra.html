@@ -106,7 +106,9 @@
                             <div class="input-compra-out">
                                 <div class="input-compra-in">
                                     <div class="texto-in">D.N.I.:</div>
-                                    <input id="dni" class="input-in-num" type="number" required>
+                                    <input id="dni" class="input-in-num"
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                        type="number" required maxlength="9">
                                 </div>
 
                                 <div class="input-compra-vacio">
@@ -116,7 +118,9 @@
                             <div class="input-compra-out">
                                 <div class="input-compra-in">
                                     <div class="texto-in">Teléfono (sin 0 ni 15):</div>
-                                    <input id="telefono" class="input-in-num" type="number" required>
+                                    <input id="telefono" class="input-in-num"
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                        type="number" required maxlength="13">
                                 </div>
 
                                 <div class="input-compra-in">
@@ -134,7 +138,7 @@
                                     </div>
 
                                     <div class="input-compra-in">
-                                        <div class="texto-in">Barrio (opcional)::</div>
+                                        <div class="texto-in">Barrio (opcional):</div>
                                         <input id="barrio" class="input-in" type="text">
                                     </div>
                                 </div>
@@ -148,10 +152,9 @@
                                     <div class="valido-hasta-tarj">
                                         <div class="valido-hasta-tarj-in">
                                             <div class="texto-in">Cód. postal:</div>
-                                            <input id="codpos" class="input-in-num" type="number" required>
-                                        </div>
-
-                                        <div class="valido-hasta-tarj-in">
+                                            <input id="codpos" class="input-in-num"
+                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                type="number" required maxlength="6">
                                         </div>
                                     </div>
                                 </div>
@@ -219,18 +222,24 @@
                             <div class="input-compra-out">
                                 <div class="input-compra-in">
                                     <div class="texto-in">N° de tarjeta:</div>
-                                    <input id="nrotarj" class="input-in-num" type="number" required>
+                                    <input id="nrotarj" class="input-in-num"
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                        type="number" required maxlength="16">
                                 </div>
 
                                 <div class="valido-hasta-tarj">
                                     <div class="valido-hasta-tarj-in">
                                         <div class="texto-in">Mes venc.:</div>
-                                        <input id="mesvenc" class="input-in-num" type="number" required>
+                                        <input id="mesvenc" class="input-in-num"
+                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                            type="number" required maxlength="2">
                                     </div>
 
                                     <div class="valido-hasta-tarj-in">
                                         <div class="texto-in">Año venc.:</div>
-                                        <input id="añovenc" class="input-in-num" type="number" required>
+                                        <input id="añovenc" class="input-in-num"
+                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                            type="number" required maxlength="2">
                                     </div>
                                 </div>
                             </div>
@@ -244,17 +253,24 @@
                                 <div class="valido-hasta-tarj">
                                     <div class="valido-hasta-tarj-in">
                                         <div class="texto-in">D.N.I. titular:</div>
-                                        <input id="dnititular" class="input-in-num" type="number" required>
+                                        <input id="dnititular" class="input-in-num"
+                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                            type="number" required maxlength="9">
                                     </div>
 
                                     <div class="valido-hasta-tarj-in">
                                         <div class="texto-in">Cód. seguridad:</div>
-                                        <input id="codseg" class="input-in-num" type="number" required>
+                                        <input id="codseg" class="input-in-num"
+                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                            type="number" required maxlength="3">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <input name="somename"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            type="number" maxlength="6" />
 
                         <div class="boton-pagar-div">
                             <input type="submit" value="Pagar" class="boton-pagar">

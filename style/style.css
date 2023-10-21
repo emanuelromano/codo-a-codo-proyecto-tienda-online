@@ -866,9 +866,7 @@ h2 {
 }
 
 .input-compra-vacio {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
+    display: block;
     padding: 10px;
     width: 100%;
 }
