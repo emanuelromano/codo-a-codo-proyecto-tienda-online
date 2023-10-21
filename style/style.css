@@ -569,15 +569,16 @@ h2 {
 }
 
 .total {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
-    color: #fa9600;
     margin: 0px 10px 10px 10px;
 }
 
 .total-num {
     font-size: 35px;
     margin: 0px 10px 10px 10px;
+    font-weight: bold;
+    color: #ff812c;
 }
 
 .comprar {
@@ -705,7 +706,7 @@ h2 {
 }
 
 .descuento-resta {
-    margin: 0px 10px;
+    margin: 10px 10px 0px 10px;
 }
 
 .info-cupon-aplicado {
@@ -802,7 +803,7 @@ h2 {
 }
 
 .total-a-pagar-num {
-    color: #fa6400;
+    color: #ff812c;
     font-size: 40px;
 
     margin-left: auto;
