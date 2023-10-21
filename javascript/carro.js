@@ -205,10 +205,18 @@ function verificarCupon() {
 // Guarda la cantidad de items a comprar y el precio total a pagar
 function efectuarCompra() {
     let cantidad = parseInt(localStorage.getItem("contadorCarrito"))
+    let envio
+
+    if (totalPrecio > 15000) {
+        envio = 0
+    } else {
+        envio = 2500
+    }
 
     let compra = [{
         "cantidad": cantidad,
-        "total": totalPrecio
+        "total": totalPrecio,
+        "envio": envio
     }]
 
     localStorage.setItem("compra", JSON.stringify(compra))

@@ -64,10 +64,11 @@ window.addEventListener('load', function () {
     cargarContadorCarrito()
 })
 
-// DEBUG - Reinicia contador de carro
+// DEBUG - Reinicia contador de carro, carro de compras y compra final
 function resetCarrito() {
     localStorage.setItem("contadorCarrito", 0)
     localStorage.setItem("carroDeCompras", JSON.stringify([]))
+    localStorage.removeItem("compra")
     let botonCarrito = document.getElementsByClassName("boton-carrito-contador")
     botonCarrito[0].innerText = `Carro (0)`
 }
