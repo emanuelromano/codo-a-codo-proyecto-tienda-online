@@ -38,7 +38,7 @@ h1 {
     top: 10px;
     left: 10px;
     right: 10px;
-    /* margin: 10px; */
+    justify-content: space-between;
     width: auto;
     height: 80px;
     z-index: 99998;
@@ -63,6 +63,29 @@ h1 {
 
 .cabecera-izq>img {
     margin: 8px;
+}
+
+.cabecera-der {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    border-left: 1px solid #00000021;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.cabecera-der:hover {
+    background-color: #fff8ed;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+}
+
+.cabecera-der>img {
+    height: 45px;
+    width: auto;
+    padding: 5px;
+    margin: 20px;
 }
 
 @media (max-width: 1500px) {
@@ -122,6 +145,22 @@ nav ul li a:hover {
     font-weight: bold;
     background-color: #ffc163;
     border-radius: 5px;
+}
+
+#menu-item-1 {
+    display: flex;
+}
+
+#menu-item-2 {
+    display: flex;
+}
+
+#menu-item-3 {
+    display: flex;
+}
+
+#menu-item-4 {
+    display: flex;
 }
 
 /* ----------------------------------------------------------------------------- */
@@ -1005,6 +1044,22 @@ h2 {
         max-width: 350px;
         height: auto;
     }
+
+    #menu-item-1 {
+        display: flex;
+    }
+    
+    #menu-item-2 {
+        display: flex;
+    }
+    
+    #menu-item-3 {
+        display: flex;
+    }
+    
+    #menu-item-4 {
+        display: flex;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -1016,6 +1071,22 @@ h2 {
             "centro centro"
             "aside1 aside1"
             "footer footer";
+    }
+
+    #menu-item-1 {
+        display: flex;
+    }
+    
+    #menu-item-2 {
+        display: flex;
+    }
+    
+    #menu-item-3 {
+        display: flex;
+    }
+    
+    #menu-item-4 {
+        display: flex;
     }
 
     .aside {
@@ -1112,6 +1183,17 @@ h2 {
             "footer";
     }
 
+    .cabecera-der {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    
+        border-left: 1px solid #00000021;
+        border-radius: 0px 5px 5px 0px;
+    }
+
     nav ul li {
         color: #fa6400;
         display: flex;
@@ -1131,6 +1213,22 @@ h2 {
         background-color: #fa9600;
         border-radius: 5px;
         /* Puede ser scaleX para solo agrandar hacia arriba */
+    }
+
+    #menu-item-1 {
+        display: none;
+    }
+    
+    #menu-item-2 {
+        display: none;
+    }
+
+    #menu-item-3 {
+        display: none;
+    }
+
+    #menu-item-4 {
+        display: none;
     }
 
     .tarjetas {
