@@ -46,7 +46,7 @@ h1 {
 
     display: flex;
     border-radius: 5px;
-    background-color: white;
+    background-color: #fdf3e5;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
     margin: 0px 100px;
 }
@@ -77,7 +77,7 @@ h1 {
 }
 
 .cabecera-der:hover {
-    background-color: #fff8ed;
+    background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
 }
 
@@ -93,7 +93,7 @@ h1 {
         display: flex;
         justify-content: space-between;
         border-radius: 5px;
-        background-color: white;
+        background-color: #fdf3e5;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
         height: 80px;
         margin: 0px 0px;
@@ -133,17 +133,17 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: white;
-    background-color: #fa9600;
+    color: #9e4b07;
+    background-color: #ffc163;
     border-radius: 5px;
     /* transform: scale(1.1); */
     /* Puede ser scaleX para solo agrandar hacia arriba */
 }
 
 .selecc {
-    color: #9e4b07;
+    color: white;
+    background-color: #fa9600;
     font-weight: bold;
-    background-color: #ffc163;
     border-radius: 5px;
 }
 
@@ -509,9 +509,9 @@ h2 {
 }
 
 .boton-carrito-contador-selecc {
-    color: #9e4b07;
+    color: white;
+    background-color: #fa9600;
     font-weight: bold;
-    background-color: #ffc163;
     border-radius: 5px;
 }
 
@@ -1209,10 +1209,9 @@ h2 {
     }
 
     nav ul li a:hover {
-        color: white;
-        background-color: #fa9600;
+        color: #9e4b07;
+        background-color: #ffc163;
         border-radius: 5px;
-        /* Puede ser scaleX para solo agrandar hacia arriba */
     }
 
     #menu-item-1 {
