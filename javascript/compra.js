@@ -22,9 +22,31 @@ function mostrarCompra() {
     let totalAPagarNum = document.getElementsByClassName("total-a-pagar-num")
     totalAPagarNum[0].innerHTML = `<b>$${total},00</b>`
 
-    // Ocultar el panel de retiro por local
-    let datosRetiro = document.getElementsByClassName("datos-retiro")
-    datosRetiro[0].style.display = "none";
+    // Ocultar o mostrar el panel de retiro por local
+    if (document.getElementById("retirar").checked === true) {
+        let datosEnvio = document.getElementsByClassName("datos-envio-info")
+        datosEnvio[0].style.display = "none";
+
+        document.getElementById("direccion").value = ""
+        document.getElementById("barrio").value = ""
+        document.getElementById("ciudad").value = ""
+        document.getElementById("codpos").value = ""
+
+        document.getElementById("direccion").required = false
+        document.getElementById("ciudad").required = false
+        document.getElementById("codpos").required = false
+
+        banderaRetiro = true
+    } else {
+        let datosRetiro = document.getElementsByClassName("datos-retiro")
+        datosRetiro[0].style.display = "none";
+
+        document.getElementById("direccion").required = true
+        document.getElementById("ciudad").required = true
+        document.getElementById("codpos").required = true
+
+        banderaRetiro = false
+    }
 }
 
 // Inicializar contador de carro de compras o recuperar número de productos en el carro
@@ -55,6 +77,15 @@ function retirarEnLocal() {
 
         let totalAPagarNum = document.getElementsByClassName("total-a-pagar-num")
         totalAPagarNum[0].innerHTML = `<b>$${compra[0].total},00</b>`
+
+        document.getElementById("direccion").value = ""
+        document.getElementById("barrio").value = ""
+        document.getElementById("ciudad").value = ""
+        document.getElementById("codpos").value = ""
+
+        document.getElementById("direccion").required = false
+        document.getElementById("ciudad").required = false
+        document.getElementById("codpos").required = false
     } else {
         datosEnvio[0].style.display = "block";
         datosRetiro[0].style.display = "none";
@@ -70,7 +101,56 @@ function retirarEnLocal() {
 
         let totalAPagarNum = document.getElementsByClassName("total-a-pagar-num")
         totalAPagarNum[0].innerHTML = `<b>$${compra[0].total + compra[0].envio},00</b>`
+
+        document.getElementById("direccion").required = true
+        document.getElementById("ciudad").required = true
+        document.getElementById("codpos").required = true
     }
+}
+
+// Botón Pagar: validaciones y confirmación de compra
+function botonPagar() {
+    let nombre = document.getElementById("nombre").value
+    let apellido = document.getElementById("apellido").value
+    let dni = document.getElementById("dni").value
+    let telefono = document.getElementById("telefono").value
+    let email = document.getElementById("email").value
+    let direccion = document.getElementById("direccion").value
+    let barrio = document.getElementById("barrio").value
+    let ciudad = document.getElementById("ciudad").value
+    let codpos = document.getElementById("codpos").value
+
+    let nrotarj = document.getElementById("nrotarj").value
+    let mesvenc = document.getElementById("mesvenc").value
+    let añovenc = document.getElementById("añovenc").value
+    let nombretitular = document.getElementById("nombretitular").value
+    let dnititular = document.getElementById("dnititular").value
+    let codseg = document.getElementById("codseg").value
+
+    let infoCompra = [{
+        "nombre": nombre,
+        "apellido": apellido,
+        "dni": dni,
+        "telefono": telefono,
+        "email": email,
+
+        "retiroLocal": banderaRetiro,
+        "direccion": direccion,
+        "barrio": barrio,
+        "ciudad": ciudad,
+        "codpos": codpos,
+
+        "nrotarj": nrotarj,
+        "mesvenc": mesvenc,
+        "añovenc": añovenc,
+        "nombretitular": nombretitular,
+        "dnititular": dnititular,
+        "codseg": codseg
+    }]
+
+    localStorage.setItem("infoCompra", JSON.stringify(infoCompra))
+
+    console.log(JSON.parse(localStorage.getItem("infoCompra")))
 }
 
 // Ocultar elementos del Nav Bar en modo para moviles

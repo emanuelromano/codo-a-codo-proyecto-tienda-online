@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Pastelería · ¡Gracias por tu compra!</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- Scripts y JSON -->
+    <script src="./javascript/gracias.js"></script>
+    <script src="./json/productos.json"></script>
+</head>
+
+<body>
+    <div class="contenedor">
+        <header class="cabecera">
+            <div class="cabecera-izq">
+                <img src="./img/cake2.svg" alt="Pastel">
+                <h1>Pastelería</h1>
+            </div>
+
+            <div class="cabecera-der" onclick="menuHamburguesa()">
+                <img src="./img/menu2.svg" alt="Menu">
+            </div>
+        </header>
+
+        <nav class="menu">
+            <ul type="none">
+                <li><a id="menu-item-1" href="./index.html">Inicio</a></li>
+                <li><a id="menu-item-2" href="./productos.html">Productos</a></li>
+                <li><a id="menu-item-3" href="./nosotros.html">Sobre Nosotros</a></li>
+                <li><a id="menu-item-4" href="./contacto.html">Contacto</a></li>
+                <li><a class="boton-carrito-contador-selecc" href="./carro.html">Carro (0)</a></li>
+            </ul>
+        </nav>
+
+        <div class="caja"></div>
+
+        <div class="caja"></div>
+
+        <aside class="aside">
+            <div class="aside-in">
+                <div class="promo-1">
+                    <img src="./img/flor.png" alt="Flor" class="imagen-oferta-1">
+                    <div class="titulo-oferta-1">¡Oferta de Primavera!</div>
+                    <div class="texto-oferta-1"><b>20% DE DESCUENTO</b> ingresando el código <b>PRIMAVERA</b> en
+                        cualquiera de
+                        tus compras</div>
+                </div>
+
+                <div class="promo-2">
+                    <img src="./img/delivery.png" alt="Delivery" class="imagen-oferta-2">
+                    <div class="titulo-oferta-2">¡Promo delivery!</div>
+                    <div class="texto-oferta-2"><b>ENVÍO GRATIS</b> en compras que superen los <b>$15000</b></div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="contenido">
+            <div class="contenido-in">
+                <h2>¡Gracias por tu compra!</h2>
+
+                <!-- Aquí va el contenido -->
+                
+                <div class="resumen">
+                    <div class="resumen-in">
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="foot">
+            <hr />
+            <div>Sitio creado por <a href="./nosotros.html">Grupo 2 / Codo a Codo</a> · <a
+                    href="./contacto.html">Contacto</a> · 2023</div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

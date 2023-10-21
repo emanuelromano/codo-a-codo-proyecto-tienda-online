@@ -105,6 +105,7 @@ function resetCarrito() {
     localStorage.setItem("contadorCarrito", 0)
     localStorage.setItem("carroDeCompras", JSON.stringify([]))
     localStorage.removeItem("compra")
+    localStorage.removeItem("infoCompra")
     let botonCarrito = document.getElementsByClassName("boton-carrito-contador")
     botonCarrito[0].innerText = `Carro (0)`
 }
