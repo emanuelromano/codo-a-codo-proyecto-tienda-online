@@ -63,6 +63,8 @@ h1 {
 
 .cabecera-izq>img {
     margin: 8px;
+    height: 63px;
+    width: 63px;
 }
 
 .cabecera-der {
@@ -1236,6 +1238,7 @@ h2 {
         align-items: center;
         justify-content: space-around;
         padding: 0px;
+        margin: 20px 0px;
     }
 
     .mostrar-producto {
