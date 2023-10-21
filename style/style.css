@@ -129,7 +129,7 @@ nav ul li a:hover {
     }
 }
 
-.promo-1{
+.promo-1 {
     background-color: #fff0da;
     padding: 5px;
     display: flex;
@@ -147,7 +147,7 @@ nav ul li a:hover {
     height: auto;
 }
 
-.promo-2{
+.promo-2 {
     background-color: #e5daff;
     padding: 5px;
     display: flex;
@@ -743,6 +743,38 @@ h2 {
     border: 1px solid #00000021;
     border-radius: 10px;
     padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.info-a-pagar {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.info-total-a-pagar {
+    margin-left: auto;
+    margin-right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.total-a-pagar {
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 25px;
+}
+
+.total-a-pagar-num {
+    color: #fa6400;
+    font-size: 40px;
+
+    margin-left: auto;
+    margin-right: 0;
 }
 
 .input-compra-out {
@@ -1006,7 +1038,7 @@ h2 {
         align-items: stretch;
     }
 
-    .promo-1{
+    .promo-1 {
         background-color: #fff0da;
         padding: 5px;
         display: flex;
@@ -1017,8 +1049,8 @@ h2 {
         margin: 5px;
         width: 50%;
     }
-    
-    .promo-2{
+
+    .promo-2 {
         background-color: #daffdd;
         padding: 5px;
         display: flex;
@@ -1218,6 +1250,40 @@ h2 {
         margin: 10px 20px 20px 20px;
 
         margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info-compra {
+        font-size: 20px;
+        border: 1px solid #00000021;
+        border-radius: 10px;
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+        justify-items: left;
+    }
+
+    .info-total-a-pagar {
+        margin-top: 10px;
+        margin-left: 0;
+        margin-right: auto;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .total-a-pagar {
+        margin-left: 0;
+        margin-right: auto;
+        font-size: 25px;
+    }
+
+    .total-a-pagar-num {
+        color: #fa6400;
+        font-size: 40px;
+
+        margin-left: 0;
         margin-right: auto;
     }
 }

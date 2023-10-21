@@ -3,20 +3,24 @@ let compra
 
 function mostrarCompra() {
     compra = JSON.parse(localStorage.getItem("compra"))
-    console.log(compra)
 
     let productos = document.getElementsByClassName("productos-div")
-    let total = document.getElementsByClassName("total-div")
+    let totalProd = document.getElementsByClassName("total-div")
     let envio = document.getElementsByClassName("envio-div")
 
     productos[0].innerHTML = `Productos: <b>${compra[0].cantidad}</b>`
-    total[0].innerHTML = `Total a pagar: <b>$${compra[0].total},00</b>`
+    totalProd[0].innerHTML = `Total productos: <b>$${compra[0].total},00</b>`
 
     if (compra[0].envio === 0) {
         envio[0].innerHTML = `Envío: <b style="color: green;">GRATIS</b>`
     } else {
         envio[0].innerHTML = `Envío: <b>$${compra[0].envio},00</b>`
     }
+
+    let total = compra[0].total + compra[0].envio
+
+    let totalAPagarNum = document.getElementsByClassName("total-a-pagar-num")
+    totalAPagarNum[0].innerHTML = `<b>$${total}</b>`
 
     // Ocultar el panel de retiro por local
     let datosRetiro = document.getElementsByClassName("datos-retiro")
@@ -48,6 +52,9 @@ function retirarEnLocal() {
 
         let envio = document.getElementsByClassName("envio-div")
         envio[0].innerHTML = `<div>Envío: <b style="color: green;">Retiro en local GRATIS</b></div>`
+
+        let totalAPagarNum = document.getElementsByClassName("total-a-pagar-num")
+        totalAPagarNum[0].innerHTML = `<b>$${compra[0].total}</b>`
     } else {
         datosEnvio[0].style.display = "block";
         datosRetiro[0].style.display = "none";
@@ -60,6 +67,9 @@ function retirarEnLocal() {
         } else {
             envio[0].innerHTML = `Envío: <b>$${compra[0].envio},00</b>`
         }
+
+        let totalAPagarNum = document.getElementsByClassName("total-a-pagar-num")
+        totalAPagarNum[0].innerHTML = `<b>$${compra[0].total + compra[0].envio}</b>`
     }
 }
 
