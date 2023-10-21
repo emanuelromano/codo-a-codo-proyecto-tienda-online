@@ -110,22 +110,33 @@ function retirarEnLocal() {
 
 // Botón Pagar: validaciones y confirmación de compra
 function botonPagar() {
-    let nombre = document.getElementById("nombre").value
-    let apellido = document.getElementById("apellido").value
-    let dni = document.getElementById("dni").value
-    let telefono = document.getElementById("telefono").value
-    let email = document.getElementById("email").value
-    let direccion = document.getElementById("direccion").value
-    let barrio = document.getElementById("barrio").value
-    let ciudad = document.getElementById("ciudad").value
-    let codpos = document.getElementById("codpos").value
+    document.getElementById("nombre").value = document.getElementById("nombre").value.trim()
+    document.getElementById("apellido").value = document.getElementById("apellido").value.trim()
+    document.getElementById("email").value = document.getElementById("email").value.trim()
 
-    let nrotarj = document.getElementById("nrotarj").value
-    let mesvenc = document.getElementById("mesvenc").value
-    let añovenc = document.getElementById("añovenc").value
-    let nombretitular = document.getElementById("nombretitular").value
-    let dnititular = document.getElementById("dnititular").value
-    let codseg = document.getElementById("codseg").value
+    document.getElementById("direccion").value = document.getElementById("direccion").value.trim()
+    document.getElementById("barrio").value = document.getElementById("barrio").value.trim()
+    document.getElementById("ciudad").value = document.getElementById("ciudad").value.trim()
+
+    document.getElementById("nombretitular").value = document.getElementById("nombretitular").value.trim()
+
+    let nombre = document.getElementById("nombre").value.trim()
+    let apellido = document.getElementById("apellido").value.trim()
+    let dni = document.getElementById("dni").value.trim()
+    let telefono = document.getElementById("telefono").value.trim()
+    let email = document.getElementById("email").value.trim()
+
+    let direccion = document.getElementById("direccion").value.trim()
+    let barrio = document.getElementById("barrio").value.trim()
+    let ciudad = document.getElementById("ciudad").value.trim()
+    let codpos = document.getElementById("codpos").value.trim()
+
+    let nrotarj = document.getElementById("nrotarj").value.trim()
+    let mesvenc = document.getElementById("mesvenc").value.trim()
+    let añovenc = document.getElementById("añovenc").value.trim()
+    let nombretitular = document.getElementById("nombretitular").value.trim()
+    let dnititular = document.getElementById("dnititular").value.trim()
+    let codseg = document.getElementById("codseg").value.trim()
 
     let infoCompra = [{
         "nombre": nombre,
