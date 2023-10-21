@@ -99,20 +99,20 @@ nav ul li a:hover {
 /* ----------------------------------------------------------------------------- */
 
 .aside {
-    background-color: #fff0da;
+    background-color: #ffffff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
     border-radius: 5px;
     margin: 10px 10px 10px 0px;
 }
 
 .aside-in {
-    padding: 15px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-.imagen-oferta {
+.imagen-oferta-1 {
+    padding: 10px;
     width: 100px;
     height: auto;
     filter: invert(0.50) sepia(100%);
@@ -129,24 +129,59 @@ nav ul li a:hover {
     }
 }
 
-.promo{
+.promo-1{
+    background-color: #fff0da;
     padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid #00000021;
     border-radius: 5px;
+    margin: 5px;
+    width: auto;
 }
 
-.titulo-oferta {
+.imagen-oferta-2 {
+    padding: 10px;
+    width: 100px;
+    height: auto;
+}
+
+.promo-2{
+    background-color: #daffdd;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #00000021;
+    border-radius: 5px;
+    margin: 5px;
+    width: auto;
+}
+
+.titulo-oferta-1 {
     color: #9e4b07;
     font-size: 25px;
     font-weight: bold;
     text-align: center;
-    padding: 10px 10px;
+    padding: 0px 10px;
 }
 
-.texto-oferta {
+.texto-oferta-1 {
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+}
+
+.titulo-oferta-2 {
+    color: #000000;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 10px;
+}
+
+.texto-oferta-2 {
     font-size: 15px;
     text-align: center;
     padding: 10px;
@@ -657,6 +692,7 @@ h2 {
 
 .datos-envio-tarj {
     margin-top: 10px;
+    background-color: #effdf6;
     border: 1px solid #00000021;
     padding: 10px;
     border-radius: 10px;
@@ -954,6 +990,37 @@ h2 {
         border: 1px solid #00000021;
         border-radius: 10px;
     } */
+
+    .aside-in {
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .promo-1{
+        background-color: #fff0da;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #00000021;
+        border-radius: 5px;
+        margin: 5px;
+        width: 50%;
+    }
+    
+    .promo-2{
+        background-color: #daffdd;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #00000021;
+        border-radius: 5px;
+        margin: 5px;
+        width: 50%;
+    }
 }
 
 @media (max-width: 800px) {
