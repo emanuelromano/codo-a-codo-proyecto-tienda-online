@@ -24,7 +24,7 @@ function mostrarProducto() {
                         <p class="porcion-producto"><b>Porciones:</b> ${data[id].porciones}</p>
                         <button class="boton-ver-mas" onclick="addCarro()">Añadir al carro</button>
                         <div class="popup-div"></div>
-                        <p class="atencion-producto">🛈 <b>Importante:</b> Una vez efectuado el pedido, el mismo estará disponible a partir de los próximos <b>cuatro días hábiles</b> como mínimo.</p>
+                        <p class="atencion-producto">🛈 <b>Importante:</b> Una vez efectuado el pedido, el mismo estará disponible a partir de los próximos <b>cuatro días hábiles</b> como mínimo. Se le notificará por teléfono / mail el estado de su pedido.</p>
                     </div>
                 </div>`
         });

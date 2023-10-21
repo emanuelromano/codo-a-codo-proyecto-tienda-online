@@ -20,7 +20,7 @@ function mostrarCompra() {
     let total = compra[0].total + compra[0].envio
 
     let totalAPagarNum = document.getElementsByClassName("total-a-pagar-num")
-    totalAPagarNum[0].innerHTML = `<b>$${total}</b>`
+    totalAPagarNum[0].innerHTML = `<b>$${total},00</b>`
 
     // Ocultar el panel de retiro por local
     let datosRetiro = document.getElementsByClassName("datos-retiro")
@@ -54,7 +54,7 @@ function retirarEnLocal() {
         envio[0].innerHTML = `<div>Envío: <b style="color: green;">Retiro en local GRATIS</b></div>`
 
         let totalAPagarNum = document.getElementsByClassName("total-a-pagar-num")
-        totalAPagarNum[0].innerHTML = `<b>$${compra[0].total}</b>`
+        totalAPagarNum[0].innerHTML = `<b>$${compra[0].total},00</b>`
     } else {
         datosEnvio[0].style.display = "block";
         datosRetiro[0].style.display = "none";
@@ -69,7 +69,7 @@ function retirarEnLocal() {
         }
 
         let totalAPagarNum = document.getElementsByClassName("total-a-pagar-num")
-        totalAPagarNum[0].innerHTML = `<b>$${compra[0].total + compra[0].envio}</b>`
+        totalAPagarNum[0].innerHTML = `<b>$${compra[0].total + compra[0].envio},00</b>`
     }
 }
 

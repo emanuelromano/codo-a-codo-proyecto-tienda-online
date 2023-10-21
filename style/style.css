@@ -28,23 +28,53 @@ body {
 /* Cabecera -------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------- */
 
-.cabecera {
-    position: fixed;
-    top: 0;
-    left: 0px;
-    width: 100%;
-    z-index: 99998;
-    box-sizing: content-box;
+h1 {
+    font-family: robotoslab;
+    color: #fa9600;
 }
 
-.cabecera iframe {
-    overflow: hidden;
-    height: 100px;
+.cabecera {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    /* margin: 10px; */
+    width: auto;
+    height: 80px;
+    z-index: 99998;
+    box-sizing: content-box;
+
+    display: flex;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    margin: 0px 100px;
 }
 
 .caja {
     height: 100px;
     width: auto;
+}
+
+.cabecera-izq {
+    display: flex;
+    justify-content: left;
+}
+
+.cabecera-izq>img {
+    margin: 8px;
+}
+
+@media (max-width: 1500px) {
+    .cabecera {
+        display: flex;
+        justify-content: space-between;
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+        height: 80px;
+        margin: 0px 0px;
+    }
 }
 
 /* ----------------------------------------------------------------------------- */
@@ -702,7 +732,7 @@ h2 {
     margin-top: 10px;
     background-color: #effdf6;
     border: 1px solid #00000021;
-    padding: 10px;
+    padding: 15px;
     border-radius: 10px;
 }
 
@@ -735,7 +765,6 @@ h2 {
 
 .texto-retirar {
     padding: 5px;
-
 }
 
 .info-compra {
@@ -760,7 +789,10 @@ h2 {
 
     display: flex;
     flex-direction: column;
-    justify-items: center;
+
+    background-color: #fff0da;
+    border-radius: 8px;
+    padding: 10px;
 }
 
 .total-a-pagar {
@@ -839,7 +871,8 @@ h2 {
     flex-direction: column;
     justify-content: left;
     padding: 10px;
-    width: 150px;
+    max-width: 150px;
+    width: auto;
 }
 
 .boton-pagar-div {
@@ -1031,6 +1064,10 @@ h2 {
         border-radius: 10px;
     } */
 
+    .aside {
+        margin: 0px 10px 10px 10px;
+    }
+
     .aside-in {
         padding: 5px;
         display: flex;
@@ -1051,7 +1088,7 @@ h2 {
     }
 
     .promo-2 {
-        background-color: #daffdd;
+        background-color: #e5daff;
         padding: 5px;
         display: flex;
         flex-direction: column;
@@ -1093,10 +1130,6 @@ h2 {
         background-color: #fa9600;
         border-radius: 5px;
         /* Puede ser scaleX para solo agrandar hacia arriba */
-    }
-
-    .aside {
-        margin: 0px 10px 10px 10px;
     }
 
     .tarjetas {
@@ -1227,7 +1260,7 @@ h2 {
         flex-direction: column;
         justify-content: left;
         padding: 10px;
-        width: 50%;
+        /* width: 50%; */
     }
 
     .boton-pagar {
@@ -1271,6 +1304,7 @@ h2 {
 
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     .total-a-pagar {

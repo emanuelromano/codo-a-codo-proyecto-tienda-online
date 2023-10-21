@@ -71,7 +71,7 @@ function sumarItem(i, id, precio) {
     cant.innerHTML = `<b>Cantidad: ${sum}</b>`
 
     let sub = document.getElementById(`sub${id}`)
-    sub.innerText = `Subtotal: ${sum * precio}`
+    sub.innerText = `Subtotal: $${sum * precio}`
 
     let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
     let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
@@ -96,7 +96,7 @@ function restarItem(i, id, precio) {
         cant.innerHTML = `<b>Cantidad: ${sum}</b>`
 
         let sub = document.getElementById(`sub${id}`)
-        sub.innerText = `Subtotal: ${sum * precio}`
+        sub.innerText = `Subtotal: $${sum * precio}`
 
         let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
         let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
