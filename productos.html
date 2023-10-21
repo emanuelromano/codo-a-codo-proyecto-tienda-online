@@ -14,16 +14,23 @@
 <body>
     <div class="contenedor">
         <header class="cabecera">
-            <iframe src="./header.html" width="100%" height="100" frameborder="0" scrolling="no"></iframe>
+            <div class="cabecera-izq">
+                <img src="./img/cake2.svg" alt="Pastel">
+                <h1>Pastelería</h1>
+            </div>
+
+            <div class="cabecera-der" onclick="menuHamburguesa()">
+                <img src="./img/menu2.svg" alt="Menu">
+            </div>
         </header>
 
         <nav class="menu">
             <ul type="none">
-                <li><a href="./index.html">Inicio</a></li>
+                <li><a id="menu-item-1" href="./index.html">Inicio</a></li>
                 <li><a href="./productos.html" class="selecc">Productos</a></li>
-                <li><a href="./nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-                <li><a class="boton-carrito-contador" href="./carro.html">Carro (0)</a></li>
+                <li><a id="menu-item-2" href="./nosotros.html">Sobre Nosotros</a></li>
+                <li><a id="menu-item-3" href="./contacto.html">Contacto</a></li>
+                <li><a id="menu-item-4" class="boton-carrito-contador" href="./carro.html">Carro (0)</a></li>
             </ul>
         </nav>
 
@@ -31,10 +38,19 @@
 
         <aside class="aside">
             <div class="aside-in">
-                <img src="./img/flor.png" alt="Flor" class="imagen-oferta">
-                <div class="titulo-oferta">¡Oferta de Primavera!</div>
-                <div class="texto-oferta"><b>20% DE DESCUENTO</b> ingresando el código <b>PRIMAVERA</b> en cualquiera de
-                    tus compras</div>
+                <div class="promo-1">
+                    <img src="./img/flor.png" alt="Flor" class="imagen-oferta-1">
+                    <div class="titulo-oferta-1">¡Oferta de Primavera!</div>
+                    <div class="texto-oferta-1"><b>20% DE DESCUENTO</b> ingresando el código <b>PRIMAVERA</b> en
+                        cualquiera de
+                        tus compras</div>
+                </div>
+
+                <div class="promo-2">
+                    <img src="./img/delivery.png" alt="Delivery" class="imagen-oferta-2">
+                    <div class="titulo-oferta-2">¡Promo delivery!</div>
+                    <div class="texto-oferta-2"><b>ENVÍO GRATIS</b> en compras que superen los <b>$15000</b></div>
+                </div>
             </div>
         </aside>
 

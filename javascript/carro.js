@@ -48,10 +48,13 @@ function cargarItemsCarro() {
 function cargarContadorCarro() {
     if (localStorage.getItem("contadorCarrito") === null) {
         localStorage.setItem("contadorCarrito", 0)
+        let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
+
         let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
         botonCarrito[0].innerText = `Carro (${contadorCarrito})`
     } else {
         let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
+
         let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
         botonCarrito[0].innerText = `Carro (${contadorCarrito})`
     }
@@ -68,7 +71,7 @@ function sumarItem(i, id, precio) {
     cant.innerHTML = `<b>Cantidad: ${sum}</b>`
 
     let sub = document.getElementById(`sub${id}`)
-    sub.innerText = `Subtotal: ${sum * precio}`
+    sub.innerText = `Subtotal: $${sum * precio}`
 
     let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
     let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
@@ -93,7 +96,7 @@ function restarItem(i, id, precio) {
         cant.innerHTML = `<b>Cantidad: ${sum}</b>`
 
         let sub = document.getElementById(`sub${id}`)
-        sub.innerText = `Subtotal: ${sum * precio}`
+        sub.innerText = `Subtotal: $${sum * precio}`
 
         let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
         let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
@@ -151,10 +154,6 @@ function verificarCupon() {
                         let descuento = totalPrecio * data[i].descuento
                         let totalDescuento = Math.round(((totalPrecio - descuento) + Number.EPSILON) * 100) / 100  // Redondea los decimales
 
-                        console.log(totalPrecio)
-                        console.log(data[i].descuento)
-                        console.log(totalDescuento)
-
                         let totalNum = document.getElementsByClassName("total-num")
                         totalNum[0].innerText = `$${totalDescuento},00`
 
@@ -168,7 +167,6 @@ function verificarCupon() {
                         </div>`
 
                         totalPrecio = totalDescuento
-                        console.log(totalPrecio)
 
                         let infoCupon = document.getElementsByClassName("info-cupon-div")
                         infoCupon[0].innerHTML =
@@ -204,16 +202,46 @@ function verificarCupon() {
 
 // Guarda la cantidad de items a comprar y el precio total a pagar
 function efectuarCompra() {
-    let cantidad = parseInt(localStorage.getItem("contadorCarrito"))
+    if (parseInt(localStorage.getItem("contadorCarrito")) != 0) {
+        let cantidad = parseInt(localStorage.getItem("contadorCarrito"))
+        let envio
+    
+        if (totalPrecio > 15000) {
+            envio = 0
+        } else {
+            envio = 2500
+        }
+    
+        let compra = [{
+            "cantidad": cantidad,
+            "total": totalPrecio,
+            "envio": envio
+        }]
+    
+        localStorage.setItem("compra", JSON.stringify(compra))
+    
+        window.open('compra.html', '_self')
+    } else {
+        let alerta = document.getElementsByClassName("alerta-compra")
+        alerta[0].innerHTML = `<div class="alerta-compra-info">🛈 <b>Debe haber al menos un item en el carro para realizar una compra.</b></div>`
+    }
+}
 
-    let compra = [{
-        "cantidad": cantidad,
-        "total": totalPrecio
-    }]
+// Ocultar elementos del Nav Bar en modo para moviles
+function menuHamburguesa() {
+    let menuItemDisplay = window.getComputedStyle(document.querySelector('#menu-item-1')).display
 
-    localStorage.setItem("compra", JSON.stringify(compra))
-
-    window.open('compra.html', '_self')
+    if (menuItemDisplay === "flex") {
+        document.getElementById("menu-item-1").style.display = "none"
+        document.getElementById("menu-item-2").style.display = "none"
+        document.getElementById("menu-item-3").style.display = "none"
+        document.getElementById("menu-item-4").style.display = "none"
+    } else if (menuItemDisplay === "none") {
+        document.getElementById("menu-item-1").style.display = "flex"
+        document.getElementById("menu-item-2").style.display = "flex"
+        document.getElementById("menu-item-3").style.display = "flex"
+        document.getElementById("menu-item-4").style.display = "flex"
+    }
 }
 
 // Funciones a ejecutarse al cargar completamente la página
@@ -221,3 +249,22 @@ window.addEventListener('load', function () {
     cargarItemsCarro()
     cargarContadorCarro()
 })
+
+// Ocultar elementos del Nav Bar en modo para moviles con Event Listener
+function tamañoPantalla() {
+    let tamaño = document.documentElement.clientWidth
+
+    if (tamaño > 800) {
+        document.getElementById("menu-item-1").style.display = "flex"
+        document.getElementById("menu-item-2").style.display = "flex"
+        document.getElementById("menu-item-3").style.display = "flex"
+        document.getElementById("menu-item-4").style.display = "flex"
+    } else if (tamaño <= 800) {
+        document.getElementById("menu-item-1").style.display = "none"
+        document.getElementById("menu-item-2").style.display = "none"
+        document.getElementById("menu-item-3").style.display = "none"
+        document.getElementById("menu-item-4").style.display = "none"
+    }
+}
+
+window.addEventListener('resize', tamañoPantalla)
