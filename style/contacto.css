@@ -1,0 +1,85 @@
+#mapa {
+    margin: 0 auto;
+    border-radius: 1rem;
+    width: 80%;
+    height: 15%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    border: solid 2px #fa6400 ;
+}
+
+#contenedor {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.formulario {
+    
+    width: 50%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    resize: none;
+    color: #fa6400;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formulario input {
+    height: 25px;
+    border: 1px solid rgb(175, 175, 175);
+}
+
+.contenido {
+    display: flex;
+    flex-direction: row;
+}
+
+.datos-retiro-in {
+    border: 1px solid #00000021;
+    margin: 10px 0px 0px 0px;
+    border-radius: 10px;
+    background-color: #ffeed4;
+}
+
+.retiro-titulo {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px;
+    color: #9e4b07;
+}
+
+.retiro-horarios-mapa {
+    display: flex;
+    flex-direction: row;
+ 
+}
+
+.retiro-horarios {
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    display: block;
+}
+
+.retiro-mapa {
+    margin: 10px 20px 20px 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media (max-width: 950px) {
+    .retiro-horarios-mapa {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+     
+    }
+}
