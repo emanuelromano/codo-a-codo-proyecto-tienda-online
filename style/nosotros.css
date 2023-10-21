@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    bottom: none;
+    box-sizing: border-box;
+    border: none;
+}
+
+.contenido {    
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.contenido p {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 2rem;
+    text-align: justify;
+}
+
+.contenido iframe{
+    margin: 1rem auto;
+    border-radius: 1rem;
+    width: 80rem;
+    height: 15rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+}
+
+#pwait {
+    font-size: 2rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
