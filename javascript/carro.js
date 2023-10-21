@@ -154,10 +154,6 @@ function verificarCupon() {
                         let descuento = totalPrecio * data[i].descuento
                         let totalDescuento = Math.round(((totalPrecio - descuento) + Number.EPSILON) * 100) / 100  // Redondea los decimales
 
-                        console.log(totalPrecio)
-                        console.log(data[i].descuento)
-                        console.log(totalDescuento)
-
                         let totalNum = document.getElementsByClassName("total-num")
                         totalNum[0].innerText = `$${totalDescuento},00`
 
@@ -171,7 +167,6 @@ function verificarCupon() {
                         </div>`
 
                         totalPrecio = totalDescuento
-                        console.log(totalPrecio)
 
                         let infoCupon = document.getElementsByClassName("info-cupon-div")
                         infoCupon[0].innerHTML =
@@ -227,7 +222,8 @@ function efectuarCompra() {
     
         window.open('compra.html', '_self')
     } else {
-
+        let alerta = document.getElementsByClassName("alerta-compra")
+        alerta[0].innerHTML = `<div class="alerta-compra-info">🛈 <b>Debe haber al menos un item en el carro para realizar una compra.</b></div>`
     }
 }
 
