@@ -9,6 +9,8 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.png">
     <!-- Scripts y JSON -->
     <script src="./javascript/gracias.js"></script>
+    <script src="./javascript/html2canvas.js"></script>
+    <script src="./javascript/jspdf.min.js"></script>
     <script src="./json/productos.json"></script>
 </head>
 
@@ -66,7 +68,7 @@
                 <div class="resumen">
                     <div class="resumen-in">
                         <div class="info-compra-div">
-                            <div class="info-compra-imp">
+                            <div id="ticket-imprimir" class="info-compra-imp">
                                 <div class="logo-titulo-pasteleria">
                                     <img class="logo-pasteleria" src="./img/pasteleria.png" alt="Pastelería logo">
                                     <div class="titulo-pasteleria">La Pastelería</div>
@@ -97,7 +99,7 @@
                                 </div>
                             </div>
 
-                            <button class="boton-imprimir">Imprimir ticket</button>
+                            <button class="boton-imprimir" onclick="imprimirTicket()">Imprimir ticket</button>
                         </div>
                     </div>
                 </div>

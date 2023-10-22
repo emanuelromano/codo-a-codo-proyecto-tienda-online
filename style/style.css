@@ -1005,19 +1005,19 @@ h2 {
 }
 
 .logo-pasteleria {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
 }
 
 .titulo-pasteleria {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bolder;
     font-family: robotoslab;
     color: #fa9600;
 }
 
 .pedido-info-datos {
-    margin: 20px;
+    margin: 10px;
     font-size: 15px;
 }
 

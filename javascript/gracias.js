@@ -20,8 +20,6 @@ function mostrarInfoCompra() {
 
     let infoCompra = JSON.parse(localStorage.getItem("infoCompra"))
 
-    console.log(infoCompra)
-
     document.getElementById("fecha").innerHTML = `Fecha: <b>${infoCompra[0].fechaCompra}</b>`
     document.getElementById("nroPedido").innerHTML = `Nro. de pedido: <b>${infoCompra[0].nroPedido}</b>`
     document.getElementById("productos").innerHTML = `Productos: <b>${infoCompra[0].productos}</b>`
@@ -39,6 +37,28 @@ function mostrarInfoCompra() {
     document.getElementById("barrio").innerHTML = `Barrio: <b>${infoCompra[0].barrio}</b>`
     document.getElementById("ciudad").innerHTML = `Ciudad: <b>${infoCompra[0].ciudad}</b>`
     document.getElementById("codpos").innerHTML = `Cód. postal: <b>${infoCompra[0].codpos}</b>`
+}
+
+function imprimirTicket() {
+    // html2canvas(document.querySelector("#ticket-imprimir"), {
+    //     onrendered: function (canvas) {
+    //         var imgData = canvas.toDataURL(
+    //             'image/png');
+    //         var doc = new jsPDF('p', 'mm');
+    //         doc.addImage(imgData, 'PNG', 10, 10);
+    //         doc.save('sample-file.pdf');
+    //     }
+    // });
+
+
+
+    html2canvas(document.querySelector("#ticket-imprimir"), { scale: 1 })
+        .then(canvas => {
+            var img = canvas.toDataURL("image/png");
+            var doc = new jsPDF('p', 'mm');
+            doc.addImage(img, 'PNG', 10, 10);
+            doc.save(`Ticket.pdf`);
+        });
 }
 
 // Funciones a ejecutarse al cargar completamente la página

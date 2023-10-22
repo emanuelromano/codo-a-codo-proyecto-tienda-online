@@ -223,7 +223,7 @@ function efectuarCompra() {
         window.open('compra.html', '_self')
     } else {
         let alerta = document.getElementsByClassName("alerta-compra")
-        alerta[0].innerHTML = `<div class="alerta-compra-info">🛈 <b>Debe haber al menos un item en el carro para realizar una compra.</b></div>`
+        alerta[0].innerHTML = `<div class="alerta-compra-info"><b>Debe haber al menos un item en el carro para realizar una compra.</b></div>`
     }
 }
 
