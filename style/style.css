@@ -38,7 +38,9 @@ h1 {
     font-family: robotoslab;
     color: #fa9600;
     overflow: hidden;
-    width: 200px;
+    width: 170px;
+    font-size: 26px;
+    padding-top: 2px;
 }
 
 .cabecera {
@@ -48,7 +50,7 @@ h1 {
     right: 10px;
     justify-content: space-between;
     width: auto;
-    height: 80px;
+    height: 70px;
     z-index: 99998;
     box-sizing: content-box;
 
@@ -60,7 +62,7 @@ h1 {
 }
 
 .caja {
-    height: 139px;
+    height: 129px;
     width: auto;
 }
 
@@ -71,8 +73,8 @@ h1 {
 
 .cabecera-izq>img {
     margin: 8px;
-    height: 63px;
-    width: 63px;
+    height: 52px;
+    width: 52px;
 }
 
 .cabecera-der {
@@ -116,7 +118,7 @@ h1 {
 
 .menu {
     position: fixed;
-    top: 100px;
+    top: 90px;
     left: 0px;
     right: 0px;
     justify-content: space-between;
@@ -1449,7 +1451,7 @@ a {
 
     .menu {
         position: fixed;
-        top: 100px;
+        top: 90px;
         left: 0px;
         right: 0px;
         justify-content: space-between;
