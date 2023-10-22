@@ -15,6 +15,9 @@ function menuHamburguesa() {
     }
 }
 
+// Llena el ticket con la información de la compra
+let nroPedidoTicket
+
 function mostrarInfoCompra() {
     localStorage.setItem("carroDeCompras", JSON.stringify([]))
     localStorage.setItem("contadorCarrito", 0)
@@ -25,8 +28,11 @@ function mostrarInfoCompra() {
 
     let infoCompra = JSON.parse(localStorage.getItem("infoCompra"))
 
-    document.getElementById("fecha").innerHTML = `Fecha: <b>${infoCompra[0].fechaCompra}</b>`
+    nroPedidoTicket = infoCompra[0].nroPedido 
+
     document.getElementById("nroPedido").innerHTML = `Nro. de pedido: <b>${infoCompra[0].nroPedido}</b>`
+    document.getElementById("fechaCompra").innerHTML = `Fecha: <b>${infoCompra[0].fechaCompra}</b>`
+    document.getElementById("fechaEntrega").innerHTML = `Fecha entrega (aprox.): <b>${infoCompra[0].fechaEntrega}</b>`
     document.getElementById("productos").innerHTML = `Productos: <b>${infoCompra[0].productos}</b>`
     document.getElementById("totalProductos").innerHTML = `Total productos: <b>$${infoCompra[0].totalProductos}</b>`
     document.getElementById("envio").innerHTML = `Envío: <b>$${infoCompra[0].envio}</b>`
@@ -65,7 +71,7 @@ function imprimirTicket() {
             var img = canvas.toDataURL("image/png");
             var doc = new jsPDF('p', 'mm');
             doc.addImage(img, 'PNG', 10, 10);
-            doc.save(`Ticket.pdf`);
+            doc.save(`Ticket-pedido-${nroPedidoTicket}.pdf`);
         });
 
     document.getElementById("ticket-imprimir").style.width = w;

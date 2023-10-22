@@ -148,14 +148,22 @@ function botonPagar() {
 
     let nroPedido = Math.floor(Math.random() * 999999)
 
-    const date = new Date();
+    var fechaCompra = new Date();
 
-    let dia = date.getDate();
-    let mes = date.getMonth() + 1;
-    let año = date.getFullYear();
+    let diaC = fechaCompra.getDate();
+    let mesC = fechaCompra.getMonth() + 1;
+    let añoC = fechaCompra.getFullYear();
+
+    var fechaEntrega = new Date(fechaCompra);
+    fechaEntrega.setDate(fechaCompra.getDate() + 4);
+
+    let diaE = fechaEntrega.getDate();
+    let mesE = fechaEntrega.getMonth() + 1;
+    let añoE = fechaEntrega.getFullYear();
 
     let infoCompra = [{
-        "fechaCompra": dia + "-" + mes + "-" + año,
+        "fechaCompra": diaC + "-" + mesC + "-" + añoC,
+        "fechaEntrega": diaE + "-" + mesE + "-" + añoE,
         "productos": compra[0].cantidad,
         "totalProductos": compra[0].total,
         "envio": compra[0].envio,
@@ -182,6 +190,7 @@ function botonPagar() {
         "codseg": codseg
     }]
 
+    console.log(infoCompra);
     localStorage.setItem("infoCompra", JSON.stringify(infoCompra))
 }
 

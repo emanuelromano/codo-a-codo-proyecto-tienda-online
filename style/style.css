@@ -1008,6 +1008,55 @@ h2 {
 /* ¡Gracias! ------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------- */
 
+.resumen-in {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-evenly;
+}
+
+.exito-div {
+    max-width: 300px;
+    padding: 20px;
+    background-color: #ceffd2;
+    border-radius: 10px;
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pedido-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fa9600;
+    margin-bottom: 20px;
+}
+
+.tilde {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bolder;
+    width: 60px;
+    height: 60px;
+    background-color: #16c725;
+    border-radius: 30px;
+    margin:  0px 20px 20px 20px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+}
+
+.gracias-div {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.texto-gracias {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 .info-compra-div {
     font-size: 20px;
     border-radius: 10px;
@@ -1023,6 +1072,8 @@ h2 {
     border: 1px solid #00000021;
     padding: 35px;
     background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    width: 350px;
 }
 
 .logo-titulo-pasteleria {
@@ -1536,5 +1587,12 @@ h2 {
 
         margin-left: 0;
         margin-right: auto;
+    }
+
+    .resumen-in {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
     }
 }
