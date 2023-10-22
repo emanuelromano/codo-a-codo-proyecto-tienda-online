@@ -22,6 +22,7 @@ function mostrarInfoCompra() {
 
     console.log(infoCompra)
 
+    document.getElementById("fecha").innerHTML = `Fecha: <b>${infoCompra[0].fechaCompra}</b>`
     document.getElementById("nroPedido").innerHTML = `Nro. de pedido: <b>${infoCompra[0].nroPedido}</b>`
     document.getElementById("productos").innerHTML = `Productos: <b>${infoCompra[0].productos}</b>`
     document.getElementById("totalProductos").innerHTML = `Total productos: <b>$${infoCompra[0].totalProductos}</b>`

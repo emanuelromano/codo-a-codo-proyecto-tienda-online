@@ -141,7 +141,14 @@ function botonPagar() {
 
     let nroPedido = Math.floor(Math.random() * 999999)
 
+    const date = new Date();
+
+    let dia = date.getDate();
+    let mes = date.getMonth() + 1;
+    let año = date.getFullYear();
+
     let infoCompra = [{
+        "fechaCompra": dia + "-" + mes + "-" + año,
         "productos": compra[0].cantidad,
         "totalProductos": compra[0].total,
         "envio": compra[0].envio,
