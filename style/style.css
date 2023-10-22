@@ -29,9 +29,9 @@ body {
 /* ----------------------------------------------------------------------------- */
 
 .test {
-display: flex;
-flex-direction: row;
-align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 h1 {
@@ -801,6 +801,29 @@ h2 {
     margin: 0px 10px 10px 10px;
 }
 
+.carro-vacio {
+    width: auto;
+    text-align: center;
+    background-color: #ffeed4;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.nada-div {
+    font-size: 25px;
+    font-weight: bolder;
+    color: #9d4a07;
+}
+
+.texto-vacio {
+    font-size: 20px;
+}
+
+#carro-icono {
+    font-size: 150px;
+    margin-bottom: 15px;
+}
+
 /* ----------------------------------------------------------------------------- */
 /* Compra ---------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------- */
@@ -1064,7 +1087,7 @@ h2 {
     height: 60px;
     background-color: #16c725;
     border-radius: 30px;
-    margin:  0px 20px 20px 20px;
+    margin: 0px 20px 20px 20px;
     text-align: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
 }
@@ -1209,22 +1232,22 @@ a {
     width: auto;
     height: 15%;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
-    border: solid 2px #fa6400 ;
+    border: solid 2px #fa6400;
 }
 
 #contenedor {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
 }
 
-.formulario {    
+.formulario {
     width: auto;
     margin: 20px;
     display: flex;
     flex-direction: column;
     gap: 5px;
     align-items: center;
-    resize: none;  
+    resize: none;
 }
 
 .envianos-email {
@@ -1286,7 +1309,7 @@ a {
 .contenido {
     display: flex;
     flex-direction: column;
-    width: auto;  
+    width: auto;
 }
 
 .datos-retiro {
@@ -1313,7 +1336,7 @@ a {
 
 .retiro-horarios-mapa {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .retiro-horarios {
@@ -1333,7 +1356,7 @@ a {
     text-align: center;
 }
 
-.retiro-mapa {    
+.retiro-mapa {
     margin: 10px 20px 20px 20px;
 }
 
@@ -1343,8 +1366,8 @@ a {
         flex-direction: row;
     }
 
-    .formulario {    
-        width: 40%;    
+    .formulario {
+        width: 40%;
     }
 
     .retiro-mapa iframe {
@@ -1434,15 +1457,15 @@ a {
     #menu-item-1 {
         display: flex;
     }
-    
+
     #menu-item-2 {
         display: flex;
     }
-    
+
     #menu-item-3 {
         display: flex;
     }
-    
+
     #menu-item-4 {
         display: flex;
     }
@@ -1462,15 +1485,15 @@ a {
     #menu-item-1 {
         display: flex;
     }
-    
+
     #menu-item-2 {
         display: flex;
     }
-    
+
     #menu-item-3 {
         display: flex;
     }
-    
+
     #menu-item-4 {
         display: flex;
     }
@@ -1558,7 +1581,7 @@ a {
         align-items: center;
         justify-content: center;
         overflow: hidden;
-    
+
         border-left: 1px solid #00000021;
         border-radius: 0px 5px 5px 0px;
     }
@@ -1586,7 +1609,7 @@ a {
     #menu-item-1 {
         display: none;
     }
-    
+
     #menu-item-2 {
         display: none;
     }

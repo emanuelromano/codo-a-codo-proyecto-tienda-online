@@ -9,6 +9,19 @@ function cargarItemsCarro() {
         let long = itemsCarro.length
         let itemLista = document.getElementsByClassName("items-carro")
 
+        if (long === 0) {
+            itemLista[0].innerHTML +=
+                `<div class="carro-vacio">
+                    <i id="carro-icono" class="fa-solid fa-cart-shopping" style="color: #9d4a07;"></i>
+                    <br>
+                    <div class="nada-div">Aquí no hay nada...</div>
+                    <br>
+                    <div class="texto-vacio">Te invitamos a ver nuestros productos y llenar tu carrito de compras.</div>
+                    <br>
+                    <button class="boton-ver-mas" onclick="verProductos()">Ver productos...</button>
+                </div>`
+        }
+
         for (let i = 0; i < long; i++) {
 
             let cant = itemsCarro[i].cantidadCompra
@@ -249,10 +262,15 @@ function menuHamburguesa() {
     }
 }
 
+// Ver Productos
+function verProductos() {
+    window.open('productos.html', '_self')
+}
+
 // Funciones a ejecutarse al cargar completamente la página
 window.addEventListener('load', function () {
-    cargarItemsCarro()
     cargarContadorCarro()
+    cargarItemsCarro()
 })
 
 // Ocultar elementos del Nav Bar en modo para moviles con Event Listener
