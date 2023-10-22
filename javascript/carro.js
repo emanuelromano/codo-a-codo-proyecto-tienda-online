@@ -16,7 +16,7 @@ function cargarItemsCarro() {
                     <br>
                     <div class="nada-div">Aquí no hay nada...</div>
                     <br>
-                    <div class="texto-vacio">Te invitamos a ver nuestros productos y llenar tu carrito de compras.</div>
+                    <div class="texto-vacio">Te invitamos a ver nuestros productos <br> y llenar tu carrito de compras.</div>
                     <br>
                     <button class="boton-ver-mas" onclick="verProductos()">Ver productos...</button>
                 </div>`
