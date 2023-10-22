@@ -28,6 +28,12 @@ body {
 /* Cabecera -------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------- */
 
+.test {
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+
 h1 {
     font-family: robotoslab;
     color: #fa9600;
@@ -995,6 +1001,7 @@ h2 {
 .info-compra-imp {
     border: 1px solid #00000021;
     padding: 35px;
+    background-color: white;
 }
 
 .logo-titulo-pasteleria {

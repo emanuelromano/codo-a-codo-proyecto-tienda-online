@@ -211,7 +211,7 @@ function efectuarCompra() {
         let cantidad = parseInt(localStorage.getItem("contadorCarrito"))
         let envio
 
-        if (totalPrecio > 15000) {
+        if (totalPrecio >= 15000) {
             envio = 0
         } else {
             envio = 2500
