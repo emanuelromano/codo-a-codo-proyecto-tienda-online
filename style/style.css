@@ -544,6 +544,26 @@ h2 {
     border-radius: 5px;
 }
 
+.producto-atras-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: initial;
+}
+
+.atras-div {
+    font: 22px;
+    color: #9e4b07;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.atras-div:hover {
+    background-color: #ffdba4;
+}
+
 /* ----------------------------------------------------------------------------- */
 /* Carro de compras ------------------------------------------------------------ */
 /* ----------------------------------------------------------------------------- */
@@ -840,6 +860,7 @@ h2 {
     font-size: 20px;
     border: 1px solid #00000021;
     border-radius: 10px;
+    margin-top: 20px;
     padding: 20px;
 
     display: flex;

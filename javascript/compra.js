@@ -211,6 +211,11 @@ function menuHamburguesa() {
     }
 }
 
+// Volver a Productos
+function atras() {
+    window.open('carro.html', '_self')
+}
+
 // Funciones a ejecutarse al cargar completamente la página
 window.addEventListener('load', function () {
     mostrarCompra()
