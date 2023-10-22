@@ -1195,6 +1195,167 @@ h2 {
 }
 
 /* ----------------------------------------------------------------------------- */
+/* Contacto -------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+a {
+    text-decoration: none;
+}
+
+#mapa {
+    margin: 0 auto;
+    border-radius: 1rem;
+    width: auto;
+    height: 15%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    border: solid 2px #fa6400 ;
+}
+
+#contenedor {
+    display: flex;
+    flex-direction: column;    
+}
+
+.formulario {    
+    width: auto;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    resize: none;  
+}
+
+.envianos-email {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #9e4b07;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    width: 70%;
+}
+
+.formulario label {
+    margin-left: 0;
+    margin-top: 10px;
+    margin-right: auto;
+}
+
+.formulario textarea {
+    resize: none;
+    border: 1px solid #fa9600;
+    border-radius: 8px;
+}
+
+.formulario input {
+    height: 25px;
+    border: 1px solid #fa9600;
+    border-radius: 8px;
+}
+
+#enviar {
+    font-size: 20px;
+    padding: 10px;
+    font-family: mooli;
+    font-weight: bold;
+    color: #9e4b07;
+    background-color: #ffb23f;
+    border: 1px solid #fa9600;
+    border-radius: 5px;
+    width: 10rem;
+    height: 3rem;
+    margin: auto;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+#enviar:hover {
+    color: white;
+    background-color: #fa9600;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+}
+
+.contenido {
+    display: flex;
+    flex-direction: column;
+    width: auto;  
+}
+
+.datos-retiro {
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+}
+
+.datos-retiro-in-x {
+    border: 1px solid #00000021;
+    width: auto;
+    margin: 0px 0px 0px 0px;
+    border-radius: 10px;
+    background-color: #ffeed4;
+}
+
+.titulo-x {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px;
+    color: #9e4b07;
+    text-align: center;
+}
+
+.retiro-horarios-mapa {
+    display: flex;
+    flex-direction: column; 
+}
+
+.retiro-horarios {
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.info-retirar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.retiro-mapa {    
+    margin: 10px 20px 20px 20px;
+}
+
+@media screen and (min-width: 1000px) {
+    #contenedor {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .formulario {    
+        width: 40%;    
+    }
+
+    .retiro-mapa iframe {
+        width: 100%;
+    }
+
+    .formulario form {
+        width: 90%;
+    }
+}
+
+/* ----------------------------------------------------------------------------- */
 /* CSS Responsivo -------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------- */
 

@@ -6,16 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Pastelería</title>
     <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/contacto.css">
+    <!-- <link rel="stylesheet" href="./style/contacto.css"> -->
     <link rel="icon" type="image/x-icon" href="/img/favicon.png">
     <link rel="stylesheet" href="">
     <!-- Scripts y JSON -->
     <script src="./javascript/contacto.js"></script>
     <script src="./json/productos.json"></script>
     <script src="https://kit.fontawesome.com/4d2d62b243.js" crossorigin="anonymous"></script>
-
-    
-    
 </head>
 
 <body>
@@ -67,33 +64,19 @@
                 <br>
 
                 <section id="contenedor">
-                    <div class="formulario">
-                        <form action="" method="POST">
-                            <label for="nombre">Nombre: </label>
-                            <input type="text" id="nombre" name="nombre" required>
-        
-                            <label for="correo">Email: </label>
-                            <input type="email" id="correo" name="correo" required>
-        
-                            <label for="asunto">Asunto: </label>
-                            <input type="text" id="asunto" name="asunto" required>
-        
-                            <label for="mensaje">Mensaje: </label>
-                            <textarea id="mensaje" name="mensaje" rows="10" required></textarea>
-                            <input id="enviar" type="submit" value="Enviar">
-                        </form>
-                    </div>
                     <div class="datos-retiro">
-                        <div class="datos-retiro-in">
-                            <div class="retiro-titulo">
+                        <div class="datos-retiro-in-x">
+                            <div class="titulo-x">
                                 ¡Buscanos en nuestras redes o en nuestro local!
                             </div>
 
                             <div class="retiro-horarios-mapa">
                                 <div class="retiro-horarios">
                                     <div class="info-retirar">
-                                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class=""><i class="fa-brands fa-instagram"></i> Instagram</a>
-                                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"
+                                            class=""><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i
+                                                class="fa-brands fa-facebook"></i> Facebook</a>
                                     </div>
 
                                     <div>
@@ -108,22 +91,47 @@
                                         <b>Dirección:</b> <br>
                                         Laprida 101, San Miguel de Tucumán
                                     </div>
+
+                                    <div>
+                                        <br>
+                                        <b>Teléfonos:</b> <br>
+                                        <i class="fa-brands fa-whatsapp"></i> 381-4455678 <br>
+                                        <i class="fa-solid fa-phone"></i> 381-428000
+                                    </div>
                                 </div>
 
                                 <div class="retiro-mapa">
                                     <iframe
                                         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1904.2377468554464!2d-65.20243765034884!3d-26.83098350346789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1697848568909!5m2!1ses-419!2sar"
-                                        width="100%" height="300"
-                                        style="border: 1px solid #fa9600; border-radius: 8px;" allowfullscreen=""
-                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        width="100%" height="300" style="border: 1px solid #fa9600; border-radius: 8px;"
+                                        allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-            
 
-               
+                    <div class="formulario">
+                        <div class="envianos-email">Envianos un E-mail y te responderemos a la brevedad:</div>
+                        <form action="">
+                            <label for="nombre"><i class="fa-solid fa-user" style="color: #000000;"></i> Nombre: </label>
+                            <input type="text" id="nombre" name="nombre" required>
+
+                            <label for="correo"><i class="fa-solid fa-at" style="color: #000000;"></i> E-mail: </label>
+                            <input type="email" id="correo" name="correo" required>
+
+                            <label for="asunto"><i class="fa-solid fa-quote-left" style="color: #000000;"></i> Asunto: </label>
+                            <input type="text" id="asunto" name="asunto" required>
+
+                            <label for="mensaje"><i class="fa-solid fa-pencil" style="color: #000000;"></i> Mensaje: </label>
+                            <textarea id="mensaje" name="mensaje" rows="10" required></textarea>
+                            <button id="enviar" type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </section>
+
+
+
 
             </div>
         </div>

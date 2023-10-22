@@ -1,4 +1,4 @@
-a {
+/* a {
     text-decoration: none;
 }
 
@@ -18,13 +18,20 @@ a {
 
 .formulario {    
     width: auto;
-    margin: 1rem;
+    margin: 20px;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 5px;
     align-items: center;
-    resize: none;
-    color: #fa6400;    
+    resize: none;  
+}
+
+.envianos-email {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #9e4b07;
 }
 
 .formulario form {
@@ -32,17 +39,25 @@ a {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
-    text-decoration: underline #fa6400;
-    width: 90%;
+    width: 70%;
+}
+
+.formulario label {
+    margin-left: 0;
+    margin-top: 10px;
+    margin-right: auto;
 }
 
 .formulario textarea {
     resize: none;
+    border: 1px solid #fa9600;
+    border-radius: 8px;
 }
 
 .formulario input {
     height: 25px;
-    border: 1px solid rgb(175, 175, 175);
+    border: 1px solid #fa9600;
+    border-radius: 8px;
 }
 
 #enviar {
@@ -57,6 +72,7 @@ a {
     width: 10rem;
     height: 3rem;
     margin: auto;
+    margin-top: 10px;
     text-decoration: none;
 }
 
@@ -72,7 +88,13 @@ a {
     width: auto;  
 }
 
-.datos-retiro-in {
+.datos-retiro {
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+}
+
+.datos-retiro-in-x {
     border: 1px solid #00000021;
     width: auto;
     margin: 0px 0px 0px 0px;
@@ -80,7 +102,7 @@ a {
     background-color: #ffeed4;
 }
 
-.retiro-titulo {
+.titulo-x {
     font-size: 30px;
     font-weight: bold;
     margin: 10px;
@@ -111,13 +133,10 @@ a {
 }
 
 .retiro-mapa {    
-    
     margin: 10px 20px 20px 20px;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1000px) {
     #contenedor {
         display: flex;
         flex-direction: row;
@@ -130,4 +149,8 @@ a {
     .retiro-mapa iframe {
         width: 100%;
     }
-}
+
+    .formulario form {
+        width: 90%;
+    }
+} */
