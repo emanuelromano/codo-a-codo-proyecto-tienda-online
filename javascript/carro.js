@@ -3,24 +3,25 @@ let itemsCarro = []
 let totalPrecio = 0
 
 function cargarItemsCarro() {
-    itemsCarro = JSON.parse(localStorage.getItem("carroDeCompras"))
+    if (localStorage.getItem("carroDeCompras") != null) {
+        itemsCarro = JSON.parse(localStorage.getItem("carroDeCompras"))
 
-    let long = itemsCarro.length
-    let itemLista = document.getElementsByClassName("items-carro")
+        let long = itemsCarro.length
+        let itemLista = document.getElementsByClassName("items-carro")
 
-    for (let i = 0; i < long; i++) {
+        for (let i = 0; i < long; i++) {
 
-        let cant = itemsCarro[i].cantidadCompra
-        let prec = itemsCarro[i].precio
+            let cant = itemsCarro[i].cantidadCompra
+            let prec = itemsCarro[i].precio
 
-        let resultado = prec * cant
+            let resultado = prec * cant
 
-        totalPrecio = totalPrecio + resultado
-        let totalNum = document.getElementsByClassName("total-num")
-        totalNum[0].innerText = `$${totalPrecio},00`
+            totalPrecio = totalPrecio + resultado
+            let totalNum = document.getElementsByClassName("total-num")
+            totalNum[0].innerText = `$${totalPrecio},00`
 
-        itemLista[0].innerHTML +=
-            `<tr class="item-carro">
+            itemLista[0].innerHTML +=
+                `<tr class="item-carro">
                 <td>
                     <img class="imagen-item" src=${itemsCarro[i].imagen}>
                 </td>
@@ -39,8 +40,12 @@ function cargarItemsCarro() {
                 </td>
             </tr>`
 
-        let subtotal = document.getElementById(`sub${itemsCarro[i].id}`)
-        subtotal.innerText = `Subtotal: $${resultado}`
+            let subtotal = document.getElementById(`sub${itemsCarro[i].id}`)
+            subtotal.innerText = `Subtotal: $${resultado}`
+        }
+    } else {
+        let carroDeCompras = []
+        localStorage.setItem("carroDeCompras", JSON.stringify(carroDeCompras))
     }
 }
 
@@ -205,21 +210,21 @@ function efectuarCompra() {
     if (parseInt(localStorage.getItem("contadorCarrito")) != 0) {
         let cantidad = parseInt(localStorage.getItem("contadorCarrito"))
         let envio
-    
+
         if (totalPrecio > 15000) {
             envio = 0
         } else {
             envio = 2500
         }
-    
+
         let compra = [{
             "cantidad": cantidad,
             "total": totalPrecio,
             "envio": envio
         }]
-    
+
         localStorage.setItem("compra", JSON.stringify(compra))
-    
+
         window.open('compra.html', '_self')
     } else {
         let alerta = document.getElementsByClassName("alerta-compra")
