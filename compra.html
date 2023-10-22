@@ -10,6 +10,7 @@
     <!-- Scripts y JSON -->
     <script src="./javascript/compra.js"></script>
     <script src="./json/productos.json"></script>
+    <script src="https://kit.fontawesome.com/4d2d62b243.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -59,7 +60,7 @@
             <div class="contenido-in">
                 <div class="producto-atras-div">
                     <h2>Completar Compra:</h2>
-                    <div class="atras-div" onclick="atras()">◄ Atrás</div>
+                    <div class="atras-div" onclick="atras()"><i class="fa-solid fa-arrow-left" style="color: #9d4a07;"></i> Atrás</div>
                 </div>
                 <!-- <br> -->
 
@@ -97,19 +98,19 @@
                         <div class="datos-envio-cliente">
                             <div class="input-compra-out">
                                 <div class="input-compra-in">
-                                    <div class="texto-in">Nombre/s:</div>
+                                    <div class="texto-in"><i class="fa-solid fa-user" style="color: #000000;"></i> Nombre/s:</div>
                                     <input id="nombre" class="input-in" type="text" required maxlength="30">
                                 </div>
 
                                 <div class="input-compra-in">
-                                    <div class="texto-in">Apellido/s:</div>
+                                    <div class="texto-in"><i class="fa-solid fa-user" style="color: #000000;"></i> Apellido/s:</div>
                                     <input id="apellido" class="input-in" type="text" required maxlength="30">
                                 </div>
                             </div>
 
                             <div class="input-compra-out">
                                 <div class="input-compra-in">
-                                    <div class="texto-in">D.N.I.:</div>
+                                    <div class="texto-in"><i class="fa-solid fa-book" style="color: #000000;"></i> D.N.I.:</div>
                                     <input id="dni" class="input-in-num"
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                         type="number" required maxlength="9">
@@ -121,14 +122,14 @@
 
                             <div class="input-compra-out">
                                 <div class="input-compra-in">
-                                    <div class="texto-in">Teléfono (sin 0 ni 15):</div>
+                                    <div class="texto-in"><i class="fa-solid fa-phone" style="color: #000000;"></i> Teléfono (sin 0 ni 15):</div>
                                     <input id="telefono" class="input-in-num"
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                         type="number" required maxlength="13">
                                 </div>
 
                                 <div class="input-compra-in">
-                                    <div class="texto-in">E-mail:</div>
+                                    <div class="texto-in"><i class="fa-solid fa-at" style="color: #000000;"></i> E-mail:</div>
                                     <input id="email" class="input-in" type="email" required maxlength="50">
                                 </div>
                             </div>
@@ -137,25 +138,25 @@
                             <div class="datos-envio-info">
                                 <div class="input-compra-out">
                                     <div class="input-compra-in">
-                                        <div class="texto-in">Dirección:</div>
+                                        <div class="texto-in"><i class="fa-solid fa-house" style="color: #000000;"></i> Dirección:</div>
                                         <input id="direccion" class="input-in" type="text" required maxlength="50">
                                     </div>
 
                                     <div class="input-compra-in">
-                                        <div class="texto-in">Barrio (opcional):</div>
+                                        <div class="texto-in"><i class="fa-solid fa-house-user" style="color: #000000;"></i> Barrio (opcional):</div>
                                         <input id="barrio" class="input-in" type="text" maxlength="50">
                                     </div>
                                 </div>
 
                                 <div class="input-compra-out">
                                     <div class="input-compra-in">
-                                        <div class="texto-in">Ciudad:</div>
+                                        <div class="texto-in"><i class="fa-solid fa-city" style="color: #000000;"></i> Ciudad:</div>
                                         <input id="ciudad" class="input-in" type="text" required maxlength="30">
                                     </div>
 
                                     <div class="valido-hasta-tarj">
                                         <div class="valido-hasta-tarj-in">
-                                            <div class="texto-in">Cód. postal:</div>
+                                            <div class="texto-in"><i class="fa-solid fa-envelope-open-text" style="color: #000000;"></i> Cód. postal:</div>
                                             <input id="codpos" class="input-in-num"
                                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                                 type="number" required maxlength="6">
@@ -186,14 +187,14 @@
 
                                         <div>
                                             <br>
-                                            <b>Horarios:</b> <br>
+                                            <b><i class="fa-regular fa-clock" style="color: #000000;"></i> Horarios:</b> <br>
                                             Lunes a Viernes: 8:00 a 13:00 / 17:00 a 21:00 <br>
                                             Sábados: 8:00 a 13:00
                                         </div>
 
                                         <div>
                                             <br>
-                                            <b>Dirección:</b> <br>
+                                            <b><i class="fa-solid fa-house" style="color: #000000;"></i> Dirección:</b> <br>
                                             Laprida 101, San Miguel de Tucumán
                                         </div>
                                     </div>
@@ -225,7 +226,7 @@
 
                             <div class="input-compra-out">
                                 <div class="input-compra-in">
-                                    <div class="texto-in">N° de tarjeta:</div>
+                                    <div class="texto-in"><i class="fa-solid fa-credit-card" style="color: #000000;"></i> N° de tarjeta:</div>
                                     <input id="nrotarj" class="input-in-num"
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                         type="number" required maxlength="16">
@@ -233,14 +234,14 @@
 
                                 <div class="valido-hasta-tarj">
                                     <div class="valido-hasta-tarj-in">
-                                        <div class="texto-in">Mes venc.:</div>
+                                        <div class="texto-in"><i class="fa-regular fa-calendar-days" style="color: #000000;"></i> Mes venc.:</div>
                                         <input id="mesvenc" class="input-in-num"
                                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                             type="number" required maxlength="2">
                                     </div>
 
                                     <div class="valido-hasta-tarj-in">
-                                        <div class="texto-in">Año venc.:</div>
+                                        <div class="texto-in"><i class="fa-solid fa-calendar" style="color: #000000;"></i> Año venc.:</div>
                                         <input id="añovenc" class="input-in-num"
                                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                             type="number" required maxlength="2">
@@ -250,20 +251,20 @@
 
                             <div class="input-compra-out">
                                 <div class="input-compra-in">
-                                    <div class="texto-in">Nombre titular:</div>
+                                    <div class="texto-in"><i class="fa-solid fa-user" style="color: #000000;"></i> Nombre titular:</div>
                                     <input id="nombretitular" class="input-in" type="text" required maxlength="60">
                                 </div>
 
                                 <div class="valido-hasta-tarj">
                                     <div class="valido-hasta-tarj-in">
-                                        <div class="texto-in">D.N.I. titular:</div>
+                                        <div class="texto-in"><i class="fa-solid fa-book" style="color: #000000;"></i> D.N.I. titular:</div>
                                         <input id="dnititular" class="input-in-num"
                                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                             type="number" required maxlength="9">
                                     </div>
 
                                     <div class="valido-hasta-tarj-in">
-                                        <div class="texto-in">Cód. seguridad:</div>
+                                        <div class="texto-in"><i class="fa-solid fa-lock" style="color: #000000;"></i> Cód. seg.:</div>
                                         <input id="codseg" class="input-in-num"
                                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                             type="number" required maxlength="3">

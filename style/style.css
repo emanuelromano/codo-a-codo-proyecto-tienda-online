@@ -553,7 +553,7 @@ h2 {
 
 .atras-div {
     font: 22px;
-    color: #9e4b07;
+    color: #9d4a07;
     font-weight: bold;
     cursor: pointer;
     padding: 10px;
@@ -1003,6 +1003,7 @@ h2 {
     font-weight: bold;
     margin: 10px;
     color: #9e4b07;
+    text-align: center;
 }
 
 .retiro-horarios-mapa {
