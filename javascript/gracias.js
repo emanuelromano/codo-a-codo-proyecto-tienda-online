@@ -33,24 +33,27 @@ function mostrarInfoCompra() {
     document.getElementById("telefono").innerHTML = `Teléfono: <b>${infoCompra[0].telefono}</b>`
     document.getElementById("email").innerHTML = `E-mail: <b>${infoCompra[0].email}</b>`
 
-    document.getElementById("direccion").innerHTML = `Dirección: <b>${infoCompra[0].direccion}</b>`
-    document.getElementById("barrio").innerHTML = `Barrio: <b>${infoCompra[0].barrio}</b>`
-    document.getElementById("ciudad").innerHTML = `Ciudad: <b>${infoCompra[0].ciudad}</b>`
-    document.getElementById("codpos").innerHTML = `Cód. postal: <b>${infoCompra[0].codpos}</b>`
+    if (infoCompra[0].retiroLocal === false) {
+        document.getElementById("direccion").innerHTML = `Dirección: <b>${infoCompra[0].direccion}</b>`
+        document.getElementById("barrio").innerHTML = `Barrio: <b>${infoCompra[0].barrio}</b>`
+        document.getElementById("ciudad").innerHTML = `Ciudad: <b>${infoCompra[0].ciudad}</b>`
+        document.getElementById("codpos").innerHTML = `Cód. postal: <b>${infoCompra[0].codpos}</b>`
+
+        document.getElementById("pedido-info-datos-y").style.display = "none"
+    } else if (infoCompra[0].retiroLocal === true){
+        document.getElementById("pedido-info-datos-x").style.display = "none"
+        document.getElementById("pedido-info-datos-y").style.display = "block"
+    }
 }
 
 function imprimirTicket() {
-    // html2canvas(document.querySelector("#ticket-imprimir"), {
-    //     onrendered: function (canvas) {
-    //         var imgData = canvas.toDataURL(
-    //             'image/png');
-    //         var doc = new jsPDF('p', 'mm');
-    //         doc.addImage(imgData, 'PNG', 10, 10);
-    //         doc.save('sample-file.pdf');
-    //     }
-    // });
+    let w = document.getElementById("ticket-imprimir").style.width;
+    let h = document.getElementById("ticket-imprimir").style.height;
+    let f = document.getElementById("ticket-imprimir").style.fontSize;
 
-
+    document.getElementById("ticket-imprimir").style.height = "1000px";
+    document.getElementById("ticket-imprimir").style.width = "692px";
+    document.getElementById("ticket-imprimir").style.fontSize = "100px";
 
     html2canvas(document.querySelector("#ticket-imprimir"), { scrollY: -window.scrollY })
         .then(canvas => {
@@ -59,6 +62,10 @@ function imprimirTicket() {
             doc.addImage(img, 'PNG', 10, 10);
             doc.save(`Ticket.pdf`);
         });
+
+    document.getElementById("ticket-imprimir").style.width = w;
+    document.getElementById("ticket-imprimir").style.height = h;
+    document.getElementById("ticket-imprimir").style.fontSize = f;
 }
 
 // Funciones a ejecutarse al cargar completamente la página

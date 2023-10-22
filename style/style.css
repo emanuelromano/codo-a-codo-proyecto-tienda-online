@@ -1021,6 +1021,20 @@ h2 {
     font-size: 15px;
 }
 
+.pedido-info-datos-x {
+    margin: 10px;
+    font-size: 15px;
+}
+
+.pedido-info-datos-y {
+    margin: 10px;
+    font-size: 12px;
+    max-width: 250px;
+    border: 1px solid #00000021;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .boton-imprimir {
     font-size: 25px;
     font-weight: bold;
