@@ -100,8 +100,8 @@ function tamañoPantalla() {
 
 window.addEventListener('resize', tamañoPantalla)
 
-// DEBUG - Reinicia contador de carro, carro de compras y compra final
-function resetCarrito() {
+// DEBUG - Reinicia contador de carro, carro de compras, compra final e info de compras
+function debug() {
     localStorage.setItem("contadorCarrito", 0)
     localStorage.setItem("carroDeCompras", JSON.stringify([]))
     localStorage.removeItem("compra")
