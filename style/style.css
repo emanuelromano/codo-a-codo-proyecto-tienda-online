@@ -1070,7 +1070,7 @@ h2 {
 
 .info-compra-imp {
     border: 1px solid #00000021;
-    padding: 35px;
+    padding: 30px;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
     width: 350px;
@@ -1097,17 +1097,17 @@ h2 {
 
 .pedido-info-datos {
     margin: 10px;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .pedido-info-datos-x {
     margin: 10px;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .pedido-info-datos-y {
     margin: 10px;
-    font-size: 12px;
+    font-size: 10px;
     max-width: 250px;
     border: 1px solid #00000021;
     padding: 10px;
