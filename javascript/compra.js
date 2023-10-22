@@ -128,7 +128,14 @@ function botonPagar() {
     let email = document.getElementById("email").value.trim()
 
     let direccion = document.getElementById("direccion").value.trim()
-    let barrio = document.getElementById("barrio").value.trim()
+
+    let barrio
+    if (document.getElementById("barrio").value.trim() === "") {
+        barrio = "-"
+    } else {
+        barrio = document.getElementById("barrio").value.trim()
+    }
+
     let ciudad = document.getElementById("ciudad").value.trim()
     let codpos = document.getElementById("codpos").value.trim()
 
