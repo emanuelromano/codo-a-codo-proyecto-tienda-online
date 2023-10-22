@@ -161,7 +161,7 @@ function verificarCupon() {
         let cuponMod = cupon[0].value.trim()
         cupon[0].value = cuponMod
 
-        fetch("../json/cupones.json")
+        fetch("https://raw.githubusercontent.com/emanuelromano/codo-a-codo-proyecto-tienda-online/main/json/cupones.json")
             .then((res) => {
                 return res.json();
             })

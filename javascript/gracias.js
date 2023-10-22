@@ -30,6 +30,9 @@ function mostrarInfoCompra() {
 
     nroPedidoTicket = infoCompra[0].nroPedido 
 
+    let graciasNombre = document.getElementsByClassName("gracias-nombre")
+    graciasNombre[0].innerHTML = `¡Gracias por tu compra, ${infoCompra[0].nombre}!`
+
     document.getElementById("nroPedido").innerHTML = `Nro. de pedido: <b>${infoCompra[0].nroPedido}</b>`
     document.getElementById("fechaCompra").innerHTML = `Fecha: <b>${infoCompra[0].fechaCompra}</b>`
     document.getElementById("fechaEntrega").innerHTML = `Fecha entrega (aprox.): <b>${infoCompra[0].fechaEntrega}</b>`

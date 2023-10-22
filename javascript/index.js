@@ -2,7 +2,7 @@
 let carroDeCompras = []
 
 function cargarItemsInicio() {
-    fetch("../json/productos.json")
+    fetch("https://raw.githubusercontent.com/emanuelromano/codo-a-codo-proyecto-tienda-online/main/json/productos.json")
         .then((res) => {
             return res.json();
         })
