@@ -1066,8 +1066,8 @@ h2 {
 .retiro-mapa {
     margin: 10px 20px 20px 20px;
 
-    margin-left: auto;
-    margin-right: 20px;
+    /* margin-left: auto;
+    margin-right: 20px; */
 }
 
 /* ----------------------------------------------------------------------------- */
@@ -1793,9 +1793,6 @@ a {
 
     .retiro-mapa {
         margin: 10px 20px 20px 20px;
-
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .info-compra {
