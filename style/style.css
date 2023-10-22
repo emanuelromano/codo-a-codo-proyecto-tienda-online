@@ -37,10 +37,10 @@ body {
 h1 {
     font-family: robotoslab;
     color: #fa9600;
-    /* overflow: hidden; */
+    overflow: hidden;
     /* width: 170px; */
     font-size: 26px;
-    padding-top: 2px;
+    padding-top: 1px;
 }
 
 .cabecera {
