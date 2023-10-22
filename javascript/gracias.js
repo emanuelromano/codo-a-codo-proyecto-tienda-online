@@ -16,7 +16,12 @@ function menuHamburguesa() {
 }
 
 function mostrarInfoCompra() {
-    // console.log(JSON.parse(localStorage.getItem("infoCompra")))
+    localStorage.setItem("carroDeCompras", JSON.stringify([]))
+    localStorage.setItem("contadorCarrito", 0)
+
+    let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
+    let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
+    botonCarrito[0].innerText = `Carro (${contadorCarrito})`
 
     let infoCompra = JSON.parse(localStorage.getItem("infoCompra"))
 
