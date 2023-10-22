@@ -1,5 +1,6 @@
 // Mostrar la cantidad de items a comprar y el precio total a pagar
 let compra
+let totalFinal
 
 function mostrarCompra() {
     compra = JSON.parse(localStorage.getItem("compra"))
@@ -17,10 +18,10 @@ function mostrarCompra() {
         envio[0].innerHTML = `Envío: <b>$${compra[0].envio},00</b>`
     }
 
-    let total = compra[0].total + compra[0].envio
+    totalFinal = compra[0].total + compra[0].envio
 
     let totalAPagarNum = document.getElementsByClassName("total-a-pagar-num")
-    totalAPagarNum[0].innerHTML = `<b>$${total},00</b>`
+    totalAPagarNum[0].innerHTML = `<b>$${totalFinal},00</b>`
 
     // Ocultar o mostrar el panel de retiro por local
     if (document.getElementById("retirar").checked === true) {
@@ -138,7 +139,15 @@ function botonPagar() {
     let dnititular = document.getElementById("dnititular").value.trim()
     let codseg = document.getElementById("codseg").value.trim()
 
+    let nroPedido = Math.floor(Math.random() * 999999)
+
     let infoCompra = [{
+        "productos": compra[0].cantidad,
+        "totalProductos": compra[0].total,
+        "envio": compra[0].envio,
+        "totalAPagar": totalFinal,
+
+        "nroPedido": nroPedido,
         "nombre": nombre,
         "apellido": apellido,
         "dni": dni,
@@ -160,8 +169,6 @@ function botonPagar() {
     }]
 
     localStorage.setItem("infoCompra", JSON.stringify(infoCompra))
-
-    console.log(JSON.parse(localStorage.getItem("infoCompra")))
 }
 
 // Ocultar elementos del Nav Bar en modo para moviles

@@ -95,12 +95,12 @@
                             <div class="input-compra-out">
                                 <div class="input-compra-in">
                                     <div class="texto-in">Nombre/s:</div>
-                                    <input id="nombre" class="input-in" type="text" required>
+                                    <input id="nombre" class="input-in" type="text" required maxlength="30">
                                 </div>
 
                                 <div class="input-compra-in">
                                     <div class="texto-in">Apellido/s:</div>
-                                    <input id="apellido" class="input-in" type="text" required>
+                                    <input id="apellido" class="input-in" type="text" required maxlength="30">
                                 </div>
                             </div>
 
@@ -126,7 +126,7 @@
 
                                 <div class="input-compra-in">
                                     <div class="texto-in">E-mail:</div>
-                                    <input id="email" class="input-in" type="email" required>
+                                    <input id="email" class="input-in" type="email" required maxlength="50">
                                 </div>
                             </div>
 
@@ -135,19 +135,19 @@
                                 <div class="input-compra-out">
                                     <div class="input-compra-in">
                                         <div class="texto-in">Dirección:</div>
-                                        <input id="direccion" class="input-in" type="text" required>
+                                        <input id="direccion" class="input-in" type="text" required maxlength="50">
                                     </div>
 
                                     <div class="input-compra-in">
                                         <div class="texto-in">Barrio (opcional):</div>
-                                        <input id="barrio" class="input-in" type="text">
+                                        <input id="barrio" class="input-in" type="text" maxlength="50">
                                     </div>
                                 </div>
 
                                 <div class="input-compra-out">
                                     <div class="input-compra-in">
                                         <div class="texto-in">Ciudad:</div>
-                                        <input id="ciudad" class="input-in" type="text" required>
+                                        <input id="ciudad" class="input-in" type="text" required maxlength="30">
                                     </div>
 
                                     <div class="valido-hasta-tarj">
@@ -248,7 +248,7 @@
                             <div class="input-compra-out">
                                 <div class="input-compra-in">
                                     <div class="texto-in">Nombre titular:</div>
-                                    <input id="nombretitular" class="input-in" type="text" required>
+                                    <input id="nombretitular" class="input-in" type="text" required maxlength="60">
                                 </div>
 
                                 <div class="valido-hasta-tarj">
@@ -269,17 +269,13 @@
                             </div>
                         </div>
 
-                        <input name="somename"
-                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                            type="number" maxlength="6" />
-
                         <div class="boton-pagar-div">
                             <input type="submit" value="Pagar" class="boton-pagar">
                         </div>
 
                     </form>
 
-                    <button onclick="botonPagar()">Pagar</button>
+                    <!-- <button onclick="botonPagar()">Pagar</button> -->
                 </div>
             </div>
         </div>

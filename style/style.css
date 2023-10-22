@@ -978,6 +978,50 @@ h2 {
 }
 
 /* ----------------------------------------------------------------------------- */
+/* ¡Gracias! ------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+.info-compra-div {
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-compra-imp {
+    border: 1px solid #00000021;
+    padding: 35px;
+}
+
+.logo-titulo-pasteleria {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-pasteleria {
+    width: 100px;
+    height: 100px;
+}
+
+.titulo-pasteleria {
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: robotoslab;
+    color: #fa9600;
+}
+
+.pedido-info-datos {
+    margin: 20px;
+    font-size: 15px;
+}
+
+/* ----------------------------------------------------------------------------- */
 /* CSS Responsivo -------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------- */
 
