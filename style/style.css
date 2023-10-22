@@ -37,6 +37,8 @@ body {
 h1 {
     font-family: robotoslab;
     color: #fa9600;
+    overflow: hidden;
+    width: 200px;
 }
 
 .cabecera {
@@ -805,6 +807,7 @@ h2 {
     width: auto;
     text-align: center;
     background-color: #ffeed4;
+    border: 1px solid #00000021;
     padding: 20px;
     border-radius: 10px;
 }
