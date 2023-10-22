@@ -52,7 +52,7 @@ function imprimirTicket() {
 
 
 
-    html2canvas(document.querySelector("#ticket-imprimir"), { scale: 1 })
+    html2canvas(document.querySelector("#ticket-imprimir"), { scrollY: -window.scrollY })
         .then(canvas => {
             var img = canvas.toDataURL("image/png");
             var doc = new jsPDF('p', 'mm');
