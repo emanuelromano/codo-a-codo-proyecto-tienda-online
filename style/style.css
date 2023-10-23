@@ -55,14 +55,14 @@ h1 {
     box-sizing: content-box;
 
     display: flex;
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
     background-color: #fdf3e5;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
     margin: 0px 100px;
 }
 
 .caja {
-    height: 129px;
+    height: 119px;
     width: auto;
 }
 
@@ -85,7 +85,7 @@ h1 {
     overflow: hidden;
 
     border-left: 1px solid #00000021;
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 0px 5px 0px 0px;
 }
 
 .cabecera-der:hover {
@@ -104,7 +104,7 @@ h1 {
     .cabecera {
         display: flex;
         justify-content: space-between;
-        border-radius: 5px;
+        border-radius: 5px 5px 0px 0px;
         background-color: #fdf3e5;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
         max-height: 80px;
@@ -118,7 +118,7 @@ h1 {
 
 .menu {
     position: fixed;
-    top: 90px;
+    top: 80px;
     left: 0px;
     right: 0px;
     justify-content: space-between;
@@ -127,10 +127,11 @@ h1 {
     z-index: 99998;
     box-sizing: content-box;
     margin: 0px 110px;
+    border-top: 1px solid #00000021;
 }
 
 nav {
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px;
     background-color: white;
     text-align: center;
     margin: 0px 10px;
@@ -140,9 +141,9 @@ nav ul {
     list-style-type: none;
     padding: 0px;
     margin: 0px;
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px;
     background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
 }
 
 nav ul li {
@@ -163,7 +164,7 @@ nav ul li a {
 nav ul li a:hover {
     color: #9e4b07;
     background-color: #ffc163;
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px;
     /* transform: scale(1.1); */
     /* Puede ser scaleX para solo agrandar hacia arriba */
 }
@@ -172,7 +173,7 @@ nav ul li a:hover {
     color: white;
     background-color: #fa9600;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px;
 }
 
 #menu-item-1 {
@@ -561,7 +562,7 @@ h2 {
     color: white;
     background-color: #fa9600;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px;
 }
 
 .producto-atras-div {
@@ -1475,7 +1476,7 @@ a {
 
     .menu {
         position: fixed;
-        top: 90px;
+        top: 80px;
         left: 0px;
         right: 0px;
         justify-content: space-between;
@@ -1628,7 +1629,7 @@ a {
         overflow: hidden;
 
         border-left: 1px solid #00000021;
-        border-radius: 0px 5px 5px 0px;
+        border-radius: 0px 5px 0px 0px;
     }
 
     nav ul li {
@@ -1648,7 +1649,7 @@ a {
     nav ul li a:hover {
         color: #9e4b07;
         background-color: #ffc163;
-        border-radius: 5px;
+        border-radius: 0px 0px 5px 5px;
     }
 
     #menu-item-1 {
