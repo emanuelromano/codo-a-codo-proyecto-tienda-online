@@ -36,7 +36,7 @@ function cargarItemsCarro() {
             itemLista[0].innerHTML +=
                 `<tr class="item-carro">
                 <td>
-                    <img class="imagen-item" src=${itemsCarro[i].imagen}>
+                    <img class="imagen-item" src=${itemsCarro[i].imagen} draggable="false">
                 </td>
                 
                 <td class="titulo-precio-item">

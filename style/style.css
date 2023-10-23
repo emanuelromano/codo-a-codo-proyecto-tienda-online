@@ -369,7 +369,7 @@ h2 {
     align-items: center;
 
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
     border: 1px solid #00000021;
     margin: 10px;
 }
@@ -386,7 +386,7 @@ h2 {
     align-items: center;
 
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
     border: 1px solid #00000021;
     margin: 10px;
 }
@@ -403,7 +403,7 @@ h2 {
     align-items: center;
 
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
     margin: 10px 10px;
     border: 1px solid #00000021;
 }
@@ -424,10 +424,13 @@ h2 {
 
 .titulo-tarjeta {
     color: #fa9600;
+    margin: 8px auto 5px 0px;
+    font-size: 20px;
 }
 
 .precio-tarjeta {
-    margin: 0px;
+    margin: 0px auto 5px 0px;
+    font-size: 15px;
 }
 
 .ver-mas {
@@ -1157,6 +1160,7 @@ h2 {
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
     width: 350px;
+    user-select: none;
 }
 
 .logo-titulo-pasteleria {
@@ -1169,6 +1173,8 @@ h2 {
 .logo-pasteleria {
     width: 70px;
     height: 70px;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .titulo-pasteleria {
@@ -1193,6 +1199,7 @@ h2 {
     font-size: 10px;
     max-width: 250px;
     border: 1px solid #00000021;
+    background-color: #fff3e0;
     padding: 10px;
     border-radius: 10px;
 }
@@ -1215,6 +1222,12 @@ h2 {
     background-color: #fa9600;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
     cursor: pointer;
+}
+
+#totalAPagar {
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 3px;
 }
 
 /* ----------------------------------------------------------------------------- */

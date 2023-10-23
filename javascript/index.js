@@ -23,16 +23,16 @@ function cargarItemsInicio() {
 
             tarjeta1[0].innerHTML =
                 `<div onclick="abrirProducto(${data[num1].id})">
-                    <img class="imagen-tarjeta" src=${data[num1].imagen}>
-                    <h3 class="titulo-tarjeta">· ${data[num1].nombre} ·</h3>
-                    <h4 class="precio-tarjeta">$${data[num1].precio},00</h4>
+                    <img class="imagen-tarjeta" src=${data[num1].imagen} draggable="false">
+                    <h3 class="titulo-tarjeta"><i class="fa-solid fa-cake-candles" style="color: #fa9600;"></i> ${data[num1].nombre}</h3>
+                    <h4 class="precio-tarjeta"><i class="fa-solid fa-sack-dollar" style="color: #07b032;"></i> $${data[num1].precio},00</h4>
                 </div>`
 
             tarjeta2[0].innerHTML =
                 `<div onclick="abrirProducto(${data[num2].id})">
-                    <img class="imagen-tarjeta" src=${data[num2].imagen}>
-                    <h3 class="titulo-tarjeta">· ${data[num2].nombre} ·</h3>
-                    <h4 class="precio-tarjeta">$${data[num2].precio},00</h4>
+                    <img class="imagen-tarjeta" src=${data[num2].imagen} draggable="false">
+                    <h3 class="titulo-tarjeta"><i class="fa-solid fa-cake-candles" style="color: #fa9600;"></i> ${data[num2].nombre}</h3>
+                    <h4 class="precio-tarjeta"><i class="fa-solid fa-sack-dollar" style="color: #07b032;"></i> $${data[num2].precio},00</h4>
                 </div>`
         });
 }

@@ -15,11 +15,11 @@ function mostrarProducto() {
 
             producto[0].innerHTML =
                 `<div class="producto">
-                    <img class="imagen-producto" src=${data[id].imagen}>
+                    <img class="imagen-producto" src=${data[id].imagen} draggable="false">
 
                     <div class="info-producto">
-                        <h3 class="titulo-producto">${data[id].nombre}</h3>
-                        <h4 class="precio-producto">$${data[id].precio},00</h4>
+                        <h3 class="titulo-producto"><i class="fa-solid fa-cake-candles" style="color: #fa9600;"></i> ${data[id].nombre}</h3>
+                        <h4 class="precio-producto"><i class="fa-solid fa-sack-dollar" style="color: #07b032;"></i> $${data[id].precio},00</h4>
                         <p class="descripcion-producto"><b>Descripción:</b> ${data[id].descripcion}</p>
                         <p class="porcion-producto"><b>Porciones:</b> ${data[id].porciones}</p>
                         <button class="boton-ver-mas" onclick="addCarro()">Añadir al carro</button>
