@@ -62,6 +62,7 @@ function cargarItemsCarro() {
     }
 }
 
+
 // Inicializar contador de carro de compras o recuperar número de productos en el carro
 function cargarContadorCarro() {
     if (localStorage.getItem("contadorCarrito") === null) {
@@ -77,6 +78,7 @@ function cargarContadorCarro() {
         botonCarrito[0].innerText = `Carro (${contadorCarrito})`
     }
 }
+
 
 // Sumar 1 item al carro
 function sumarItem(i, id, precio) {
@@ -101,6 +103,7 @@ function sumarItem(i, id, precio) {
     let totalNum = document.getElementsByClassName("total-num")
     totalNum[0].innerText = `$${totalPrecio},00`
 }
+
 
 // Restar 1 item del carro
 function restarItem(i, id, precio) {
@@ -128,6 +131,7 @@ function restarItem(i, id, precio) {
     }
 }
 
+
 // Eliminar item del carro
 function eliminarItem(id, precio) {
     let cant = itemsCarro[id].cantidadCompra
@@ -151,6 +155,7 @@ function eliminarItem(id, precio) {
     botonCarrito[0].innerText = `Carro (${contadorCarrito - cant})`
     localStorage.setItem("contadorCarrito", contadorCarrito - cant)
 }
+
 
 // Verificar validez de cupón
 let banderaCupon = false
@@ -218,6 +223,7 @@ function verificarCupon() {
     }
 }
 
+
 // Guarda la cantidad de items a comprar y el precio total a pagar
 function efectuarCompra() {
     if (parseInt(localStorage.getItem("contadorCarrito")) != 0) {
@@ -245,6 +251,7 @@ function efectuarCompra() {
     }
 }
 
+
 // Ocultar elementos del Nav Bar en modo para moviles
 function menuHamburguesa() {
     let menuItemDisplay = window.getComputedStyle(document.querySelector('#menu-item-1')).display
@@ -262,16 +269,19 @@ function menuHamburguesa() {
     }
 }
 
+
 // Ver Productos
 function verProductos() {
     window.open('productos.html', '_self')
 }
+
 
 // Funciones a ejecutarse al cargar completamente la página
 window.addEventListener('load', function () {
     cargarContadorCarro()
     cargarItemsCarro()
 })
+
 
 // Ocultar elementos del Nav Bar en modo para moviles con Event Listener
 function tamañoPantalla() {

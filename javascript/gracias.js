@@ -15,6 +15,7 @@ function menuHamburguesa() {
     }
 }
 
+
 // Llena el ticket con la información de la compra
 let nroPedidoTicket
 
@@ -60,6 +61,7 @@ function mostrarInfoCompra() {
     }
 }
 
+
 function imprimirTicket() {
     let w = document.getElementById("ticket-imprimir").style.width;
     let h = document.getElementById("ticket-imprimir").style.height;
@@ -82,10 +84,12 @@ function imprimirTicket() {
     document.getElementById("ticket-imprimir").style.fontSize = f;
 }
 
+
 // Funciones a ejecutarse al cargar completamente la página
 window.addEventListener('load', function () {
     mostrarInfoCompra()
 })
+
 
 // Ocultar elementos del Nav Bar en modo para moviles con Event Listener
 function tamañoPantalla() {

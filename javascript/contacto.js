@@ -9,6 +9,7 @@ function cargarContadorCarrito() {
     }
 }
 
+
 // Ocultar elementos del Nav Bar en modo para moviles
 function menuHamburguesa() {
     let menuItemDisplay = window.getComputedStyle(document.querySelector('#menu-item-1')).display
@@ -26,10 +27,12 @@ function menuHamburguesa() {
     }
 }
 
+
 // Funciones a ejecutarse al cargar completamente la página
 window.addEventListener('load', function () {
     cargarContadorCarrito()
 })
+
 
 // Ocultar elementos del Nav Bar en modo para moviles con Event Listener
 function tamañoPantalla() {

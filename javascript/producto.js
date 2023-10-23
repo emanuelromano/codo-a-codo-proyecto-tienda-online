@@ -30,6 +30,7 @@ function mostrarProducto() {
         });
 }
 
+
 // Inicializar contador de carro de compras o recuperar número de productos en el carro
 let carroDeCompras = []
 
@@ -50,6 +51,7 @@ function cargarCarro() {
         console.log(carroDeCompras)
     }
 }
+
 
 // Añade el producto al carro
 let contador = 0
@@ -103,6 +105,8 @@ function addCarro() {
     }
 }
 
+
+// Funciones de botones al presionar botón Añadir al carro
 function verCarro() {
     window.open('carro.html', '_self')
 }
@@ -110,6 +114,7 @@ function verCarro() {
 function seguirComprando() {
     window.open('productos.html', '_self')
 }
+
 
 // Ocultar elementos del Nav Bar en modo para moviles
 function menuHamburguesa() {
@@ -128,16 +133,19 @@ function menuHamburguesa() {
     }
 }
 
+
 // Volver a Productos
 function atras() {
     window.open('productos.html', '_self')
 }
+
 
 // Funciones a ejecutarse al cargar completamente la página
 window.addEventListener('load', function () {
     mostrarProducto()
     cargarCarro()
 })
+
 
 // Ocultar elementos del Nav Bar en modo para moviles con Event Listener
 function tamañoPantalla() {
@@ -155,4 +163,5 @@ function tamañoPantalla() {
         document.getElementById("menu-item-4").style.display = "none"
     }
 }
+
 window.addEventListener('resize', tamañoPantalla)

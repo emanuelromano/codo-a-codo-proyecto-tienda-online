@@ -20,6 +20,7 @@ function mostrarProductos() {
         });
 }
 
+
 // Inicializar contador de carro de compras o recuperar número de productos en el carro
 function cargarContadorCarrito() {
     if (localStorage.getItem("contadorCarrito") === null) {
@@ -31,11 +32,13 @@ function cargarContadorCarrito() {
     }
 }
 
+
 // Abre la vista de un producto seleccionado
 function abrirProducto(id) {
     localStorage.setItem("productoSeleccionado", id-1)
     window.open('producto.html', '_self')
 }
+
 
 // Ocultar elementos del Nav Bar en modo para moviles
 function menuHamburguesa() {
@@ -54,11 +57,13 @@ function menuHamburguesa() {
     }
 }
 
+
 // Funciones a ejecutarse al cargar completamente la página
 window.addEventListener('load', function () {
     mostrarProductos()
     cargarContadorCarrito()
 })
+
 
 // Ocultar elementos del Nav Bar en modo para moviles con Event Listener
 function tamañoPantalla() {
