@@ -718,7 +718,7 @@ h2 {
 
 .sumar-item {
     color: black;
-    background-color: #bad8ff;
+    background-color: #70abf7;
     border: none;
     font-weight: bolder;
     height: 25px;
@@ -735,7 +735,7 @@ h2 {
 
 .restar-item {
     color: black;
-    background-color: #bad8ff;
+    background-color: #70abf7;
     border: none;
     font-weight: bolder;
     height: 25px;
@@ -751,8 +751,8 @@ h2 {
 }
 
 .eliminar-item {
-    color: black;
-    background-color: #ffacac;
+    color: rgb(255, 255, 255);
+    background-color: #ff7979;
     border: none;
     padding: 5px;
     border-radius: 5px;

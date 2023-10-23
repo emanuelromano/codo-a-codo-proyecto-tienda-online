@@ -47,9 +47,9 @@ function cargarItemsCarro() {
                 <td class="cantidad-mas-menos-item">
                     <div class="cantidad-item" id="item${itemsCarro[i].id}"><b>Cantidad: ${itemsCarro[i].cantidadCompra}</b></div>
                     <div class="cantidad-item" id="sub${itemsCarro[i].id}"><b>Subtotal: </b></div>
-                    <button class="sumar-item" onclick="sumarItem(${i}, ${itemsCarro[i].id}, ${itemsCarro[i].precio})">+</button>
-                    <button class="restar-item" onclick="restarItem(${i}, ${itemsCarro[i].id}, ${itemsCarro[i].precio})">-</button>
-                    <button class="eliminar-item" onclick="eliminarItem(${i}, ${itemsCarro[i].precio})">Eliminar</button>
+                    <button class="sumar-item" onclick="sumarItem(${i}, ${itemsCarro[i].id}, ${itemsCarro[i].precio})"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
+                    <button class="restar-item" onclick="restarItem(${i}, ${itemsCarro[i].id}, ${itemsCarro[i].precio})"><i class="fa-solid fa-minus" style="color: #ffffff;"></i></button>
+                    <button class="eliminar-item" onclick="eliminarItem(${i}, ${itemsCarro[i].precio})"><i class="fa-solid fa-trash" style="color: #ffffff;"></i> Eliminar</button>
                 </td>
             </tr>`
 
