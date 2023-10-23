@@ -1245,7 +1245,7 @@ h2 {
 .pasteleros {
     max-width: 100%;
     max-height: 100%;
-
+    filter: sepia(80%);
     border-radius: 8px;
     border: 1px solid #fa9600;
 }
