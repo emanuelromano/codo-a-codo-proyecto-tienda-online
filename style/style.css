@@ -58,7 +58,7 @@ h1 {
     border-radius: 5px 5px 0px 0px;
     background-color: #fdf3e5;
     /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300); */
-    box-shadow: 0px -6px 10px 5px rgba(0, 0, 0, 0.11);
+    box-shadow: 0px -6px 10px 5px rgba(0, 0, 0, 0.09);
     margin: 0px 100px;
 }
 
@@ -108,7 +108,7 @@ h1 {
         border-radius: 5px 5px 0px 0px;
         background-color: #fdf3e5;
         /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300); */
-        box-shadow: 0px -1px 10px 5px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px -1px 10px 5px rgba(0, 0, 0, 0.09);
         max-height: 80px;
         margin: 0px 0px;
     }
@@ -145,7 +145,7 @@ nav ul {
     margin: 0px;
     border-radius: 0px 0px 5px 5px;
     background-color: white;
-    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.08);
 }
 
 nav ul li {
