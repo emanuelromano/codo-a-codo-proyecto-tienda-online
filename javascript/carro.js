@@ -41,7 +41,7 @@ function cargarItemsCarro() {
                 
                 <td class="titulo-precio-item">
                     <div class="titulo-item">${itemsCarro[i].nombre}</div>
-                    <div class="precio-item">$${itemsCarro[i].precio},00 C/U</div>
+                    <div class="precio-item"><i class="fa-solid fa-sack-dollar" style="color: #07b032;"></i> $${itemsCarro[i].precio},00 C/U</div>
                 </td>
 
                 <td class="cantidad-mas-menos-item">
