@@ -57,7 +57,8 @@ h1 {
     display: flex;
     border-radius: 5px 5px 0px 0px;
     background-color: #fdf3e5;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300); */
+    box-shadow: 0px -6px 10px 5px rgba(0, 0, 0, 0.11);
     margin: 0px 100px;
 }
 
@@ -106,7 +107,8 @@ h1 {
         justify-content: space-between;
         border-radius: 5px 5px 0px 0px;
         background-color: #fdf3e5;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+        /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300); */
+        box-shadow: 0px -1px 10px 5px rgba(0, 0, 0, 0.15);
         max-height: 80px;
         margin: 0px 0px;
     }
@@ -143,7 +145,7 @@ nav ul {
     margin: 0px;
     border-radius: 0px 0px 5px 5px;
     background-color: white;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul li {
@@ -374,6 +376,7 @@ h2 {
 
 .tarjeta1:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
 }
 
 .tarjeta2 {
@@ -390,6 +393,7 @@ h2 {
 
 .tarjeta2:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
 }
 
 .tarjeta-producto {
@@ -406,6 +410,7 @@ h2 {
 
 .tarjeta-producto:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
 }
 
 .imagen-tarjeta {
@@ -446,6 +451,7 @@ h2 {
     color: white;
     background-color: #fa9600;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
 }
 
 /* ----------------------------------------------------------------------------- */
@@ -540,6 +546,7 @@ h2 {
     background-color: #5cac87;
     border: 1px solid #069e57;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
 }
 
 .boton-seguir-comprando {
@@ -556,6 +563,7 @@ h2 {
     background-color: #458649;
     border: 1px solid #069e57;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
 }
 
 .boton-carrito-contador-selecc {
@@ -708,6 +716,7 @@ h2 {
     color: white;
     background-color: #fa9600;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
 }
 
 .alerta-compra-info {
@@ -732,6 +741,7 @@ h2 {
     color: white;
     background-color: #003cff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
 }
 
 .restar-item {
@@ -749,6 +759,7 @@ h2 {
     color: white;
     background-color: #003cff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
 }
 
 .eliminar-item {
@@ -764,6 +775,7 @@ h2 {
     color: white;
     background-color: #ff0000;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
 }
 
 .cuadro-cupon {
@@ -807,6 +819,7 @@ h2 {
     color: white;
     background-color: #fa9600;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
 }
 
 .info-cupon {
@@ -895,10 +908,12 @@ h2 {
 
 .checkbox {
     width: 20px;
+    cursor: pointer;
 }
 
 .texto-retirar {
     padding: 5px;
+    cursor: pointer;
 }
 
 .info-compra {
@@ -1034,6 +1049,7 @@ h2 {
     background-color: #089c39;
     border: 1px solid green;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
 }
 
 .datos-retiro-in {
@@ -1198,6 +1214,7 @@ h2 {
     color: white;
     background-color: #fa9600;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
 }
 
 /* ----------------------------------------------------------------------------- */
@@ -1350,6 +1367,7 @@ a {
     color: white;
     background-color: #fa9600;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
 }
 
 .contenido {
