@@ -1239,6 +1239,30 @@ h2 {
     margin-bottom: 10px;
 }
 
+.info-proyecto {
+    color: white;
+    background-color: #000000;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.img-cac {
+    width: 200px;
+    margin: 20px;
+}
+
+.texto-cac {
+    text-align: left;
+    margin: 20px;
+}
+
 /* ----------------------------------------------------------------------------- */
 /* Contacto -------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------- */
@@ -1831,6 +1855,20 @@ a {
     }
 
     .resumen-in {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .info-proyecto {
+        color: white;
+        background-color: #000000;
+        border-radius: 20px;
+        text-align: center;
+        margin-top: 20px;
+        padding: 30px;
+    
         display: flex;
         flex-direction: column;
         align-items: center;
