@@ -3,13 +3,11 @@
 Comisión 23511 <br>
 Grupo 2
 
-
 ## Integrantes:
 
 Emanuel Romano <br>
 DNI: 36534279 <br>
 E-mail: eromanox@gmail.com <br>
-
 
 Matías Ochoa <br>
 DNI: 40878499 <br>
@@ -17,6 +15,10 @@ E-mail: agustinochoalml@gmail.com <br>
 
 
 ## Información sobre el proyecto:
+
+<b>Proyecto Tienda Online "La Pastelería"</b>
+
+Enlace: [La Pastelería en Netlify](https://codo-a-codo-tienda-online.netlify.app/)
 
 Se buscó crear una tienda online simple, responsiva e intuitiva. Se logró implementar la muestra de los productos disponibles, así como un carro de compras con posibilidad de aplicar cupones de descuento, validación de formularios e impresión del ticket de compra con los datos del cliente.
 
