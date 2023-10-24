@@ -170,8 +170,8 @@ let banderaCupon = false
 function verificarCupon() {
     if (banderaCupon === false) {
         let cupon = document.getElementsByClassName("input-cupon")
-        let cuponMod = cupon[0].value.trim()
-        cupon[0].value = cuponMod
+        let cuponTrim = cupon[0].value.trim()
+        cupon[0].value = cuponTrim
 
         fetch("https://raw.githubusercontent.com/emanuelromano/codo-a-codo-proyecto-tienda-online/main/json/cupones.json")
             .then((res) => {
@@ -179,7 +179,7 @@ function verificarCupon() {
             })
             .then((data) => {
                 for (i = 0; i < data.length; i++) {
-                    if (data[i].cupon === cuponMod) {
+                    if (data[i].cupon === cuponTrim) {
 
                         let descuento = totalPrecio * data[i].descuento
                         let totalDescuento = Math.round(((totalPrecio - descuento) + Number.EPSILON) * 100) / 100  // Redondea los decimales
@@ -212,7 +212,7 @@ function verificarCupon() {
                             `<div class="info-cupon" style="color: #8b580a; font-weight: bold">
                             Debe haber al menos un item en el carro para aplicar un cupón.
                         </div>`
-                    } else if (cuponMod === "") {
+                    } else if (cuponTrim === "") {
                         let infoCupon = document.getElementsByClassName("info-cupon-div")
                         infoCupon[0].innerHTML =
                             `<div class="info-cupon" style="color: #8b580a; font-weight: bold">
