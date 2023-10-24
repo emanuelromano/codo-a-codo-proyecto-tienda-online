@@ -64,6 +64,8 @@ function cargarItemsCarro() {
 
 
 // Inicializar contador de carro de compras o recuperar número de productos en el carro
+let contadorCarr
+
 function cargarContadorCarro() {
     if (localStorage.getItem("contadorCarrito") === null) {
         localStorage.setItem("contadorCarrito", 0)
@@ -71,11 +73,13 @@ function cargarContadorCarro() {
 
         let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
         botonCarrito[0].innerText = `Carro (${contadorCarrito})`
+        contadorCarr = contadorCarrito
     } else {
         let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
 
         let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
         botonCarrito[0].innerText = `Carro (${contadorCarrito})`
+        contadorCarr = contadorCarrito
     }
 }
 
@@ -98,6 +102,7 @@ function sumarItem(i, id, precio) {
 
     botonCarrito[0].innerText = `Carro (${contadorCarrito + 1})`
     localStorage.setItem("contadorCarrito", contadorCarrito + 1)
+    contadorCarr = contadorCarrito + 1
 
     totalPrecio = totalPrecio + precio
     let totalNum = document.getElementsByClassName("total-num")
@@ -124,6 +129,7 @@ function restarItem(i, id, precio) {
 
         botonCarrito[0].innerText = `Carro (${contadorCarrito - 1})`
         localStorage.setItem("contadorCarrito", contadorCarrito - 1)
+        contadorCarr = contadorCarrito - 1
 
         totalPrecio = totalPrecio - precio
         let totalNum = document.getElementsByClassName("total-num")
@@ -154,6 +160,7 @@ function eliminarItem(id, precio) {
 
     botonCarrito[0].innerText = `Carro (${contadorCarrito - cant})`
     localStorage.setItem("contadorCarrito", contadorCarrito - cant)
+    contadorCarr = contadorCarrito - cant
 }
 
 
@@ -199,6 +206,12 @@ function verificarCupon() {
 
                         banderaCupon = true
                         break;
+                    } else if (contadorCarr === 0) {
+                        let infoCupon = document.getElementsByClassName("info-cupon-div")
+                        infoCupon[0].innerHTML =
+                            `<div class="info-cupon" style="color: #8b580a; font-weight: bold">
+                            Debe haber al menos un item en el carro para aplicar un cupón.
+                        </div>`
                     } else if (cuponMod === "") {
                         let infoCupon = document.getElementsByClassName("info-cupon-div")
                         infoCupon[0].innerHTML =

@@ -90,14 +90,12 @@ function addCarro() {
     if (bandera === false) {
         arrayProducto.cantidadCompra = contador
         carroDeCompras[long++] = arrayProducto
-        console.log(carroDeCompras)
         localStorage.setItem("carroDeCompras", JSON.stringify(carroDeCompras))
     } else if (bandera === true) {
         for (var i = 0; i < long; i++) {
             // Si ya existe un item con la ID de este producto, se actualiza la cantidad en el carro
             if (carroDeCompras[i].id === arrayProducto.id) {
                 carroDeCompras[i].cantidadCompra = carroDeCompras[i].cantidadCompra + 1
-                console.log(carroDeCompras)
                 localStorage.setItem("carroDeCompras", JSON.stringify(carroDeCompras))
                 break;
             }
