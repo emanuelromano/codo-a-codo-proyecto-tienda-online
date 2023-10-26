@@ -31,7 +31,7 @@ function cargarItemsCarro() {
 
             totalPrecio = totalPrecio + resultado
             let totalNum = document.getElementsByClassName("total-num")
-            totalNum[0].innerText = `$${totalPrecio},00`
+            totalNum[0].innerText = `$${totalPrecio.toLocaleString()},00`
 
             itemLista[0].innerHTML +=
                 `<tr class="item-carro">
@@ -41,7 +41,7 @@ function cargarItemsCarro() {
                 
                 <td class="titulo-precio-item">
                     <div class="titulo-item">${itemsCarro[i].nombre}</div>
-                    <div class="precio-item"><i class="fa-solid fa-sack-dollar" style="color: #07b032;"></i> $${itemsCarro[i].precio},00 C/U</div>
+                    <div class="precio-item"><i class="fa-solid fa-sack-dollar" style="color: #07b032;"></i> $${itemsCarro[i].precio.toLocaleString()},00 C/U</div>
                 </td>
 
                 <td class="cantidad-mas-menos-item">
@@ -54,7 +54,7 @@ function cargarItemsCarro() {
             </tr>`
 
             let subtotal = document.getElementById(`sub${itemsCarro[i].id}`)
-            subtotal.innerText = `Subtotal: $${resultado}`
+            subtotal.innerText = `Subtotal: $${resultado.toLocaleString()}`
         }
     } else {
         let carroDeCompras = []
@@ -95,7 +95,7 @@ function sumarItem(i, id, precio) {
     cant.innerHTML = `<b>Cantidad: ${sum}</b>`
 
     let sub = document.getElementById(`sub${id}`)
-    sub.innerText = `Subtotal: $${sum * precio}`
+    sub.innerText = `Subtotal: $${(sum * precio).toLocaleString()}`
 
     let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
     let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
@@ -106,7 +106,7 @@ function sumarItem(i, id, precio) {
 
     totalPrecio = totalPrecio + precio
     let totalNum = document.getElementsByClassName("total-num")
-    totalNum[0].innerText = `$${totalPrecio},00`
+    totalNum[0].innerText = `$${totalPrecio.toLocaleString()},00`
 }
 
 
@@ -122,7 +122,7 @@ function restarItem(i, id, precio) {
         cant.innerHTML = `<b>Cantidad: ${sum}</b>`
 
         let sub = document.getElementById(`sub${id}`)
-        sub.innerText = `Subtotal: $${sum * precio}`
+        sub.innerText = `Subtotal: $${(sum * precio).toLocaleString()}`
 
         let contadorCarrito = parseInt(localStorage.getItem("contadorCarrito"))
         let botonCarrito = document.getElementsByClassName("boton-carrito-contador-selecc")
@@ -133,7 +133,7 @@ function restarItem(i, id, precio) {
 
         totalPrecio = totalPrecio - precio
         let totalNum = document.getElementsByClassName("total-num")
-        totalNum[0].innerText = `$${totalPrecio},00`
+        totalNum[0].innerText = `$${totalPrecio.toLocaleString()},00`
     }
 }
 
@@ -145,7 +145,7 @@ function eliminarItem(id, precio) {
     totalPrecio = 0
 
     let totalNum = document.getElementsByClassName("total-num")
-    totalNum[0].innerText = `$${totalPrecio},00`
+    totalNum[0].innerText = `$${totalPrecio.toLocaleString()},00`
 
     itemsCarro.splice(id, 1)
     localStorage.setItem("carroDeCompras", JSON.stringify(itemsCarro))
@@ -161,6 +161,19 @@ function eliminarItem(id, precio) {
     botonCarrito[0].innerText = `Carro (${contadorCarrito - cant})`
     localStorage.setItem("contadorCarrito", contadorCarrito - cant)
     contadorCarr = contadorCarrito - cant
+
+    if (contadorCarr === 0) {
+        let descuentoDiv = document.getElementsByClassName("descuento-div")
+        descuentoDiv[0].innerHTML = ""
+
+        let infoCupon = document.getElementsByClassName("info-cupon-div")
+        infoCupon[0].innerHTML = ""
+
+        banderaCupon = false
+
+        let infoCuponAp = document.getElementsByClassName("info-cupon-aplicado-div")
+        infoCuponAp[0].innerHTML = ""
+    }
 }
 
 
@@ -179,19 +192,19 @@ function verificarCupon() {
             })
             .then((data) => {
                 for (i = 0; i < data.length; i++) {
-                    if (data[i].cupon === cuponTrim) {
+                    if (data[i].cupon === cuponTrim  && contadorCarr != 0) {
 
                         let descuento = totalPrecio * data[i].descuento
-                        let totalDescuento = Math.round(((totalPrecio - descuento) + Number.EPSILON) * 100) / 100  // Redondea los decimales
+                        let totalDescuento = Math.round(((totalPrecio - descuento) + Number.EPSILON) * 100) / 100  // Redondea los decimales estrictamente a dos dígitos
 
                         let totalNum = document.getElementsByClassName("total-num")
-                        totalNum[0].innerText = `$${totalDescuento},00`
+                        totalNum[0].innerText = `$${totalDescuento.toLocaleString()},00`
 
                         let descuentoDiv = document.getElementsByClassName("descuento-div")
                         descuentoDiv[0].innerHTML =
                             `<div class="descuento-resta">
                             <b>Antes:
-                            <div style="color: red; text-decoration: line-through;">$${totalPrecio},00</div>
+                            <div style="color: red; text-decoration: line-through;">$${totalPrecio.toLocaleString()},00</div>
                             </br>
                             Ahora:</b>
                         </div>`
@@ -227,7 +240,7 @@ function verificarCupon() {
                     }
                 }
             });
-    } else {
+    } else if (banderaCupon === true) {
         let infoCupon = document.getElementsByClassName("info-cupon-aplicado-div")
         infoCupon[0].innerHTML =
             `<div class="info-cupon-aplicado" style="color: red; font-weight: bold">
@@ -260,7 +273,9 @@ function efectuarCompra() {
         window.open('compra.html', '_self')
     } else {
         let alerta = document.getElementsByClassName("alerta-compra")
-        alerta[0].innerHTML = `<div class="alerta-compra-info"><i class="fa-solid fa-circle-info" style="color: #000000;"></i> Debe haber al menos un item en el carro para realizar una compra.</div>`
+        alerta[0].innerHTML = `<div class="alerta-compra-info">
+            <i class="fa-solid fa-circle-info" style="color: #000000;"></i> Debe haber al menos un item en el carro para realizar una compra.
+        </div>`
     }
 }
 

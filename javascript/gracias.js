@@ -1,21 +1,3 @@
-// Ocultar elementos del Nav Bar en modo para moviles
-function menuHamburguesa() {
-    let menuItemDisplay = window.getComputedStyle(document.querySelector('#menu-item-1')).display
-
-    if (menuItemDisplay === "flex") {
-        document.getElementById("menu-item-1").style.display = "none"
-        document.getElementById("menu-item-2").style.display = "none"
-        document.getElementById("menu-item-3").style.display = "none"
-        document.getElementById("menu-item-4").style.display = "none"
-    } else if (menuItemDisplay === "none") {
-        document.getElementById("menu-item-1").style.display = "flex"
-        document.getElementById("menu-item-2").style.display = "flex"
-        document.getElementById("menu-item-3").style.display = "flex"
-        document.getElementById("menu-item-4").style.display = "flex"
-    }
-}
-
-
 // Llena el ticket con la información de la compra
 let nroPedidoTicket
 
@@ -38,9 +20,9 @@ function mostrarInfoCompra() {
     document.getElementById("fechaCompra").innerHTML = `Fecha: <b>${infoCompra[0].fechaCompra}</b>`
     document.getElementById("fechaEntrega").innerHTML = `Fecha entrega (aprox.): <b>${infoCompra[0].fechaEntrega}</b>`
     document.getElementById("productos").innerHTML = `Productos: <b>${infoCompra[0].productos}</b>`
-    document.getElementById("totalProductos").innerHTML = `Total productos: <b>$${infoCompra[0].totalProductos}</b>`
-    document.getElementById("envio").innerHTML = `Envío: <b>$${infoCompra[0].envio}</b>`
-    document.getElementById("totalAPagar").innerHTML = `<i class="fa-solid fa-sack-dollar" style="color: #07b032;"></i> Total a pagar: <b style="color: #fa9600;">$${infoCompra[0].totalAPagar}</b>`
+    document.getElementById("totalProductos").innerHTML = `Total productos: <b>$${infoCompra[0].totalProductos.toLocaleString()}</b>`
+    document.getElementById("envio").innerHTML = `Envío: <b>$${infoCompra[0].envio.toLocaleString()}</b>`
+    document.getElementById("totalAPagar").innerHTML = `<i class="fa-solid fa-sack-dollar" style="color: #07b032;"></i> Total a pagar: <b style="color: #fa9600;">$${infoCompra[0].totalAPagar.toLocaleString()}</b>`
 
     document.getElementById("nombre").innerHTML = `Nombre: <b>${infoCompra[0].nombre}</b>`
     document.getElementById("apellido").innerHTML = `Apellido: <b>${infoCompra[0].apellido}</b>`
@@ -62,7 +44,8 @@ function mostrarInfoCompra() {
 }
 
 
-function imprimirTicket() {
+// Guardar ticket como PDF
+function guardarTicket() {
     let w = document.getElementById("ticket-imprimir").style.width;
     let h = document.getElementById("ticket-imprimir").style.height;
     let f = document.getElementById("ticket-imprimir").style.fontSize;
@@ -82,6 +65,24 @@ function imprimirTicket() {
     document.getElementById("ticket-imprimir").style.width = w;
     document.getElementById("ticket-imprimir").style.height = h;
     document.getElementById("ticket-imprimir").style.fontSize = f;
+}
+
+
+// Ocultar elementos del Nav Bar en modo para moviles
+function menuHamburguesa() {
+    let menuItemDisplay = window.getComputedStyle(document.querySelector('#menu-item-1')).display
+
+    if (menuItemDisplay === "flex") {
+        document.getElementById("menu-item-1").style.display = "none"
+        document.getElementById("menu-item-2").style.display = "none"
+        document.getElementById("menu-item-3").style.display = "none"
+        document.getElementById("menu-item-4").style.display = "none"
+    } else if (menuItemDisplay === "none") {
+        document.getElementById("menu-item-1").style.display = "flex"
+        document.getElementById("menu-item-2").style.display = "flex"
+        document.getElementById("menu-item-3").style.display = "flex"
+        document.getElementById("menu-item-4").style.display = "flex"
+    }
 }
 
 

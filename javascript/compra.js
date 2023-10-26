@@ -10,7 +10,7 @@ function mostrarCompra() {
     let envio = document.getElementsByClassName("envio-div")
 
     productos[0].innerHTML = `Productos: <b>${compra[0].cantidad}</b>`
-    totalProd[0].innerHTML = `Total productos: <b>$${compra[0].total},00</b>`
+    totalProd[0].innerHTML = `Total productos: <b>$${compra[0].total.toLocaleString()},00</b>`
 
     if (compra[0].envio === 0) {
         envio[0].innerHTML = `Envío: <b style="color: green;">GRATIS</b>`
@@ -21,7 +21,7 @@ function mostrarCompra() {
     totalFinal = compra[0].total + compra[0].envio
 
     let totalAPagarNum = document.getElementsByClassName("total-a-pagar-num")
-    totalAPagarNum[0].innerHTML = `<b>$${totalFinal},00</b>`
+    totalAPagarNum[0].innerHTML = `<b>$${totalFinal.toLocaleString()},00</b>`
 
     // Ocultar o mostrar el panel de retiro por local
     if (document.getElementById("retirar").checked === true) {

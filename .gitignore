@@ -1,0 +1,12 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+
+# testing
+
+# production
+/build
+/img/img-productos-backup
+
+# misc
+VS Code.bat*
