@@ -45,7 +45,7 @@ h1 {
 
 .cabecera {
     position: fixed;
-    top: 10px;
+    top: 0px;
     left: 10px;
     right: 10px;
     justify-content: space-between;
@@ -55,7 +55,7 @@ h1 {
     box-sizing: content-box;
 
     display: flex;
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 0px;
     background-color: #fdf3e5;
     /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300); */
     box-shadow: 0px -6px 10px 5px rgba(0, 0, 0, 0.09);
@@ -63,7 +63,7 @@ h1 {
 }
 
 .caja {
-    height: 119px;
+    height: 110px;
     width: auto;
 }
 
@@ -105,7 +105,7 @@ h1 {
     .cabecera {
         display: flex;
         justify-content: space-between;
-        border-radius: 5px 5px 0px 0px;
+        border-radius: 0px;
         background-color: #fdf3e5;
         /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300); */
         box-shadow: 0px -1px 10px 5px rgba(0, 0, 0, 0.09);
@@ -120,7 +120,7 @@ h1 {
 
 .menu {
     position: fixed;
-    top: 80px;
+    top: 70px;
     left: 0px;
     right: 0px;
     justify-content: space-between;
@@ -1507,7 +1507,7 @@ a {
 
     .menu {
         position: fixed;
-        top: 80px;
+        top: 70px;
         left: 0px;
         right: 0px;
         justify-content: space-between;
