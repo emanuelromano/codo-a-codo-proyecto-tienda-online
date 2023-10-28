@@ -30,3 +30,4 @@ Algo que se añadió también fue la consumición de APIs por medio del método 
 
 * [html2canvas](https://html2canvas.hertzen.com/)
 * [jsPDF](https://www.npmjs.com/package/jspdf)
+* [Íconos de Font Awesome](https://fontawesome.com/)
