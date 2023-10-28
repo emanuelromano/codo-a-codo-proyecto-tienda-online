@@ -22,6 +22,7 @@ body {
 * {
     box-sizing: border-box;
     transition: 0.2s;
+    user-select: none;
 }
 
 /* ----------------------------------------------------------------------------- */
@@ -426,6 +427,7 @@ h2 {
     color: #fa9600;
     margin: 8px auto 5px 0px;
     font-size: 20px;
+    word-wrap: break-word;
 }
 
 .precio-tarjeta {
@@ -646,11 +648,13 @@ h2 {
     max-height: 80px;
     border: 1px solid #fa9600;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .titulo-precio-item {
     margin-left: 15px;
     width: 150px;
+    cursor: pointer;
 }
 
 .titulo-item {

@@ -36,23 +36,24 @@ function cargarItemsCarro() {
 
             itemLista[0].innerHTML +=
                 `<tr class="item-carro">
-                <td>
-                    <img class="imagen-item" src=${itemsCarro[i].imagen} draggable="false">
-                </td>
-                
-                <td class="titulo-precio-item">
-                    <div class="titulo-item">${itemsCarro[i].nombre}</div>
-                    <div class="precio-item"><i class="fa-solid fa-money-bill-wave" style="color: #07b032;"></i> $${itemsCarro[i].precio.toLocaleString()},00 C/U</div>
-                </td>
+                    <td onclick="volverAProducto(${itemsCarro[i].id})">
+                        <img class="imagen-item" src=${itemsCarro[i].imagen} draggable="false">
+                    </td>
+                    
+                    <td class="titulo-precio-item" onclick="volverAProducto(${itemsCarro[i].id})">
+                        <div class="titulo-item">${itemsCarro[i].nombre}</div>
+                        <div class="precio-item"><i class="fa-solid fa-money-bill-wave" style="color: #07b032;"></i> $${itemsCarro[i].precio.toLocaleString()},00 C/U</div>
+                    </td>
 
-                <td class="cantidad-mas-menos-item">
-                    <div class="cantidad-item" id="item${itemsCarro[i].id}"><b>Cantidad: ${itemsCarro[i].cantidadCompra}</b></div>
-                    <div class="cantidad-item" id="sub${itemsCarro[i].id}"><b>Subtotal: </b></div>
-                    <button class="sumar-item" onclick="sumarItem(${i}, ${itemsCarro[i].id}, ${itemsCarro[i].precio})"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
-                    <button class="restar-item" onclick="restarItem(${i}, ${itemsCarro[i].id}, ${itemsCarro[i].precio})"><i class="fa-solid fa-minus" style="color: #ffffff;"></i></button>
-                    <button class="eliminar-item" onclick="eliminarItem(${i}, ${itemsCarro[i].precio})"><i class="fa-solid fa-trash" style="color: #ffffff;"></i> Eliminar</button>
-                </td>
-            </tr>`
+                    <td class="cantidad-mas-menos-item">
+                        <div class="cantidad-item" id="item${itemsCarro[i].id}"><b>Cantidad: ${itemsCarro[i].cantidadCompra}</b></div>
+                        <div class="cantidad-item" id="sub${itemsCarro[i].id}"><b>Subtotal: </b></div>
+
+                        <button class="sumar-item" onclick="sumarItem(${i}, ${itemsCarro[i].id}, ${itemsCarro[i].precio})"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
+                        <button class="restar-item" onclick="restarItem(${i}, ${itemsCarro[i].id}, ${itemsCarro[i].precio})"><i class="fa-solid fa-minus" style="color: #ffffff;"></i></button>
+                        <button class="eliminar-item" onclick="eliminarItem(${i}, ${itemsCarro[i].precio})"><i class="fa-solid fa-trash" style="color: #ffffff;"></i> Eliminar</button>
+                    </td>
+                </tr>`
 
             let subtotal = document.getElementById(`sub${itemsCarro[i].id}`)
             subtotal.innerText = `Subtotal: $${resultado.toLocaleString()}`
@@ -278,6 +279,13 @@ function aplicarDescuento() {
         let totalNum = document.getElementsByClassName("total-num")
         totalNum[0].innerText = `$${totalAPagar.toLocaleString()},00`
     }
+}
+
+
+// Volver a item
+function volverAProducto(id) {
+    localStorage.setItem("productoSeleccionado", id-1)
+    window.open('producto.html', '_self')
 }
 
 
