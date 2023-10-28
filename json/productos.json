@@ -2,6 +2,7 @@
     {
         "id": 1,
         "nombre": "Selva Negra",
+        "url": "selva-negra",
         "imagen": "https://i.ibb.co/5vwq3XY/1.jpg",
         "descripcion": "Bizcochuelo de chocolate empapado en kirsch e intercaladas con nata y cerezas.",
         "porciones": "8",
@@ -12,6 +13,7 @@
     {
         "id": 2,
         "nombre": "Lemon Pie",
+        "url": "lemon-pie",
         "imagen": "https://i.ibb.co/vv4gQFF/2.jpg",
         "descripcion": "Tarta formada por una base de masa quebrada u hojaldre rellena con crema de limón.",
         "porciones": "8",
@@ -22,6 +24,7 @@
     {
         "id": 3,
         "nombre": "Torta Rogel",
+        "url": "torta-rogel",
         "imagen": "https://i.ibb.co/HNGQR7y/3.jpg",
         "descripcion": "Capas de discos de masa Rogel crocante, relleno de dulce de leche con chips de chocolate y terminado con merengue italiano.",
         "porciones": "8",
@@ -32,6 +35,7 @@
     {
         "id": 4,
         "nombre": "Red Velvet",
+        "url": "red-velvet",
         "imagen": "https://i.ibb.co/8D5CnJw/4.jpg",
         "descripcion": "Bizcocho de color rojo en capas, relleno con crema y con un glaseado de crema de queso.",
         "porciones": "8",
@@ -42,6 +46,7 @@
     {
         "id": 5,
         "nombre": "Carrot Cake",
+        "url": "carrot-cake",
         "imagen": "https://i.ibb.co/vHDYBBV/5.jpg",
         "descripcion": "Budín de zanahoria, con una pizca de canela, cubierto con un frosting de queso crema dulce y topping de almendras tostadas.",
         "porciones": "8",
@@ -52,6 +57,7 @@
     {
         "id": 6,
         "nombre": "Cheese Cake",
+        "url": "cheese-cake",
         "imagen": "https://i.ibb.co/xMH7rXv/6.jpg",
         "descripcion": "Base crocante de galletas y manteca, crema de queso y limón combinada con una perfecta confitura casera de frambuesa.",
         "porciones": "8",
@@ -62,6 +68,7 @@
     {
         "id": 7,
         "nombre": "Chocotorta",
+        "url": "chocotorta",
         "imagen": "https://i.ibb.co/jzsFLFr/7.jpg",
         "descripcion": "Siete capas de Chocolinas intercaladas con crema de dulce de leche repostero.",
         "porciones": "8",
@@ -72,6 +79,7 @@
     {
         "id": 8,
         "nombre": "Torta Matcha",
+        "url": "torta-matcha",
         "imagen": "https://i.ibb.co/yQhrhPW/8.jpg",
         "descripcion": "Una suave y delicada torta de té verde (matcha) y un mousse de chocolate blanco.",
         "porciones": "8",
@@ -82,6 +90,7 @@
     {
         "id": 9,
         "nombre": "Torta de Chocolate y Licor",
+        "url": "torta-de-chocolate-y-licor",
         "imagen": "https://i.ibb.co/c1jKHqB/9.jpg",
         "descripcion": "Tres capas de bizcocho de chocolate unidas por de un delicioso merengue de licor de whisky.",
         "porciones": "8",
