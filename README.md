@@ -25,3 +25,8 @@ Se buscó crear una tienda online simple, responsiva e intuitiva. Se logró impl
 Se usaron librerías adicionales en el sitio, como html2canvas y jsPDF para la generación y guardado del ticket en PDF; también se hizo uso de íconos de Font Awesone para ciertas partes del sitio, como en los formularios y en el carro de compras.
 	
 Algo que se añadió también fue la consumición de APIs por medio del método fetch() de JavaScript, tomando archivos JSON en raw subidos a GitHub. Por último, todo el CSS fue pensado y hecho a mano.
+
+<b>Recursos externos utilizados</b>
+
+* [html2canvas](https://html2canvas.hertzen.com/)
+* [jsPDF](https://www.npmjs.com/package/jspdf)
