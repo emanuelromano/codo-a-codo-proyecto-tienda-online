@@ -133,9 +133,14 @@ function menuHamburguesa() {
 }
 
 
-// Volver a Productos
-function atras() {
-    window.open('productos.html', '_self')
+// Volver a Productos o Carro
+function volver() {
+    console.log(localStorage.getItem("volverA"))
+    if (localStorage.getItem("volverA") === "true") {
+        window.open('carro.html', '_self')
+    } else {
+        window.open('productos.html', '_self')
+    }
 }
 
 

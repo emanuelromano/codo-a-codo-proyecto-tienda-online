@@ -285,6 +285,7 @@ function aplicarDescuento() {
 // Volver a item
 function volverAProducto(id) {
     localStorage.setItem("productoSeleccionado", id-1)
+    localStorage.setItem("volverA", true)
     window.open('producto.html', '_self')
 }
 
@@ -354,6 +355,7 @@ function verProductos() {
 window.addEventListener('load', function () {
     cargarContadorCarro()
     cargarItemsCarro()
+    localStorage.setItem("volverA", false)
 })
 
 
