@@ -41,7 +41,7 @@ function cargarItemsCarro() {
                 
                 <td class="titulo-precio-item">
                     <div class="titulo-item">${itemsCarro[i].nombre}</div>
-                    <div class="precio-item"><i class="fa-solid fa-sack-dollar" style="color: #07b032;"></i> $${itemsCarro[i].precio.toLocaleString()},00 C/U</div>
+                    <div class="precio-item"><i class="fa-solid fa-money-bill-wave" style="color: #07b032;"></i> $${itemsCarro[i].precio.toLocaleString()},00 C/U</div>
                 </td>
 
                 <td class="cantidad-mas-menos-item">
@@ -107,6 +107,10 @@ function sumarItem(i, id, precio) {
     totalPrecio = totalPrecio + precio
     let totalNum = document.getElementsByClassName("total-num")
     totalNum[0].innerText = `$${totalPrecio.toLocaleString()},00`
+
+    if (banderaCupon === true) {
+        aplicarDescuento()
+    }
 }
 
 
@@ -134,6 +138,10 @@ function restarItem(i, id, precio) {
         totalPrecio = totalPrecio - precio
         let totalNum = document.getElementsByClassName("total-num")
         totalNum[0].innerText = `$${totalPrecio.toLocaleString()},00`
+
+        if (banderaCupon === true) {
+            aplicarDescuento()
+        }
     }
 }
 
@@ -162,6 +170,10 @@ function eliminarItem(id, precio) {
     localStorage.setItem("contadorCarrito", contadorCarrito - cant)
     contadorCarr = contadorCarrito - cant
 
+    if (banderaCupon === true) {
+        aplicarDescuento()
+    }
+
     if (contadorCarr === 0) {
         let descuentoDiv = document.getElementsByClassName("descuento-div")
         descuentoDiv[0].innerHTML = ""
@@ -179,6 +191,7 @@ function eliminarItem(id, precio) {
 
 // Verificar validez de cupón
 let banderaCupon = false
+let porcDesc
 
 function verificarCupon() {
     if (banderaCupon === false) {
@@ -192,9 +205,11 @@ function verificarCupon() {
             })
             .then((data) => {
                 for (i = 0; i < data.length; i++) {
-                    if (data[i].cupon === cuponTrim  && contadorCarr != 0) {
+                    if (data[i].cupon === cuponTrim && contadorCarr != 0) {
 
-                        let descuento = totalPrecio * data[i].descuento
+                        porcDesc = data[i].descuento
+                        let descuento = totalPrecio * porcDesc
+
                         let totalDescuento = Math.round(((totalPrecio - descuento) + Number.EPSILON) * 100) / 100  // Redondea los decimales estrictamente a dos dígitos
 
                         let totalNum = document.getElementsByClassName("total-num")
@@ -204,17 +219,17 @@ function verificarCupon() {
                         descuentoDiv[0].innerHTML =
                             `<div class="descuento-resta">
                             <b>Antes:
-                            <div style="color: red; text-decoration: line-through;">$${totalPrecio.toLocaleString()},00</div>
+                            <div class="precio-antes-text" style="color: red; text-decoration: line-through;">$${totalPrecio.toLocaleString()},00</div>
                             </br>
                             Ahora:</b>
                         </div>`
 
-                        totalPrecio = totalDescuento
+                        // totalPrecio = totalDescuento
 
                         let infoCupon = document.getElementsByClassName("info-cupon-div")
                         infoCupon[0].innerHTML =
                             `<div class="info-cupon" style="color: green; font-weight: bold">
-                            ${data[i].texto}
+                            <i class="fa-solid fa-gift" style="color: green;"></i> ${data[i].texto}
                         </div>`
 
                         banderaCupon = true
@@ -223,19 +238,19 @@ function verificarCupon() {
                         let infoCupon = document.getElementsByClassName("info-cupon-div")
                         infoCupon[0].innerHTML =
                             `<div class="info-cupon" style="color: #8b580a; font-weight: bold">
-                            Debe haber al menos un item en el carro para aplicar un cupón.
+                            <i class="fa-solid fa-circle-info" style="color: #8b580a;"></i> Debe haber al menos un item en el carro para aplicar un cupón.
                         </div>`
                     } else if (cuponTrim === "") {
                         let infoCupon = document.getElementsByClassName("info-cupon-div")
                         infoCupon[0].innerHTML =
                             `<div class="info-cupon" style="color: #8b580a; font-weight: bold">
-                            Ingrese un cupón.
+                            <i class="fa-solid fa-circle-info" style="color: #8b580a;"></i> Ingrese un cupón.
                         </div>`
                     } else {
                         let infoCupon = document.getElementsByClassName("info-cupon-div")
                         infoCupon[0].innerHTML =
                             `<div class="info-cupon" style="color: red; font-weight: bold">
-                            Cupón no válido.
+                            <i class="fa-solid fa-circle-xmark" style="color: red;"></i> Cupón no válido.
                         </div>`
                     }
                 }
@@ -243,9 +258,23 @@ function verificarCupon() {
     } else if (banderaCupon === true) {
         let infoCupon = document.getElementsByClassName("info-cupon-aplicado-div")
         infoCupon[0].innerHTML =
-            `<div class="info-cupon-aplicado" style="color: red; font-weight: bold">
-            Ya se aplicó un cupón de descuento.
+            `<div class="info-cupon-aplicado" style="color: #8b580a; font-weight: bold">
+            <i class="fa-solid fa-circle-info" style="color: #8b580a;"></i> Ya se aplicó un cupón de descuento.
         </div>`
+    }
+}
+
+// Aplica el descuelto al sumar o mermar items
+function aplicarDescuento() {
+    if (banderaCupon === true) {
+        let descuento = totalPrecio * porcDesc
+        let totalAPagar = totalPrecio - descuento
+
+        let precioAntesText = document.getElementsByClassName("precio-antes-text")
+        precioAntesText[0].innerText = `$${totalPrecio.toLocaleString()},00`
+
+        let totalNum = document.getElementsByClassName("total-num")
+        totalNum[0].innerText = `$${totalAPagar.toLocaleString()},00`
     }
 }
 

@@ -13,8 +13,8 @@ function mostrarProductos() {
                 tarjetas[0].innerHTML +=
                     `<div class="tarjeta-producto" onclick="abrirProducto(${data[i].id})">
                         <img class="imagen-tarjeta" src=${data[i].imagen} draggable="false">
-                        <h3 class="titulo-tarjeta"><i class="fa-solid fa-cake-candles" style="color: #fa9600;"></i> ${data[i].nombre}</h3>
-                        <h4 class="precio-tarjeta"><i class="fa-solid fa-sack-dollar" style="color: #07b032;"></i> $${data[i].precio},00</h4>
+                        <h3 class="titulo-tarjeta"> ${data[i].nombre}</h3>
+                        <h4 class="precio-tarjeta"><i class="fa-solid fa-money-bill-wave" style="color: #07b032;"></i> $${data[i].precio},00</h4>
                     </div>`
             }
         });

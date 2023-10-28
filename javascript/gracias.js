@@ -22,7 +22,7 @@ function mostrarInfoCompra() {
     document.getElementById("productos").innerHTML = `Productos: <b>${infoCompra[0].productos}</b>`
     document.getElementById("totalProductos").innerHTML = `Total productos: <b>$${infoCompra[0].totalProductos.toLocaleString()}</b>`
     document.getElementById("envio").innerHTML = `Envío: <b>$${infoCompra[0].envio.toLocaleString()}</b>`
-    document.getElementById("totalAPagar").innerHTML = `<i class="fa-solid fa-sack-dollar" style="color: #07b032;"></i> Total a pagar: <b style="color: #fa9600;">$${infoCompra[0].totalAPagar.toLocaleString()}</b>`
+    document.getElementById("totalAPagar").innerHTML = `<i class="fa-solid fa-money-bill-wave" style="color: #07b032;"></i> Total a pagar: <b style="color: #fa9600;">$${infoCompra[0].totalAPagar.toLocaleString()}</b>`
 
     document.getElementById("nombre").innerHTML = `Nombre: <b>${infoCompra[0].nombre}</b>`
     document.getElementById("apellido").innerHTML = `Apellido: <b>${infoCompra[0].apellido}</b>`
