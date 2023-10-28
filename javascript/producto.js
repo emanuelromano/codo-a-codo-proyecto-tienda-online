@@ -70,7 +70,8 @@ function addCarro() {
 
     let popup = document.getElementsByClassName("popup-div")
     popup[0].innerHTML =
-        `<p class="popup-add-carro">Se han añadido <b>${contador} unidades</b> de este producto al carro de compras.
+        `<p class="popup-add-carro">
+            <i class="fa-solid fa-cart-plus" style="color: #000000;"></i> Se han añadido <b>${contador} unidades</b> de este producto al carro de compras.
             </br>
             <button class="boton-ver-carro" onclick="verCarro()"><b>Ver carro</b></button>
             <button class="boton-seguir-comprando" onclick="seguirComprando()"><b>Seguir comprando</b></button>
