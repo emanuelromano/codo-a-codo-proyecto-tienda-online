@@ -11,8 +11,8 @@ function cargarItemsInicio() {
                 return Math.floor(Math.random() * max);
             }
 
-            let num1 = obtenerAleatorio(8) // Salida: 0 a 7
-            let num2 = obtenerAleatorio(8)
+            let num1 = obtenerAleatorio(9) // Salida: 0 a 8
+            let num2 = obtenerAleatorio(9)
 
             while (num2 == num1) {
                 num2 = obtenerAleatorio(8)
