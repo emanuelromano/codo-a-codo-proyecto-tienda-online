@@ -150,7 +150,6 @@ nav ul {
 }
 
 nav ul li {
-    color: #fa6400;
     border-radius: 5px;
     display: inline-block;
     text-align: center;
@@ -158,7 +157,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fa6400;
+    color: #9e4b07;
     display: block;
     text-decoration: none;
     padding: 10px;
@@ -166,7 +165,7 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #9e4b07;
-    background-color: #ffc163;
+    background-color: #ffe1b5;
     border-radius: 0px 0px 5px 5px;
     /* transform: scale(1.1); */
     /* Puede ser scaleX para solo agrandar hacia arriba */
@@ -1668,13 +1667,12 @@ a {
     }
 
     nav ul li {
-        color: #fa6400;
         display: flex;
         width: 100%;
     }
 
     nav ul li a {
-        color: #fa6400;
+        color: #9e4b07;
         display: flex;
         text-decoration: none;
         padding: 10px;
@@ -1683,7 +1681,7 @@ a {
 
     nav ul li a:hover {
         color: #9e4b07;
-        background-color: #ffc163;
+        background-color: #ffe1b5;
         border-radius: 0px 0px 5px 5px;
     }
 
