@@ -1,6 +1,7 @@
 // Cargar items del carrito en una lista
 let itemsCarro = []
 let totalPrecio = 0
+let totalPrecioConDesc = 0
 
 function cargarItemsCarro() {
     if (localStorage.getItem("carroDeCompras") != null) {
@@ -182,6 +183,7 @@ function eliminarItem(id, precio) {
         infoCupon[0].innerHTML = ""
 
         banderaCupon = false
+        totalPrecioConDesc = 0
 
         let infoCuponAp = document.getElementsByClassName("info-cupon-aplicado-div")
         infoCuponAp[0].innerHTML = ""
@@ -211,6 +213,7 @@ function verificarCupon() {
                         let descuento = totalPrecio * porcDesc
 
                         let totalDescuento = Math.round(((totalPrecio - descuento) + Number.EPSILON) * 100) / 100  // Redondea los decimales estrictamente a dos dígitos
+                        totalPrecioConDesc = totalPrecio - descuento
 
                         let totalNum = document.getElementsByClassName("total-num")
                         totalNum[0].innerText = `$${totalDescuento.toLocaleString()},00`
@@ -223,8 +226,6 @@ function verificarCupon() {
                             </br>
                             Ahora:</b>
                         </div>`
-
-                        // totalPrecio = totalDescuento
 
                         let infoCupon = document.getElementsByClassName("info-cupon-div")
                         infoCupon[0].innerHTML =
@@ -269,6 +270,7 @@ function aplicarDescuento() {
     if (banderaCupon === true) {
         let descuento = totalPrecio * porcDesc
         let totalAPagar = totalPrecio - descuento
+        totalPrecioConDesc = totalAPagar
 
         let precioAntesText = document.getElementsByClassName("precio-antes-text")
         precioAntesText[0].innerText = `$${totalPrecio.toLocaleString()},00`
@@ -284,6 +286,7 @@ function efectuarCompra() {
     if (parseInt(localStorage.getItem("contadorCarrito")) != 0) {
         let cantidad = parseInt(localStorage.getItem("contadorCarrito"))
         let envio
+        let total
 
         if (totalPrecio >= 15000) {
             envio = 0
@@ -291,9 +294,15 @@ function efectuarCompra() {
             envio = 2500
         }
 
+        if (banderaCupon === true) {
+            total = totalPrecioConDesc
+        } else if (banderaCupon === false) {
+            total = totalPrecio
+        }
+
         let compra = [{
             "cantidad": cantidad,
-            "total": totalPrecio,
+            "total": total,
             "envio": envio
         }]
 
