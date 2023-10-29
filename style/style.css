@@ -1660,13 +1660,13 @@ a {
         top: 0px;
         left: 10px;
         right: 10px;
-        justify-content: space-between;
         width: auto;
         height: 55px;
         z-index: 99998;
         box-sizing: content-box;
     
         display: flex;
+        justify-content: space-between;
         border-radius: 0px;
         background-color: #fdf3e5;
         /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300); */
@@ -1679,7 +1679,7 @@ a {
         overflow: hidden;
         /* width: 170px; */
         font-size: 23px;
-        padding-top: 1px;
+        margin: 12px 0px 0px 0px;
     }
 
     .caja {
