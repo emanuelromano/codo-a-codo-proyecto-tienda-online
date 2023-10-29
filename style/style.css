@@ -1752,15 +1752,15 @@ a {
     #menu-item-4 {
         display: none;
     }
-
+/* 
     h2 {
         color: #fa9600;
         font-family: robotoslab;
-        font-size: 19px;
+        font-size: 20px;
         padding: 0px;
         margin: 0px;
         text-decoration: underline;
-    }
+    } */
 
     .tarjetas {
         display: flex;

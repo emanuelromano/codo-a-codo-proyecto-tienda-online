@@ -155,12 +155,12 @@ window.addEventListener('load', function () {
 function tamañoPantalla() {
     let tamaño = document.documentElement.clientWidth
 
-    if (tamaño > 783) {
+    if (tamaño > 800) {
         document.getElementById("menu-item-1").style.display = "flex"
         document.getElementById("menu-item-2").style.display = "flex"
         document.getElementById("menu-item-3").style.display = "flex"
         document.getElementById("menu-item-4").style.display = "flex"
-    } else if (tamaño <= 783) {
+    } else if (tamaño <= 800) {
         document.getElementById("menu-item-1").style.display = "none"
         document.getElementById("menu-item-2").style.display = "none"
         document.getElementById("menu-item-3").style.display = "none"
