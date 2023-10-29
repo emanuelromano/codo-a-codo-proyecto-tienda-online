@@ -87,7 +87,7 @@ h1 {
     overflow: hidden;
 
     border-left: 1px solid #00000021;
-    border-radius: 0px 5px 0px 0px;
+    border-radius: 0px;
 }
 
 .cabecera-der:hover {
@@ -99,7 +99,7 @@ h1 {
     max-height: 45px;
     width: auto;
     padding: 5px;
-    margin: 20px;
+    margin: 5px;
 }
 
 @media (max-width: 1500px) {
@@ -497,18 +497,18 @@ h2 {
 
 .titulo-producto {
     color: #fa9600;
-    font-size: 40px;
+    font-size: 32px;
     margin: 0px;
 }
 
 .precio-producto {
-    font-size: 25px;
-    margin: 20px 0px;
+    font-size: 22px;
+    margin: 10px 0px;
 }
 
 .descripcion-producto {
     font-size: 20px;
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 15px 0px;
 }
 
 .porcion-producto {
@@ -1655,6 +1655,58 @@ a {
             "footer";
     }
 
+    .cabecera {
+        position: fixed;
+        top: 0px;
+        left: 10px;
+        right: 10px;
+        justify-content: space-between;
+        width: auto;
+        height: 55px;
+        z-index: 99998;
+        box-sizing: content-box;
+    
+        display: flex;
+        border-radius: 0px;
+        background-color: #fdf3e5;
+        /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300); */
+        box-shadow: 0px -6px 10px 5px rgba(0, 0, 0, 0.09);
+    }
+
+    h1 {
+        font-family: robotoslab;
+        color: #fa9600;
+        overflow: hidden;
+        /* width: 170px; */
+        font-size: 23px;
+        padding-top: 1px;
+    }
+
+    .caja {
+        height: 95px;
+        width: auto;
+    }
+
+    .menu {
+        position: fixed;
+        top: 55px;
+        left: 0px;
+        right: 0px;
+        justify-content: space-between;
+        width: auto;
+        height: 39px;
+        z-index: 99998;
+        box-sizing: content-box;
+        border-top: 1px solid #00000021;
+    }
+    
+
+    .cabecera-izq>img {
+        margin: 8px;
+        height: 40px;
+        width: 40px;
+    }
+
     .cabecera-der {
         display: flex;
         flex-direction: column;
@@ -1663,7 +1715,7 @@ a {
         overflow: hidden;
 
         border-left: 1px solid #00000021;
-        border-radius: 0px 5px 0px 0px;
+        border-radius: 0px;
     }
 
     nav ul li {
@@ -1699,6 +1751,15 @@ a {
 
     #menu-item-4 {
         display: none;
+    }
+
+    h2 {
+        color: #fa9600;
+        font-family: robotoslab;
+        font-size: 19px;
+        padding: 0px;
+        margin: 0px;
+        text-decoration: underline;
     }
 
     .tarjetas {
