@@ -40,3 +40,4 @@ insert into cupones
 values (1, "PRIMAVERA", 0.20, "¡Se aplicó un 20% de descuento a tu compra!"),
 (2, "GRATIS", 1.00, "Tuki. ¡Se aplicó un 100% de descuento a tu compra!");
 
+/* select * from productos; */
