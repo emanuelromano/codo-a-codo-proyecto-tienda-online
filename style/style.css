@@ -2068,8 +2068,9 @@ input,
     flex-direction: column;
 }
 
-#iniciarsesion0 {
+.iniciarsesion0 {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 #ingdatos {
