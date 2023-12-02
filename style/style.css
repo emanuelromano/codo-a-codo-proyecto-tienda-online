@@ -2030,8 +2030,9 @@ label {
 input,
 #txta1 {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     box-sizing: border-box;
+    resize: none;
 }
 
 #bts1 {
