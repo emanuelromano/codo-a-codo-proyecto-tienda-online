@@ -2015,6 +2015,8 @@ a {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+
 }
 
 
@@ -2027,9 +2029,14 @@ label {
     font-weight: bold;
 }
 
-input,
+input {
+    width:100%;
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none;
+}
 #txta1 {
-    width: 100%;
+    width:100%;
     padding: 10px;
     box-sizing: border-box;
     resize: none;
