@@ -2094,12 +2094,14 @@ label {
 
 #bti {
     background-color: #fa9600;
+    font-family: mooli;
     color: #fff;
     padding: 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 20px;
+    font;
 }
 
 #bti:hover {
