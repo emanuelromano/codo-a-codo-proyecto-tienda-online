@@ -2099,7 +2099,7 @@ label {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    
+    font-size: 20px;
 }
 
 #bti:hover {
