@@ -43,7 +43,7 @@ class Catalogo:
     def ver_productos(self):
         self.cursor.execute("SELECT * FROM productos")
         productos = self.cursor.fetchall()
-        print(productos)
+        return productos
 
     # Consultar productos por ID ------------------------------------------------------------------
     def consultar_producto(self, id):
@@ -88,9 +88,9 @@ db = Catalogo('localhost', 'server', '1234', 'pasteleria')
 
 print("\033[H\033[j") # Borrado de consola
 
-# productos.agregar_producto("Selva Negra", "selva-negra", "https://i.ibb.co/5vwq3XY/1.jpg", "Bizcochuelo de chocolate empapado en kirsch e intercaladas con nata y cerezas.", 8, 5500, False, 0)
-# productos.modificar_producto(1, "Selva Negra", "selva-negra", "https://i.ibb.co/5vwq3XY/1.jpg", "Bizcochuelo de chocolate empapado en kirsch e intercaladas con nata y cerezas.", 8, 5500, False, 0)
-# productos.eliminar_producto(1)
-# print(productos.consultar_producto(1))
+# db.agregar_producto("Selva Negra", "selva-negra", "https://i.ibb.co/5vwq3XY/1.jpg", "Bizcochuelo de chocolate empapado en kirsch e intercaladas con nata y cerezas.", 8, 5500, False, 0)
+# db.modificar_producto(1, "Selva Negra", "selva-negra", "https://i.ibb.co/5vwq3XY/1.jpg", "Bizcochuelo de chocolate empapado en kirsch e intercaladas con nata y cerezas.", 8, 5500, False, 0)
+# db.eliminar_producto(11)
+# print(db.consultar_producto(1))
 
-print(db.consultar_contraseña("emanuel@gmail.com", "1235"))
+# print(db.consultar_producto(5))
