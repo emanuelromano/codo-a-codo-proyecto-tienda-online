@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
     <title>Iniciar Sesión</title>
 </head>
+
 <body id="bdylog">
     <div id="lgn">
-        <a href="index.html" target="" id="btn">
-            <button id="bts">
-                Volver al inicio
-            </button>
-        </a>
+        <header class="cabecera">
+            <div class="cabecera-izq">
+                <img src="./img/cake2.svg" alt="Pastel" draggable="false">
+                <h1>La Pastelería</h1>
+            </div>
+
+            <div class="cabecera-der" onclick="menuHamburguesa()">
+                <img src="./img/menu2.svg" alt="Menu" draggable="false">
+            </div>
+        </header>
+
         <form id="inicses">
             <h2 class="iniciarsesion0">Iniciar Sesión</h2>
             <div id="datosing">
@@ -27,4 +35,5 @@
         </form>
     </div>
 </body>
+
 </html>
