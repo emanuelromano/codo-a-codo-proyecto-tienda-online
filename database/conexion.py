@@ -3,10 +3,26 @@ Codo a Codo 2023
 Trabajo Práctico Obligatorio
 "La Pastelería"
 '''
+# -------------------------------------------------------------------------------------------------
+# Importación de módulos --------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------
+
+from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
+from werkzeug.utils import secure_filename
 
 import mysql.connector
+import os
+import time
 
-class Catalogo:
+app = Flask(__name__)
+CORS(app)
+
+# -------------------------------------------------------------------------------------------------
+# Definición de clase y métodos -------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------
+
+class Conexion:
     # Conexión a la BD ----------------------------------------------------------------------------
     def __init__(self, host, user, password, database):
         self.conn = mysql.connector.connect(
@@ -16,8 +32,10 @@ class Catalogo:
             database = database,
             auth_plugin = 'mysql_native_password' # Plugin de contraseñas
         )
-        self.cursor = self.conn.cursor()
-        self.conn.cursor(dictionary=True)
+
+        self.cursor = self.conn.cursor(dictionary=True)
+
+        #self.conn.cursor(dictionary=True)
 
     # Consultar Usuario ---------------------------------------------------------------------------
     def consultar_usuario(self, email):
@@ -82,15 +100,105 @@ class Catalogo:
         self.cursor.execute(sql)
         self.conn.commit()
         return self.cursor.rowcount > 0 #Si se borró una línea, rowcount() será mayor que 0 y devolverá True. Si no se borró nada por algun error, rowcount() no será mayor a 0 y devolverá False
+    
+# -------------------------------------------------------------------------------------------------
+# Cuerpo del programa -----------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------
 
-
-db = Catalogo('localhost', 'server', '1234', 'pasteleria')
-
-print("\033[H\033[j") # Borrado de consola
+db = Conexion('localhost', 'server', '1234', 'pasteleria')
 
 # db.agregar_producto("Selva Negra", "selva-negra", "https://i.ibb.co/5vwq3XY/1.jpg", "Bizcochuelo de chocolate empapado en kirsch e intercaladas con nata y cerezas.", 8, 5500, False, 0)
 # db.modificar_producto(1, "Selva Negra", "selva-negra", "https://i.ibb.co/5vwq3XY/1.jpg", "Bizcochuelo de chocolate empapado en kirsch e intercaladas con nata y cerezas.", 8, 5500, False, 0)
 # db.eliminar_producto(11)
 # print(db.consultar_producto(1))
+# print(db.ver_productos())
 
-# print(db.consultar_producto(5))
+# Ruta inicial ------------------------------------------------------------------------------------
+@app.route("/")
+def inicio():
+    # return render_template("inicio.html") - Se puede crear un archivo HTML para mostrar en una ruta determinada usando este método
+    return "<h1>Servidor</h1> \
+            <p> \
+            Codo a Codo 2023 <br> \
+            Trabajo Práctico Obligatorio <br> \
+            'La Pastelería' <br> \
+            </p>"
+
+# Ruta mostrar productos --------------------------------------------------------------------------
+@app.route("/productos", methods=["GET"])
+def ver_productos():
+    productos = db.ver_productos()
+    return jsonify(productos)
+
+# Ruta mostrar un producto por ID -----------------------------------------------------------------
+@app.route("/productos/<int:id>")
+def consultar_producto(id):
+    producto = db.consultar_producto(id)
+    if producto:
+        return jsonify(producto)
+    else:
+        return jsonify("404")
+
+# Carpeta para guardar las imágenes ---------------------------------------------------------------
+ruta_destino = './static/imagenes/'
+
+# Ruta agregar producto ---------------------------------------------------------------------------
+@app.route("/productos", methods=["POST"])
+def agregar_producto():
+    nombre = request.form['nombre']
+    url = request.form['url']
+    imagen = request.form['imagen']
+    descripcion = request.form['descripcion']
+    porciones = request.form['porciones']
+    precio = request.form['precio']
+    enCarro = request.form['enCarro']
+    cantidadCompra = request.form['cantidadCompra']
+
+    # imagen = request.files['imagen']
+    # nombre_imagen = secure_filename(imagen.filename)
+    # print("*"*20)
+    # print(nombre_imagen)
+    # print("*"*20)
+    # nombre_base, extension = os.path.splitext(nombre_imagen)
+    # nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"
+    # imagen.save(os.path.join(ruta_destino, nombre_imagen))
+
+    if db.agregar_producto(nombre, url, imagen, descripcion, porciones, precio, enCarro, cantidadCompra):
+        return jsonify({"mensaje": "Producto agregado"})
+    else:
+        return jsonify({"mensaje": "Error agregando producto"})
+
+# Ruta actualizar producto ------------------------------------------------------------------------
+
+
+
+
+
+
+# Ruta eliminar producto --------------------------------------------------------------------------
+@app.route("/productos/<int:codigo>", methods=["DELETE"])
+def eliminar_producto(codigo):
+    # Primero, obtén la información del producto para encontrar la imagen
+    producto = catalogo.consultar_producto(codigo)
+    if producto:
+        # Eliminar la imagen asociada si existe
+        ruta_imagen = os.path.join(ruta_destino, producto['imagen_url'])
+        if os.path.exists(ruta_imagen):
+            os.remove(ruta_imagen)
+
+        # Luego, elimina el producto del catálogo
+        if catalogo.eliminar_producto(codigo):
+            return jsonify({"mensaje": "Producto eliminado"}), 200
+        else:
+            return jsonify({"mensaje": "Error al eliminar el producto"}), 500
+    else:
+        return jsonify({"mensaje": "Producto no encontrado"}), 404
+    
+# -------------------------------------------------------------------------------------------------
+# Iniciar servidor --------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------
+
+print("\033[H\033[j") # Borrado de consola
+
+if __name__ == "__main__":
+    app.run(debug=True)
