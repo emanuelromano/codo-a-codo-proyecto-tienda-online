@@ -2154,6 +2154,7 @@ label {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 40%;
+    width: 48%;
     height: 60%;
+    font-family: mooli;
 }
