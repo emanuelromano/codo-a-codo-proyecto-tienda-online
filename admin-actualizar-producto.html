@@ -20,7 +20,7 @@
         <div class="cabecera-izq">
             <img src="./img/cake2.svg" alt="Pastel" draggable="false">
             <h1>La Pastelería</h1>
-    
+
         </div>
 
     </header>
@@ -36,15 +36,16 @@
     </nav>
 
     <div id="cnt1">
-        <form id="f1" action="procesar_formulario.php" method="post">
+        <form id="f1">
 
             <div>
+                <label for="nombre">ID del producto:</label> <br>
+                <input type="text" id="bottbuscar" name="nombre">
+                <button id="btb" onclick="buscarProducto()">Buscar</button>
+            </div>
 
             <label for="nombre">Nombre del producto:</label>
-            <input type="text" id="bottbuscar" name="nombre">
-            <button id="btb">BUSCAR</button>
-
-            </div>
+            <input type="text" id="nombre" name="nombre">
 
             <label for="mensaje">Descripcion:</label>
             <textarea id="descripcion" name="mensaje" rows="4" required></textarea>

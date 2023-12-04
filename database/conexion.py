@@ -158,7 +158,7 @@ def consultar_producto(id):
     if producto:
         return jsonify(producto)
     else:
-        return jsonify("404")
+        return jsonify({"mensaje": 404})
 
 # Carpeta para guardar las imágenes ---------------------------------------------------------------
 ruta_destino = './static/imagenes/'
