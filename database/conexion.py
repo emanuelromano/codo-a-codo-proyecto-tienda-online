@@ -43,12 +43,12 @@ class Conexion:
         usuario = self.cursor.fetchone()
 
         if usuario:
-            return True
+            return jsonify({"existe": 1})
         
-        return False
+        return jsonify({"existe": 0})
     
     # Consultar Contraseña ------------------------------------------------------------------------
-    def consultar_contraseña(self, email, passw):
+    def consultar_email_passw(self, email, passw):
         self.cursor.execute(f"SELECT * FROM usuarios WHERE email = '{email}' AND passw = '{passw}'")
         usuario = self.cursor.fetchone()
 
@@ -129,6 +129,15 @@ def inicio():
             Trabajo Práctico Obligatorio <br> \
             'La Pastelería' <br> \
             </p>"
+
+# Ruta chequear usuario -------------------------------------------------------------------------
+@app.route("/usuario/<string:email>/<string:passw>")
+def consultar_email_passw(email, passw):
+    usuario = db.consultar_email_passw(email, passw)
+    if usuario:
+        return jsonify({"acceso": 1})
+    else:
+        return jsonify({"acceso": 0})
 
 # Ruta mostrar cupones --------------------------------------------------------------------------
 @app.route("/cupones", methods=["GET"])

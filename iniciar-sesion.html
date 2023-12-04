@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="icon" type="image/x-icon" href="/img/favicon.png">
     <!-- Scripts y JSON -->
-    <script src="./javascript/index.js"></script>
-    <script src="./json/productos.json"></script>
+    <script src="./javascript/iniciar-sesion.js"></script>
     <script src="https://kit.fontawesome.com/4d2d62b243.js" crossorigin="anonymous"></script>
 </head>
 
@@ -26,24 +25,24 @@
                     Volver al inicio
                 </button>
             </a>
-
-            <div class="cabecera-der" onclick="menuHamburguesa()">
-                <img src="./img/menu2.svg" alt="Menu" draggable="false">
-            </div>
         </header>
 
-        <form id="inicses">
             <h2 class="iniciarsesion0">Iniciar Sesión</h2>
+            
             <div id="datosing">
                 <label for="username">Usuario / Correo Electronico:</label>
-                <input type="text" id="inpusu" name="username" required>
+                <input class="usuario" type="text" id="inpusu" name="username" required>
             </div>
+
             <div id="ingdatos">
                 <label for="password">Contraseña:</label>
-                <input type="password" id="inpusu" name="password" required>
+                <input class="pass" type="password" id="inpusu" name="password" required>
             </div>
-            <button id="bti" type="submit">Ingresar</button>
-        </form>
+
+            <div class="alerta-inicio-sesion"></div>
+
+            <button id="bti" type="submit" onclick="iniciarSesion()">Ingresar</button>
+
     </div>
 </body>
 

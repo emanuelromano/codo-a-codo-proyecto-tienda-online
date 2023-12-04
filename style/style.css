@@ -2110,6 +2110,7 @@ label {
     border-radius: 4px;
     cursor: pointer;
     font-size: 20px;
+    width: 100%;
 }
 
 #bti:hover {
