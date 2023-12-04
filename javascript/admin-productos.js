@@ -22,7 +22,10 @@ function mostrarProductos() {
                     </td>
 
                     <td class="cantidad-mas-menos-item">
-                        <button class="eliminar-item" onclick="eliminarItem(${data[i].id},)"><i class="fa-solid fa-trash" style="color: #ffffff;"></i> Eliminar</button>
+                        <button class="eliminar-item" onclick="eliminarProducto(${data[i].id},)"><i class="fa-solid fa-trash" style="color: #ffffff;"></i> Eliminar</button>
+
+                        <button class="sumar-item" onclick="sumarItem()"><i class="fa-solid fa-check" style="color: #ffffff;"></i></i></button>
+                        <button class="restar-item" onclick="restarItem()"><i class="fa-solid fa-x" style="color: #ffffff;"></i></i></button>
                     </td>
                 </tr>`
             }
@@ -59,6 +62,29 @@ function menuHamburguesa() {
 window.addEventListener('load', function () {
     mostrarProductos()
 })
+
+
+// Eliminar producto
+function eliminarProducto(id) {
+    api = `http://127.0.0.1:5000/productos/${id}`
+
+    fetch(api, {
+        method: 'DELETE'
+    })
+        .then(response => {
+            if (response.ok) {
+                alert('Producto eliminado correctamente.')
+
+                let tabla = document.getElementsByClassName('items-productos-admin')
+                tabla[0].innerHTML = ""
+
+                mostrarProductos()
+            }
+        })
+        .catch(error => {
+            alert(error.message);
+        });
+}
 
 
 // Ocultar elementos del Nav Bar en modo para moviles con Event Listener

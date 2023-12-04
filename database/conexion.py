@@ -218,7 +218,7 @@ def modificar_producto(id):
 @app.route("/productos/<int:id>", methods=["DELETE"])
 def eliminar_producto(id):
     # Primero, obtén la información del producto para encontrar la imagen
-    eliminar = db.consultar_producto(id)
+    eliminar = db.eliminar_producto(id)
     if eliminar:
         return jsonify({"mensaje": "Producto eliminado"})
     else:
