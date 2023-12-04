@@ -1,8 +1,9 @@
-function agregarProducto() {
+function actualizarProducto() {
     var formData = new FormData();
 
     url = document.getElementById('nombre').value.trim().toLowerCase().replace(/ /g, "-")
 
+    formData.append('id', document.getElementById('id').value.trim())
     formData.append('nombre', document.getElementById('nombre').value.trim())
     formData.append('url', url)
     formData.append('imagen', document.getElementById('urlImagen').value.trim())
@@ -12,18 +13,19 @@ function agregarProducto() {
     formData.append('enCarro', false)
     formData.append('cantidadCompra', 0)
 
-    let api = "http://127.0.0.1:5000/productos"
+    let api = `http://127.0.0.1:5000/productos/${document.getElementById('id').value.trim()}`
 
     fetch(api, {
-        method: 'POST',
+        method: 'PUT',
         body: formData // Aquí enviamos formData en lugar de JSON
     })
         .then(function (response) {
             if (response.ok) { return response.json(); }
         })
         .then(function (data) {
-            alert('Producto agregado correctamente.');
+            alert('Producto actualizado correctamente.');
             // Limpiar el formulario para el proximo producto
+            document.getElementById('id').value = "";
             document.getElementById('nombre').value = "";
             document.getElementById('urlImagen').value = "";
             document.getElementById('descripcion').value = "";
@@ -32,7 +34,7 @@ function agregarProducto() {
         })
         .catch(function (error) {
             // Mostramos el error, y no limpiamos el form.
-            alert('Error al agregar el producto.');
+            alert('Error al actualizar el producto.');
         });
 }
 

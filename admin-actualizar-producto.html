@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="icon" type="image/x-icon" href="/img/favicon.png">
     <!-- Scripts y JSON -->
-    <script src="./javascript/index.js"></script>
-    <script src="./json/productos.json"></script>
+    <script src="./javascript/admin-actualizar-producto.js"></script>
+    <script src="./javascript/previsu.js"></script>
     <script src="https://kit.fontawesome.com/4d2d62b243.js" crossorigin="anonymous"></script>
 </head>
 
 <body id="bdyform1">
 
     <header class="cabecera">
-        
+
         <div class="cabecera-izq">
             <img src="./img/cake2.svg" alt="Pastel" draggable="false">
             <h1>La Pastelería</h1>
@@ -37,43 +37,31 @@
 
     <div id="cnt1">
         <form id="f1" action="procesar_formulario.php" method="post">
-            <div>
-                
-                <label for="nombre">Nombre del producto:</label>
-                <input type="text" id="bottbuscar" name="nombre">
-                <button id="btb">Buscar</button>
-
-            </div>    
-
-            <label for="Codigo">ID producto:</label>
+            <label for="nombre">Nombre del producto:</label>
             <input type="text" id="" name="nombre">
 
+            <label for="mensaje">Descripcion:</label>
+            <textarea id="descripcion" name="mensaje" rows="4" required></textarea>
+
             <label for="Cantidad">Cantidad de porciones:</label>
-            <input type="text" id="">
+            <input type="text" id="porciones">
 
             <label for="Precio">Precio del producto:</label>
-            <input type="text">
-
-            <label for="mensaje">Descripcion:</label>
-            <textarea id="txta1" name="mensaje" rows="4" required></textarea>
+            <input type="number" id="precio">
 
             <form id="miFormulario">
-
-                <label for="urlImagen">Ingresa la URL del producto:</label>
+                <label for="urlImagen">Ingrese la URL de imágen:</label>
 
                 <input type="text" id="urlImagen" name="urlImagen">
 
-                <button id="bts" type="button" onclick="mostrarPrevisualizacion()">Mostrar Previsualización</button>
+                <button id="bts" type="button" onclick="mostrarPrevisualizacion()">Mostrar imagen</button>
 
                 <div id="previsualizacion"></div>
-
             </form>
 
-            <button type="submit" id="bts1">Cargar producto</button>
+            <button type="button" id="bts1" onclick="actualizarProducto()">Cargar producto</button>
         </form>
     </div>
-
-    <script src="./javascript/previsu.js"></script>
 </body>
 
 
