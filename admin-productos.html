@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="icon" type="image/x-icon" href="/img/favicon.png">
     <!-- Scripts y JSON -->
-    <script src="./javascript/productos.js"></script>
+    <script src="./javascript/admin-productos.js"></script>
     <script src="./json/productos.json"></script>
     <script src="https://kit.fontawesome.com/4d2d62b243.js" crossorigin="anonymous"></script>
 </head>
@@ -28,8 +28,8 @@
 
         <nav class="menu">
             <ul type="none">
-                <li><a href="./admin-inicio.html" class="selecc">Inicio</a></li>
-                <li><a id="menu-item-1" href="./admin-productos.html">Productos</a></li>
+                <li><a href="./admin-inicio.html">Inicio</a></li>
+                <li><a id="menu-item-1" href="./admin-productos.html" class="selecc">Productos</a></li>
                 <li><a id="menu-item-2" href="./admin-agregar-producto.html">Agregar Productos</a></li>
                 <li><a id="menu-item-3" href="./admin-actualizar-producto.html">Actualizar Producto</a></li>
                 <!-- <li><a id="menu-item-4" class="boton-carrito-contador" href="./carro.html">Carro (0)</a></li> -->
@@ -40,19 +40,7 @@
 
         <aside class="aside">
             <div class="aside-in">
-                <div class="promo-1">
-                    <img src="./img/flor.png" alt="Flor" class="imagen-oferta-1" draggable="false">
-                    <div class="titulo-oferta-1">¡Oferta de Primavera!</div>
-                    <div class="texto-oferta-1"><b>20% DE DESCUENTO</b> ingresando el código <b>PRIMAVERA</b> en
-                        cualquiera de
-                        tus compras</div>
-                </div>
 
-                <div class="promo-2">
-                    <img src="./img/delivery.png" alt="Delivery" class="imagen-oferta-2" draggable="false">
-                    <div class="titulo-oferta-2">¡Promo delivery!</div>
-                    <div class="texto-oferta-2"><b>ENVÍO GRATIS</b> en compras que superen los <b>$15000</b></div>
-                </div>
             </div>
         </aside>
 
@@ -62,9 +50,12 @@
 
                 <!-- Aquí va el contenido -->
 
-                <div class="tarjetas">
+                <!-- <div class="tarjetas">
                     <div class="tarjetas-productos"></div>
-                </div>
+                </div> -->
+
+                <table class="items-productos-admin"></table>
+
             </div>
         </div>
 
