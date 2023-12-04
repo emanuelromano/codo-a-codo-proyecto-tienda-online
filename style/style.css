@@ -2012,7 +2012,7 @@ a {
 
 #cnt1 {
     background-color: rgba(249, 247, 246, 0.769);
-    padding: 20px;
+    padding: 1%;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 400px;
@@ -2034,6 +2034,7 @@ input {
     padding: 10px;
     box-sizing: border-box;
     resize: none;
+    margin: 1px;
 }
 #txta1 {
     width:100%;
@@ -2088,7 +2089,7 @@ input {
 
 label {
     font-weight: bold;
-    margin-bottom: 5px;
+    margin: 5px;
 }
 
 #inpusu {
@@ -2128,4 +2129,14 @@ label {
 
 #bts:hover {
     background-color: #ffb23f;
+}
+
+#previsualizacion {
+    margin-top: 20px;
+}
+
+#previsualizacion img {
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: 10px;
 }

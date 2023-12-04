@@ -39,19 +39,30 @@
             <label for="Cantidad">Cantidad de porciones:</label>
             <input type="text" id="">
 
-            <label for="Imagen">Imagen del producto:</label>
-            <input type="text">
-            
             <label for="Precio">Precio del producto:</label>
             <input type="text">
 
             <label for="mensaje">Descripcion:</label>
             <textarea id="txta1" name="mensaje" rows="4" required></textarea>
 
+            
+            <form id="miFormulario" enctype="multipart/form-data">
+
+                <label for="imagen">Imagen del producto:</label>
+    
+                <input type="file" id="imagen" name="imagen" accept="image/*">
+    
+                <div id="previsualizacion"></div>
+    
+                </form>  
+
             <button type="submit" id="bts1">Cargar producto</button>
         </form>
     </div>
 
+    <script src="./javascript/previsu.js"></script>
+
 </body>
+
 
 </html>
