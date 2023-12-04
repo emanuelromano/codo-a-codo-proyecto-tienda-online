@@ -11,7 +11,6 @@ function mostrarProducto() {
 
             let producto = document.getElementsByClassName("mostrar-producto")
             arrayProducto = data[id]
-            console.log(id)
 
             producto[0].innerHTML =
                 `<div class="producto">
@@ -45,10 +44,8 @@ function cargarCarro() {
 
     if (localStorage.getItem("carroDeCompras") === null) {
         localStorage.setItem("carroDeCompras", JSON.stringify(carroDeCompras))
-        console.log(carroDeCompras)
     } else {
         carroDeCompras = JSON.parse(localStorage.getItem("carroDeCompras"))
-        console.log(carroDeCompras)
     }
 }
 
