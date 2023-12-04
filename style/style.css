@@ -2143,3 +2143,17 @@ label {
     margin-top: 10px;
 }
 
+#bottbuscar {
+    width: 50%;
+}
+
+#btb {
+    background-color: #fa9600;
+    color: #fff;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 40%;
+    height: 60%;
+}
