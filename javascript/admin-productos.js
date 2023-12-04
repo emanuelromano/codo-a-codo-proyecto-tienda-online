@@ -11,7 +11,7 @@ function mostrarProductos() {
 
             for (let i = 0; i < longitud; i++) {
                 items[0].innerHTML +=
-                `<tr class="item-carro">
+                    `<tr class="item-carro">
                     <td>
                         <img class="imagen-item" src=${data[i].imagen} draggable="false">
                     </td>
@@ -19,6 +19,10 @@ function mostrarProductos() {
                     <td class="titulo-precio-item">
                         <div class="titulo-item">${data[i].nombre}</div>
                         <div class="precio-item"><i class="fa-solid fa-money-bill-wave" style="color: #07b032;"></i> $${data[i].precio.toLocaleString()},00 - ID: ${data[i].id}</div>
+                    </td>
+
+                    <td class="cantidad-mas-menos-item">
+                        <button class="eliminar-item" onclick="eliminarItem(${data[i].id},)"><i class="fa-solid fa-trash" style="color: #ffffff;"></i> Eliminar</button>
                     </td>
                 </tr>`
             }
@@ -28,7 +32,7 @@ function mostrarProductos() {
 
 // Abre la vista de un producto seleccionado
 function abrirProducto(id) {
-    localStorage.setItem("productoSeleccionado", id-1)
+    localStorage.setItem("productoSeleccionado", id - 1)
     window.open('producto.html', '_self')
 }
 
