@@ -7,6 +7,6 @@ function mostrarPrevisualizacion() {
         var preview = document.getElementById('previsualizacion');
         preview.innerHTML = '<img src="' + url + '" alt="Previsualización">';
     } else {
-        alert('Por favor, ingresa una URL de imagen válida.');
+        alert('Link invalido, intente nuevamente con otro link');
     }
 }
