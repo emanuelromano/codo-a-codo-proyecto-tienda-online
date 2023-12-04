@@ -24,8 +24,9 @@
             Panel Admin
         </button>
     </a>
-    
+
     </header>
+    
 <body id="bdyform1">
     <div id="cnt1">
         
@@ -45,16 +46,17 @@
             <label for="mensaje">Descripcion:</label>
             <textarea id="txta1" name="mensaje" rows="4" required></textarea>
 
-            
-            <form id="miFormulario" enctype="multipart/form-data">
+            <form id="miFormulario">
 
-                <label for="imagen">Imagen del producto:</label>
-    
-                <input type="file" id="imagen" name="imagen" accept="image/*">
-    
+                <label for="urlImagen">Ingresa la URL del producto:</label>
+
+                <input type="text" id="urlImagen" name="urlImagen">
+
+                <button id="bts" type="button" onclick="mostrarPrevisualizacion()">Mostrar Previsualización</button>
+
                 <div id="previsualizacion"></div>
-    
-                </form>  
+
+            </form>
 
             <button type="submit" id="bts1">Cargar producto</button>
         </form>

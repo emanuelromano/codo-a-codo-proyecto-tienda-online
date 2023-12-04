@@ -1,14 +1,12 @@
-document.getElementById('imagen').addEventListener('change', function () {
-    var input = this;
 
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
+function mostrarPrevisualizacion() {
+    var urlInput = document.getElementById('urlImagen');
+    var url = urlInput.value.trim();
 
-        reader.onload = function (e) {
-            var preview = document.getElementById('previsualizacion');
-            preview.innerHTML = '<img src="' + e.target.result + '" alt="Previsualización">';
-        };
-
-        reader.readAsDataURL(input.files[0]);
+    if (url !== "") {
+        var preview = document.getElementById('previsualizacion');
+        preview.innerHTML = '<img src="' + url + '" alt="Previsualización">';
+    } else {
+        alert('Por favor, ingresa una URL de imagen válida.');
     }
-});
+}
