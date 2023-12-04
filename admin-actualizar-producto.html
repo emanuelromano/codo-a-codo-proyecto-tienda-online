@@ -36,11 +36,11 @@
     </nav>
 
     <div id="cnt1">
-        <form id="f1">
+        <form id="f1" onsubmit="event.preventDefault();">
 
             <div>
                 <label for="nombre">ID del producto:</label> <br>
-                <input type="text" id="bottbuscar" name="nombre">
+                <input type="text" id="bottbuscar" name="nombre" autofocus>
                 <button id="btb" onclick="buscarProducto()">Buscar</button>
             </div>
 
@@ -51,7 +51,7 @@
             <textarea id="descripcion" name="mensaje" rows="4" required></textarea>
 
             <label for="Cantidad">Cantidad de porciones:</label>
-            <input type="text" id="porciones">
+            <input type="number" id="porciones">
 
             <label for="Precio">Precio del producto:</label>
             <input type="number" id="precio">

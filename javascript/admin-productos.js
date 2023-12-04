@@ -22,12 +22,15 @@ function mostrarProductos() {
                     </td>
 
                     <td class="cantidad-mas-menos-item">
-                        <button class="eliminar-item" onclick="eliminarProducto(${data[i].id},)"><i class="fa-solid fa-trash" style="color: #ffffff;"></i> Eliminar</button>
+                        <button class="eliminar-item" onclick="mostrarBotones(${data[i].id})"><i class="fa-solid fa-trash" style="color: #ffffff;"></i> Eliminar</button>
 
-                        <button class="sumar-item" onclick="sumarItem()"><i class="fa-solid fa-check" style="color: #ffffff;"></i></i></button>
-                        <button class="restar-item" onclick="restarItem()"><i class="fa-solid fa-x" style="color: #ffffff;"></i></i></button>
+                        <button class="sumar-item" id="eliminar-si-${data[i].id}" onclick="eliminarProducto(${data[i].id})"><i class="fa-solid fa-check" style="color: #ffffff;"></i></i></button>
+                        <button class="restar-item" id="eliminar-no-${data[i].id}" onclick="mostrarBotones(${data[i].id})"><i class="fa-solid fa-x" style="color: #ffffff;"></i></i></button>
                     </td>
                 </tr>`
+
+                document.getElementById(`eliminar-si-${data[i].id}`).style.display = "none"
+                document.getElementById(`eliminar-no-${data[i].id}`).style.display = "none"
             }
         });
 }
@@ -62,6 +65,23 @@ function menuHamburguesa() {
 window.addEventListener('load', function () {
     mostrarProductos()
 })
+
+// Mostrar u ocultar botones
+let botones = false
+
+function mostrarBotones(id) {
+    if (botones == false) {
+        document.getElementById(`eliminar-si-${id}`).style.display = "inline"
+        document.getElementById(`eliminar-no-${id}`).style.display = "inline"
+
+        botones = true
+    } else if (botones == true) {
+        document.getElementById(`eliminar-si-${id}`).style.display = "none"
+        document.getElementById(`eliminar-no-${id}`).style.display = "none"
+
+        botones = false
+    }
+}
 
 
 // Eliminar producto

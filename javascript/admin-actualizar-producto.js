@@ -42,20 +42,34 @@ function actualizarProducto() {
 }
 
 function buscarProducto() {
-    fetch(`http://127.0.0.1:5000/productos/${document.getElementById('bottbuscar').value.trim()}`)
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-            document.getElementById('nombre').value = data.nombre;
-            document.getElementById('urlImagen').value = data.imagen;
-            document.getElementById('descripcion').value = data.descripcion;
-            document.getElementById('porciones').value = data.porciones;
-            document.getElementById('precio').value = data.precio;
+    if (document.getElementById('bottbuscar').value == "") {
+        alert("Ingrese una ID de producto.")
+    } else {
+        fetch(`http://127.0.0.1:5000/productos/${document.getElementById('bottbuscar').value.trim()}`)
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => {
+                console.log(data.nombre)
+                if (data.nombre == undefined) {
+                    alert("El producto no existe.")
+                    document.getElementById('bottbuscar').value = ""
+                    return
+                }
 
-            var preview = document.getElementById('previsualizacion');
-            preview.innerHTML = '<img src="' + data.imagen + '" alt="Previsualización">';
-        });
+                document.getElementById('nombre').value = data.nombre;
+                document.getElementById('urlImagen').value = data.imagen;
+                document.getElementById('descripcion').value = data.descripcion;
+                document.getElementById('porciones').value = data.porciones;
+                document.getElementById('precio').value = data.precio;
+
+                var preview = document.getElementById('previsualizacion');
+                preview.innerHTML = '<img src="' + data.imagen + '" alt="Previsualización">';
+            }).catch(function (error) {
+                // Mostramos el error, y no limpiamos el form.
+                alert('Error al agregar el producto.');
+            });;
+    }
 }
 
 window.addEventListener('load', function () {

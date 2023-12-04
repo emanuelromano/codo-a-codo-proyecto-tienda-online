@@ -17,7 +17,7 @@ function iniciarSesion() {
                 console.log(data.acceso)
 
                 if (data.acceso == 1) {
-                    window.open('admin-inicio.html', '_self')
+                    window.open('admin-productos.html', '_self')
                 } else {
                     let alerta = document.getElementsByClassName("alerta-inicio-sesion")
                     alerta[0].innerHTML = `<div class="alerta-compra-info">
