@@ -63,6 +63,12 @@ class Conexion:
         productos = self.cursor.fetchall()
         return productos
 
+    # Ver todos los cupones ---------------------------------------------------------------------
+    def ver_cupones(self):
+        self.cursor.execute("SELECT * FROM cupones")
+        productos = self.cursor.fetchall()
+        return productos
+
     # Consultar productos por ID ------------------------------------------------------------------
     def consultar_producto(self, id):
         self.cursor.execute(f"SELECT * FROM productos WHERE id = {id}")
@@ -124,6 +130,12 @@ def inicio():
             'La Pastelería' <br> \
             </p>"
 
+# Ruta mostrar cupones --------------------------------------------------------------------------
+@app.route("/cupones", methods=["GET"])
+def ver_cupones():
+    cupones = db.ver_cupones()
+    return jsonify(cupones)
+
 # Ruta mostrar productos --------------------------------------------------------------------------
 @app.route("/productos", methods=["GET"])
 def ver_productos():
@@ -145,6 +157,8 @@ ruta_destino = './static/imagenes/'
 # Ruta agregar producto ---------------------------------------------------------------------------
 @app.route("/productos", methods=["POST"])
 def agregar_producto():
+
+    # Datos del producto
     nombre = request.form['nombre']
     url = request.form['url']
     imagen = request.form['imagen']
@@ -163,36 +177,43 @@ def agregar_producto():
     # nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"
     # imagen.save(os.path.join(ruta_destino, nombre_imagen))
 
+    # Agregando producto
     if db.agregar_producto(nombre, url, imagen, descripcion, porciones, precio, enCarro, cantidadCompra):
         return jsonify({"mensaje": "Producto agregado"})
     else:
         return jsonify({"mensaje": "Error agregando producto"})
 
 # Ruta actualizar producto ------------------------------------------------------------------------
+@app.route("/productos/<int:id>", methods=["PUT"])
+def modificar_producto(id):
 
+    # Datos del producto
+    data = request.form
+    id = data.get("id")
+    nuevo_nombre = data.get("nombre")
+    nueva_url = data.get("url")
+    nueva_imagen = data.get("imagen")
+    nueva_descripcion = data.get("descripcion")
+    nuevo_porciones = data.get("porciones")
+    nuevo_precio = data.get("precio")
+    enCarro = data.get("enCarro")
+    cantidadCompra = data.get("cantidadCompra")
 
-
-
-
+    # Actualización del producto
+    if db.modificar_producto(id, nuevo_nombre, nueva_url, nueva_imagen, nueva_descripcion, nuevo_porciones, nuevo_precio, enCarro, cantidadCompra):
+        return jsonify({"mensaje": "Producto modificado"})
+    else:
+        return jsonify({"mensaje": "Producto no encontrado"})
 
 # Ruta eliminar producto --------------------------------------------------------------------------
-@app.route("/productos/<int:codigo>", methods=["DELETE"])
-def eliminar_producto(codigo):
+@app.route("/productos/<int:id>", methods=["DELETE"])
+def eliminar_producto(id):
     # Primero, obtén la información del producto para encontrar la imagen
-    producto = catalogo.consultar_producto(codigo)
-    if producto:
-        # Eliminar la imagen asociada si existe
-        ruta_imagen = os.path.join(ruta_destino, producto['imagen_url'])
-        if os.path.exists(ruta_imagen):
-            os.remove(ruta_imagen)
-
-        # Luego, elimina el producto del catálogo
-        if catalogo.eliminar_producto(codigo):
-            return jsonify({"mensaje": "Producto eliminado"}), 200
-        else:
-            return jsonify({"mensaje": "Error al eliminar el producto"}), 500
+    eliminar = db.consultar_producto(id)
+    if eliminar:
+        return jsonify({"mensaje": "Producto eliminado"})
     else:
-        return jsonify({"mensaje": "Producto no encontrado"}), 404
+        return jsonify({"mensaje": "Error al eliminar el producto"})
     
 # -------------------------------------------------------------------------------------------------
 # Iniciar servidor --------------------------------------------------------------------------------

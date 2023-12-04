@@ -202,7 +202,7 @@ function verificarCupon() {
         let cuponTrim = cupon[0].value.trim()
         cupon[0].value = cuponTrim
 
-        fetch("https://raw.githubusercontent.com/emanuelromano/codo-a-codo-proyecto-tienda-online/main/json/cupones.json")
+        fetch("http://127.0.0.1:5000/cupones")
             .then((res) => {
                 return res.json();
             })

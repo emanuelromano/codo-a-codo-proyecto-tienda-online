@@ -2,7 +2,7 @@
 let arrayProducto = []
 
 function mostrarProducto() {
-    fetch("https://raw.githubusercontent.com/emanuelromano/codo-a-codo-proyecto-tienda-online/main/json/productos.json")
+    fetch("http://127.0.0.1:5000/productos")
         .then((res) => {
             return res.json();
         })
