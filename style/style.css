@@ -2007,7 +2007,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 115vh;
+    height: 125vh;
 }
 
 #cnt1 {
@@ -2134,7 +2134,10 @@ label {
 }
 
 #previsualizacion {
-    margin-top: 20px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 #previsualizacion img {
