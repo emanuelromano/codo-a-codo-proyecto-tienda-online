@@ -17,22 +17,16 @@ function iniciarSesion() {
                 console.log(data.acceso)
 
                 if (data.acceso == 1) {
-                    window.open('admin-productos.html', '_self')
+                    window.open('admin-inicio.html', '_self')
                 } else {
-
                     let alerta = document.getElementsByClassName("alerta-inicio-sesion")
                     alerta[0].innerHTML = `<div class="alerta-compra-info">
-                <i class="fa-solid fa-circle-info" style="color: #000000;"></i> Usuario o contraseña incorrectos.
-                </div> <br>`
+                    <i class="fa-solid fa-circle-info" style="color: #000000;"></i> Usuario o contraseña incorrectos.
+                    </div> <br>`
                 }
             });
     }
 }
-
-
-
-
-
 
 // Funciones a ejecutarse al cargar completamente la página
 window.addEventListener('load', function () {

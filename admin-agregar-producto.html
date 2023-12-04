@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Pastelería · Agregar Producto</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
+    <!-- Scripts y JSON -->
+    <script src="./javascript/index.js"></script>
+    <script src="./json/productos.json"></script>
+    <script src="https://kit.fontawesome.com/4d2d62b243.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="bdyform1">
+
+    <header class="cabecera">
+        <div class="cabecera-izq">
+            <img src="./img/cake2.svg" alt="Pastel" draggable="false">
+            <h1>La Pastelería</h1>
+    
+        </div>
+    
+        <a href="admin-productos.html" target="" id="btn">
+            <button id="bts">
+                Panel Admin
+            </button>
+        </a>
+    </header>
+
+    <nav class="menu">
+        <ul type="none">
+            <li><a href="./admin-inicio.html" class="selecc">Inicio</a></li>
+            <li><a id="menu-item-1" href="./admin-productos.html">Productos</a></li>
+            <li><a id="menu-item-2" href="./admin-agregar-producto.html">Agregar Productos</a></li>
+            <li><a id="menu-item-3" href="./admin-actualizar-producto.html">Actualizar Producto</a></li>
+            <!-- <li><a id="menu-item-4" class="boton-carrito-contador" href="./carro.html">Carro (0)</a></li> -->
+        </ul>
+    </nav>
+
+    <div id="cnt1">
+        <form id="f1" action="procesar_formulario.php" method="post">
+            <label for="nombre">Nombre del producto:</label>
+            <input type="text" id="" name="nombre">
+
+            <label for="Codigo">ID producto:</label>
+            <input type="text" id="" name="nombre">
+
+            <label for="Cantidad">Cantidad de porciones:</label>
+            <input type="text" id="">
+
+            <label for="Precio">Precio del producto:</label>
+            <input type="text">
+
+            <label for="mensaje">Descripcion:</label>
+            <textarea id="txta1" name="mensaje" rows="4" required></textarea>
+
+            <form id="miFormulario">
+
+                <label for="urlImagen">Ingresa la URL del producto:</label>
+
+                <input type="text" id="urlImagen" name="urlImagen">
+
+                <button id="bts" type="button" onclick="mostrarPrevisualizacion()">Mostrar Previsualización</button>
+
+                <div id="previsualizacion"></div>
+
+            </form>
+
+            <button type="submit" id="bts1">Cargar producto</button>
+        </form>
+    </div>
+
+    <script src="./javascript/previsu.js"></script>
+</body>
+
+
+</html>
