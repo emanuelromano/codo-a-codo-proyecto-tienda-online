@@ -11,7 +11,7 @@ function mostrarProducto() {
 
             let producto = document.getElementsByClassName("mostrar-producto")
             arrayProducto = data[id]
-            console.log(arrayProducto)
+            console.log(id)
 
             producto[0].innerHTML =
                 `<div class="producto">

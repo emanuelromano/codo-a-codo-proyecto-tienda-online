@@ -5,13 +5,15 @@ function mostrarProductos() {
             return res.json();
         })
         .then((data) => {
+            console.log(data)
+
             let longitud = data.length
 
             let tarjetas = document.getElementsByClassName("tarjetas-productos")
 
-            for (let i = 0; i < longitud; i++) {
+            for (let i = 0; i <= longitud; i++) {
                 tarjetas[0].innerHTML +=
-                    `<div class="tarjeta-producto" onclick="abrirProducto(${data[i].id})">
+                    `<div class="tarjeta-producto" onclick="abrirProducto(${i+1})">
                         <img class="imagen-tarjeta" src=${data[i].imagen} draggable="false">
                         <h3 class="titulo-tarjeta"> ${data[i].nombre}</h3>
                         <h4 class="precio-tarjeta"><i class="fa-solid fa-money-bill-wave" style="color: #07b032;"></i> $${data[i].precio},00</h4>
