@@ -1,6 +1,10 @@
 // Carga la lista completa de productos desde el JSON
+
+// let api = "http://127.0.0.1:5000/productos"
+let api = 'https://emanuel.pythonanywhere.com/productos'
+
 function mostrarProductos() {
-    fetch("http://127.0.0.1:5000/productos")
+    fetch(api)
         .then((res) => {
             return res.json();
         })
@@ -86,7 +90,8 @@ function mostrarBotones(id) {
 
 // Eliminar producto
 function eliminarProducto(id) {
-    api = `http://127.0.0.1:5000/productos/${id}`
+    // let api = `http://127.0.0.1:5000/productos/${id}`
+    let api = `https://emanuel.pythonanywhere.com/productos/${id}`
 
     fetch(api, {
         method: 'DELETE'

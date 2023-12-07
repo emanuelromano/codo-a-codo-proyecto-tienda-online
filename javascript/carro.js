@@ -202,7 +202,10 @@ function verificarCupon() {
         let cuponTrim = cupon[0].value.trim()
         cupon[0].value = cuponTrim
 
-        fetch("http://127.0.0.1:5000/cupones")
+        // let api = "http://127.0.0.1:5000/cupones"
+        let api = 'https://emanuel.pythonanywhere.com/cupones'
+
+        fetch(api)
             .then((res) => {
                 return res.json();
             })

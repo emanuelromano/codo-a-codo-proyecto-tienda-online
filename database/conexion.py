@@ -112,10 +112,16 @@ class Conexion:
 # -------------------------------------------------------------------------------------------------
 
 # Datos conexión ----------------------------------------------------------------------------------
-host = 'localhost'
-usuario = 'server'
-passw = '1234'
-baseDatos = 'pasteleria'
+
+# host = 'localhost'
+# usuario = 'server'
+# passw = '1234'
+# baseDatos = 'pasteleria'
+
+host = 'emanuel.mysql.pythonanywhere-services.com'
+usuario = 'emanuel'
+passw = 'cac23511'
+baseDatos = 'emanuel$pasteleria'
 
 db = Conexion(host, usuario, passw, baseDatos) # Inicio clase Conexion a la base de datos
 

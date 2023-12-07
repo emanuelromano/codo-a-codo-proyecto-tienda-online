@@ -9,7 +9,10 @@ function iniciarSesion() {
         <i class="fa-solid fa-circle-info" style="color: #000000;"></i> Debe ingresar un usuario y contraseña válidos.
         </div> <br>`
     } else {
-        fetch(`http://127.0.0.1:5000/usuario/${usuario}/${pass}`)
+        // let api = `http://127.0.0.1:5000/usuario/${usuario}/${pass}`
+        let api = `https://emanuel.pythonanywhere.com/usuario/${usuario}/${pass}`
+
+        fetch(api)
             .then((res) => {
                 return res.json();
             })

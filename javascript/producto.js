@@ -1,8 +1,11 @@
 // Muestra los detalles del producto seleccionado
 let arrayProducto = []
 
+// let api = "http://127.0.0.1:5000/productos"
+let api = 'https://emanuel.pythonanywhere.com/productos'
+
 function mostrarProducto() {
-    fetch("http://127.0.0.1:5000/productos")
+    fetch(api)
         .then((res) => {
             return res.json();
         })

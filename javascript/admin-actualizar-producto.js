@@ -13,7 +13,9 @@ function actualizarProducto() {
     formData.append('enCarro', false)
     formData.append('cantidadCompra', 0)
 
-    let api = `http://127.0.0.1:5000/productos/${document.getElementById('bottbuscar').value.trim()}`
+    let id = document.getElementById('bottbuscar').value.trim()
+    // let api = `http://127.0.0.1:5000/productos/${id}`
+    let api = `https://emanuel.pythonanywhere.com/productos/${id}`
 
     fetch(api, {
         method: 'PUT',
@@ -45,7 +47,11 @@ function buscarProducto() {
     if (document.getElementById('bottbuscar').value == "") {
         alert("Ingrese una ID de producto.")
     } else {
-        fetch(`http://127.0.0.1:5000/productos/${document.getElementById('bottbuscar').value.trim()}`)
+        let id = document.getElementById('bottbuscar').value.trim()
+        // let api = `http://127.0.0.1:5000/productos/${id}`
+        let api = `https://emanuel.pythonanywhere.com/productos/${id}`
+
+        fetch(api)
             .then((res) => {
                 return res.json();
             })

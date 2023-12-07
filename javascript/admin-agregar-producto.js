@@ -12,7 +12,8 @@ function agregarProducto() {
     formData.append('enCarro', false)
     formData.append('cantidadCompra', 0)
 
-    let api = "http://127.0.0.1:5000/productos"
+    // let api = "http://127.0.0.1:5000/productos"
+    let api = 'https://emanuel.pythonanywhere.com/productos'
 
     fetch(api, {
         method: 'POST',
