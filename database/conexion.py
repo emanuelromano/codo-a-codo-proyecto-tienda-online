@@ -111,13 +111,13 @@ class Conexion:
 # Cuerpo del programa -----------------------------------------------------------------------------
 # -------------------------------------------------------------------------------------------------
 
-db = Conexion('localhost', 'server', '1234', 'pasteleria')
+# Datos conexión ----------------------------------------------------------------------------------
+host = 'localhost'
+usuario = 'server'
+passw = '1234'
+baseDatos = 'pasteleria'
 
-# db.agregar_producto("Selva Negra", "selva-negra", "https://i.ibb.co/5vwq3XY/1.jpg", "Bizcochuelo de chocolate empapado en kirsch e intercaladas con nata y cerezas.", 8, 5500, False, 0)
-# db.modificar_producto(1, "Selva Negra", "selva-negra", "https://i.ibb.co/5vwq3XY/1.jpg", "Bizcochuelo de chocolate empapado en kirsch e intercaladas con nata y cerezas.", 8, 5500, False, 0)
-# db.eliminar_producto(11)
-# print(db.consultar_producto(1))
-# print(db.ver_productos())
+db = Conexion(host, usuario, passw, baseDatos) # Inicio clase Conexion a la base de datos
 
 # Ruta inicial ------------------------------------------------------------------------------------
 @app.route("/")
