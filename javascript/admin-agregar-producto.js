@@ -1,3 +1,15 @@
+// API a utilizar:  TRUE = online / FALSE = local
+let apiOnline = false
+let api = ''
+
+if (apiOnline == true) {
+    api = 'https://emanuel.pythonanywhere.com/productos'
+} else {
+    api = "http://127.0.0.1:5000/productos"
+}
+
+
+// Agregar producto a la base de datos
 function agregarProducto() {
     var formData = new FormData();
 
@@ -11,9 +23,6 @@ function agregarProducto() {
     formData.append('precio', document.getElementById('precio').value.trim())
     formData.append('enCarro', false)
     formData.append('cantidadCompra', 0)
-
-    // let api = "http://127.0.0.1:5000/productos"
-    let api = 'https://emanuel.pythonanywhere.com/productos'
 
     fetch(api, {
         method: 'POST',

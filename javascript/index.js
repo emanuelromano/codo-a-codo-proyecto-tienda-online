@@ -1,8 +1,16 @@
+// API a utilizar:  TRUE = online / FALSE = local
+let apiOnline = false
+let api = ''
+
+if (apiOnline == true) {
+    api = 'https://emanuel.pythonanywhere.com/productos'
+} else {
+    api = "http://127.0.0.1:5000/productos"
+}
+
+
 // Carga dos productos aleatorios en la página de inicio
 let carroDeCompras = []
-
-// let api = "http://127.0.0.1:5000/productos"
-let api = 'https://emanuel.pythonanywhere.com/productos'
 
 function cargarItemsInicio() {
     fetch(api)

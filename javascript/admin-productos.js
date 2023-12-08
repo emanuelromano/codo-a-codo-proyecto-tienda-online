@@ -1,8 +1,15 @@
+// API a utilizar:  TRUE = online / FALSE = local
+let apiOnline = false
+let api = ''
+
+if (apiOnline == true) {
+    api = 'https://emanuel.pythonanywhere.com/productos'
+} else {
+    api = "http://127.0.0.1:5000/productos"
+}
+
+
 // Carga la lista completa de productos desde el JSON
-
-// let api = "http://127.0.0.1:5000/productos"
-let api = 'https://emanuel.pythonanywhere.com/productos'
-
 function mostrarProductos() {
     fetch(api)
         .then((res) => {
@@ -90,10 +97,7 @@ function mostrarBotones(id) {
 
 // Eliminar producto
 function eliminarProducto(id) {
-    // let api = `http://127.0.0.1:5000/productos/${id}`
-    let api = `https://emanuel.pythonanywhere.com/productos/${id}`
-
-    fetch(api, {
+    fetch(api + `/${id}`, {
         method: 'DELETE'
     })
         .then(response => {

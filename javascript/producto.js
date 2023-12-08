@@ -1,9 +1,15 @@
+// API a utilizar:  TRUE = online / FALSE = local
+let apiOnline = false
+let api = ''
+
+if (apiOnline == true) {
+    api = 'https://emanuel.pythonanywhere.com/productos'
+} else {
+    api = "http://127.0.0.1:5000/productos"
+}
+
+
 // Muestra los detalles del producto seleccionado
-let arrayProducto = []
-
-// let api = "http://127.0.0.1:5000/productos"
-let api = 'https://emanuel.pythonanywhere.com/productos'
-
 function mostrarProducto() {
     fetch(api)
         .then((res) => {

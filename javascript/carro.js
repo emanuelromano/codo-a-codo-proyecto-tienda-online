@@ -192,6 +192,17 @@ function eliminarItem(id, precio) {
 }
 
 
+// API a utilizar:  TRUE = online / FALSE = local
+let apiOnline = false
+let api = ''
+
+if (apiOnline == true) {
+    api = 'https://emanuel.pythonanywhere.com/cupones'
+} else {
+    api = "http://127.0.0.1:5000/cupones"
+}
+
+
 // Verificar validez de cupón
 let banderaCupon = false
 let porcDesc
@@ -201,9 +212,6 @@ function verificarCupon() {
         let cupon = document.getElementsByClassName("input-cupon")
         let cuponTrim = cupon[0].value.trim()
         cupon[0].value = cuponTrim
-
-        // let api = "http://127.0.0.1:5000/cupones"
-        let api = 'https://emanuel.pythonanywhere.com/cupones'
 
         fetch(api)
             .then((res) => {

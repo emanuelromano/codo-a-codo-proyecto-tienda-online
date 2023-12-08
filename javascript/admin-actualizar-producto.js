@@ -1,3 +1,15 @@
+// API a utilizar:  TRUE = online / FALSE = local
+let apiOnline = false
+let api = ''
+
+if (apiOnline == true) {
+    api = 'https://emanuel.pythonanywhere.com/productos'
+} else {
+    api = "http://127.0.0.1:5000/productos"
+}
+
+
+// Actualizar productos en la base de datos
 function actualizarProducto() {
     var formData = new FormData();
 
@@ -14,10 +26,8 @@ function actualizarProducto() {
     formData.append('cantidadCompra', 0)
 
     let id = document.getElementById('bottbuscar').value.trim()
-    // let api = `http://127.0.0.1:5000/productos/${id}`
-    let api = `https://emanuel.pythonanywhere.com/productos/${id}`
 
-    fetch(api, {
+    fetch(api + `/${id}`, {
         method: 'PUT',
         body: formData // Aquí enviamos formData en lugar de JSON
     })
@@ -43,15 +53,15 @@ function actualizarProducto() {
         });
 }
 
+
+// Buscar producto en la base de datos según la ID
 function buscarProducto() {
     if (document.getElementById('bottbuscar').value == "") {
         alert("Ingrese una ID de producto.")
     } else {
         let id = document.getElementById('bottbuscar').value.trim()
-        // let api = `http://127.0.0.1:5000/productos/${id}`
-        let api = `https://emanuel.pythonanywhere.com/productos/${id}`
 
-        fetch(api)
+        fetch(api + `/${id}`)
             .then((res) => {
                 return res.json();
             })
